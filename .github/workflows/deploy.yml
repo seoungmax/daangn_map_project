@@ -13,6 +13,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
       
@@ -32,7 +35,11 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: List build output
+        run: ls -la out
+        
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
