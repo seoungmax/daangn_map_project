@@ -1,0 +1,3970 @@
+[
+  {
+    "id": 1,
+    "name": "경파",
+    "originalName": "경파",
+    "address": "대한민국 서울특별시 서초구 서운로 226",
+    "position": {
+      "lat": 37.5030721,
+      "lng": 127.0219413
+    },
+    "rating": 4.3,
+    "reviews": 25,
+    "placeId": "ChIJXSb04IWhfDURB8CZ9ZHFGUo",
+    "distance": 0.21815066728625257,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJXSb04IWhfDURB8CZ9ZHFGUo",
+    "rank": 1
+  },
+  {
+    "id": 2,
+    "name": "이치규 강남신논현점(japanese restaurant ichigyu) イチギュ / 李致奎",
+    "originalName": "이치규 강남신논현점",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 19 2층",
+    "position": {
+      "lat": 37.5035436,
+      "lng": 127.0266028
+    },
+    "rating": 4,
+    "reviews": 3,
+    "placeId": "ChIJm60gmJajfDURLRCYcgbKGkU",
+    "distance": 0.20430895864964022,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJm60gmJajfDURLRCYcgbKGkU",
+    "rank": 2
+  },
+  {
+    "id": 3,
+    "name": "효은옥 본점",
+    "originalName": "효은옥 본점 (주)아이엠프레쉬",
+    "address": "대한민국 서울특별시 서초구 사평대로 360 1층",
+    "position": {
+      "lat": 37.5035409,
+      "lng": 127.0224075
+    },
+    "rating": 4.2,
+    "reviews": 25,
+    "placeId": "ChIJG51dus-hfDUR6btO1W40qko",
+    "distance": 0.16703223148218907,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJG51dus-hfDUR6btO1W40qko",
+    "rank": 3
+  },
+  {
+    "id": 4,
+    "name": "송화유수",
+    "originalName": "(주)송화유수",
+    "address": "대한민국 서울특별시 서초구 강남대로79길 21",
+    "position": {
+      "lat": 37.5047585,
+      "lng": 127.0229992
+    },
+    "rating": 4.3,
+    "reviews": 149,
+    "placeId": "ChIJg4A916yjfDURxMfUOG2uE58",
+    "distance": 0.16563123153934345,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJg4A916yjfDURxMfUOG2uE58",
+    "rank": 4
+  },
+  {
+    "id": 5,
+    "name": "프로티너 신논현역점(Proteiner Sinnonhyeon br.)",
+    "originalName": "프로티너(PROTEINER) 신논현역점",
+    "address": "대한민국 서울특별시 서초구 반포동 번지 1층 748-2",
+    "position": {
+      "lat": 37.5050428,
+      "lng": 127.0236893
+    },
+    "rating": 4.4,
+    "reviews": 7,
+    "placeId": "ChIJIwDDi-GjfDURmJst3HayK7M",
+    "distance": 0.16072626691564584,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJIwDDi-GjfDURmJst3HayK7M",
+    "rank": 5
+  },
+  {
+    "id": 6,
+    "name": "혜장국",
+    "originalName": "혜장국",
+    "address": "대한민국 서울특별시 서초구 서초4동 사평대로56길 4",
+    "position": {
+      "lat": 37.5034333,
+      "lng": 127.0226821
+    },
+    "rating": 4.3,
+    "reviews": 435,
+    "placeId": "ChIJAX5dnVChfDURhoP_IcuK9iw",
+    "distance": 0.14470428903829136,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJAX5dnVChfDURhoP_IcuK9iw",
+    "rank": 6
+  },
+  {
+    "id": 7,
+    "name": "아소산겐안",
+    "originalName": "아소산겐안",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-10번지 한일유앤아이주상복합 204호",
+    "position": {
+      "lat": 37.50316979999999,
+      "lng": 127.0234988
+    },
+    "rating": 4.3,
+    "reviews": 88,
+    "placeId": "ChIJ89vcUV-hfDURFsjpHQvKhBU",
+    "distance": 0.09007822515057826,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ89vcUV-hfDURFsjpHQvKhBU",
+    "rank": 7
+  },
+  {
+    "id": 8,
+    "name": "정돈 강남점",
+    "originalName": "정돈(강남점)",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 19-1",
+    "position": {
+      "lat": 37.5039525,
+      "lng": 127.026436
+    },
+    "rating": 4.5,
+    "reviews": 1068,
+    "placeId": "ChIJXx6UwJ2jfDURRCN4Fn3-13M",
+    "distance": 0.19146971951406078,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJXx6UwJ2jfDURRCN4Fn3-13M",
+    "rank": 8
+  },
+  {
+    "id": 9,
+    "name": "미요",
+    "originalName": "미요",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 11",
+    "position": {
+      "lat": 37.5040242,
+      "lng": 127.0257044
+    },
+    "rating": 4.5,
+    "reviews": 161,
+    "placeId": "ChIJZRjDaeKjfDUR2FpC9V1AEkU",
+    "distance": 0.1302855777497496,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJZRjDaeKjfDUR2FpC9V1AEkU",
+    "rank": 9
+  },
+  {
+    "id": 10,
+    "name": "스아게 강남점",
+    "originalName": "스아게 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 29",
+    "position": {
+      "lat": 37.5029711,
+      "lng": 127.026816
+    },
+    "rating": 4.1,
+    "reviews": 28,
+    "placeId": "ChIJNarvl9ajfDURr1ewR7_nepE",
+    "distance": 0.2360710494223022,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNarvl9ajfDURr1ewR7_nepE",
+    "rank": 10
+  },
+  {
+    "id": 11,
+    "name": "참이맛감자탕강남점",
+    "originalName": "참이맛감자탕",
+    "address": "대한민국 서울특별시 서초구 서초동 1302-43",
+    "position": {
+      "lat": 37.5030341,
+      "lng": 127.0230559
+    },
+    "rating": 3.9,
+    "reviews": 668,
+    "placeId": "ChIJh4GlRl-hfDURsXg1a2CXB8s",
+    "distance": 0.13058034875291785,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJh4GlRl-hfDURsXg1a2CXB8s",
+    "rank": 11
+  },
+  {
+    "id": 12,
+    "name": "갓잇강남점(GODEAT)",
+    "originalName": "갓잇 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 10 1층",
+    "position": {
+      "lat": 37.5041424,
+      "lng": 127.026127
+    },
+    "rating": 4.1,
+    "reviews": 19,
+    "placeId": "ChIJUWDuvHejfDURp7KRNYQMGtE",
+    "distance": 0.16978893572429743,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJUWDuvHejfDURp7KRNYQMGtE",
+    "rank": 12
+  },
+  {
+    "id": 13,
+    "name": "새벽집 청담동점",
+    "originalName": "새벽집",
+    "address": "대한민국 서울특별시 강남구 도산대로101길 6",
+    "position": {
+      "lat": 37.525518,
+      "lng": 127.0529061
+    },
+    "rating": 3.9,
+    "reviews": 2909,
+    "placeId": "ChIJKRgefWOkfDUR5x-VDeG9c2Y",
+    "distance": 3.502276481101688,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJKRgefWOkfDUR5x-VDeG9c2Y",
+    "rank": 13
+  },
+  {
+    "id": 14,
+    "name": "청도미나리식당 신논현점",
+    "originalName": "청도미나리식당 신논현점",
+    "address": "대한민국 서울특별시 강남구 서초동 사평대로 362 지하 1층",
+    "position": {
+      "lat": 37.5036257,
+      "lng": 127.0226683
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJUSEDPgChfDURiRRJZD8C0zU",
+    "distance": 0.14344142337657906,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJUSEDPgChfDURiRRJZD8C0zU",
+    "rank": 14
+  },
+  {
+    "id": 15,
+    "name": "오도로키",
+    "originalName": "오도로키",
+    "address": "대한민국 서울특별시 서초구 사평대로55길 24",
+    "position": {
+      "lat": 37.5050506,
+      "lng": 127.0225547
+    },
+    "rating": 4.7,
+    "reviews": 73,
+    "placeId": "ChIJ_2IG6JujfDURlKW-svwabTw",
+    "distance": 0.21627178003801295,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_2IG6JujfDURlKW-svwabTw",
+    "rank": 15
+  },
+  {
+    "id": 16,
+    "name": "알로하포케 신논현점",
+    "originalName": "알로하포케 신논현점",
+    "address": "대한민국 서울특별시 서초구 반포1동 738-45",
+    "position": {
+      "lat": 37.5048977,
+      "lng": 127.0228157
+    },
+    "rating": 4.2,
+    "reviews": 119,
+    "placeId": "ChIJyUXH6-GjfDURCvQfvhOdbcE",
+    "distance": 0.18800510138668597,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyUXH6-GjfDURCvQfvhOdbcE",
+    "rank": 16
+  },
+  {
+    "id": 17,
+    "name": "더바른정육식당",
+    "originalName": "더 바른 정육식당",
+    "address": "대한민국 서울특별시 강남구 강남대로 482",
+    "position": {
+      "lat": 37.50540300000001,
+      "lng": 127.024487
+    },
+    "rating": 4.4,
+    "reviews": 101,
+    "placeId": "ChIJNTKWO_KjfDURA5fxhYmBdiE",
+    "distance": 0.19246237649069262,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNTKWO_KjfDURA5fxhYmBdiE",
+    "rank": 17
+  },
+  {
+    "id": 18,
+    "name": "누리초밥참치",
+    "originalName": "누리초밥참치",
+    "address": "대한민국 서울특별시 강남구 논현1동 강남대로116길 8",
+    "position": {
+      "lat": 37.5061687,
+      "lng": 127.0247052
+    },
+    "rating": 4.5,
+    "reviews": 57,
+    "placeId": "ChIJZ8hm3eOjfDUREHnu91j5sDI",
+    "distance": 0.2792196101576995,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJZ8hm3eOjfDUREHnu91j5sDI",
+    "rank": 18
+  },
+  {
+    "id": 19,
+    "name": "파이브가이즈 강남",
+    "originalName": "파이브가이즈_키오스크_KICC",
+    "address": "대한민국 서울특별시 서초구 강남대로 435",
+    "position": {
+      "lat": 37.5012188,
+      "lng": 127.0256954
+    },
+    "rating": 3.9,
+    "reviews": 783,
+    "placeId": "ChIJTzg4NwmhfDURtn9KIrThkxc",
+    "distance": 0.30023410121321675,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTzg4NwmhfDURtn9KIrThkxc",
+    "rank": 19
+  },
+  {
+    "id": 20,
+    "name": "인더비엣",
+    "originalName": "인더비엣 신논현역점",
+    "address": "대한민국 서울특별시 서초구 서초동 1302-35",
+    "position": {
+      "lat": 37.5025828,
+      "lng": 127.0226503
+    },
+    "rating": 4.2,
+    "reviews": 169,
+    "placeId": "ChIJP6KxGPGhfDURKfFWq3wukIU",
+    "distance": 0.18935652059596764,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP6KxGPGhfDURKfFWq3wukIU",
+    "rank": 20
+  },
+  {
+    "id": 21,
+    "name": "남산터 신논현점",
+    "originalName": "남산터 신논현점",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 8 1층",
+    "position": {
+      "lat": 37.5031991,
+      "lng": 127.022908
+    },
+    "rating": 4,
+    "reviews": 42,
+    "placeId": "ChIJC8wEvpuhfDURpZWVbu-7m6g",
+    "distance": 0.13331997542986615,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC8wEvpuhfDURpZWVbu-7m6g",
+    "rank": 21
+  },
+  {
+    "id": 22,
+    "name": "상무초밥 강남역점",
+    "originalName": "상무초밥 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로 111",
+    "position": {
+      "lat": 37.5051031,
+      "lng": 127.0257326
+    },
+    "rating": 4.2,
+    "reviews": 790,
+    "placeId": "ChIJjcVSSlqjfDURIf7g9nWvG3M",
+    "distance": 0.20298255429150056,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjcVSSlqjfDURIf7g9nWvG3M",
+    "rank": 22
+  },
+  {
+    "id": 23,
+    "name": "아웃백스테이크하우스 강남교보타워점",
+    "originalName": "(유)아웃백스테이크하우스코리아강남교보타워점",
+    "address": "대한민국 서울특별시 서초구 강남대로 465 아웃백 스테이크하우스 강남교보타워점 교보타워 1층",
+    "position": {
+      "lat": 37.50377539999999,
+      "lng": 127.0240711
+    },
+    "rating": 4,
+    "reviews": 2,
+    "placeId": "ChIJ_YPROQCjfDURiGP-fKjD_4I",
+    "distance": 0.022317169536829336,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_YPROQCjfDURiGP-fKjD_4I",
+    "rank": 23
+  },
+  {
+    "id": 24,
+    "name": "제프리웍",
+    "originalName": "제프리웍",
+    "address": "대한민국 서울특별시 서초구 서초동 1309-1",
+    "position": {
+      "lat": 37.5019696,
+      "lng": 127.0240448
+    },
+    "rating": 4.4,
+    "reviews": 22,
+    "placeId": "ChIJzQQceU-hfDURBkg5VpqAZZQ",
+    "distance": 0.19133345285897027,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJzQQceU-hfDURBkg5VpqAZZQ",
+    "rank": 24
+  },
+  {
+    "id": 25,
+    "name": "코코이찌방야 강남점",
+    "originalName": "코코이찌방야 강남점",
+    "address": "대한민국 서울특별시 강남구 강남대로 456",
+    "position": {
+      "lat": 37.5031806,
+      "lng": 127.0256302
+    },
+    "rating": 4.4,
+    "reviews": 15,
+    "placeId": "ChIJIVkDkxSjfDURovUfZ9d7HA4",
+    "distance": 0.13032826929323973,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJIVkDkxSjfDURovUfZ9d7HA4",
+    "rank": 25
+  },
+  {
+    "id": 26,
+    "name": "샐러디 신논현역점",
+    "originalName": "샐러디 신논현역점",
+    "address": "대한민국 서울특별시 서초구 서초4동 사평대로56길 7",
+    "position": {
+      "lat": 37.5034817,
+      "lng": 127.0231235
+    },
+    "rating": 4.1,
+    "reviews": 8,
+    "placeId": "ChIJUcQPpM6hfDURtKClDOGJhHQ",
+    "distance": 0.10547160745789598,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJUcQPpM6hfDURtKClDOGJhHQ",
+    "rank": 26
+  },
+  {
+    "id": 27,
+    "name": "치스타리에 강남역점",
+    "originalName": "락스타 치킨 신논현점",
+    "address": "대한민국 서울특별시 강남구 역삼동 지하 1층 810 9 치스타리에 강남역점",
+    "position": {
+      "lat": 37.5029915,
+      "lng": 127.0263366
+    },
+    "rating": 4.8,
+    "reviews": 25,
+    "placeId": "ChIJYTpaComjfDURmdbC_kr9RyM",
+    "distance": 0.19581123543643275,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYTpaComjfDURmdbC_kr9RyM",
+    "rank": 27
+  },
+  {
+    "id": 28,
+    "name": "쉐이크쉑 강남대로점",
+    "originalName": "(주)빅바이트컴퍼니 쉐이크쉑 강남대로",
+    "address": "대한민국 서울특별시 강남구 강남대로 421",
+    "position": {
+      "lat": 37.500085,
+      "lng": 127.0262194
+    },
+    "rating": 4,
+    "reviews": 7337,
+    "placeId": "ChIJddfynlihfDUR4NgudTL1OMs",
+    "distance": 0.43426520077671343,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJddfynlihfDUR4NgudTL1OMs",
+    "rank": 28
+  },
+  {
+    "id": 29,
+    "name": "메이탄",
+    "originalName": "메이탄강남점",
+    "address": "대한민국 서울특별시 서초구 서초대로73길 54",
+    "position": {
+      "lat": 37.50198839999999,
+      "lng": 127.0241232
+    },
+    "rating": 4.1,
+    "reviews": 322,
+    "placeId": "ChIJ7aNmzFihfDURpLFcMEZxC-c",
+    "distance": 0.1885819452490022,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7aNmzFihfDURpLFcMEZxC-c",
+    "rank": 29
+  },
+  {
+    "id": 30,
+    "name": "싸다김밥 신논현역점",
+    "originalName": "싸다김밥 신논현역점",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 14",
+    "position": {
+      "lat": 37.5027722,
+      "lng": 127.0232539
+    },
+    "rating": 4.4,
+    "reviews": 13,
+    "placeId": "ChIJe2z0SyqhfDURpW0BOOwFrFg",
+    "distance": 0.13626797028005266,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJe2z0SyqhfDURpW0BOOwFrFg",
+    "rank": 30
+  },
+  {
+    "id": 31,
+    "name": "서브웨이 신논현점",
+    "originalName": "써브웨이신논현점",
+    "address": "대한민국 서울특별시 서초구 강남대로 499 1층",
+    "position": {
+      "lat": 37.5064791,
+      "lng": 127.0230315
+    },
+    "rating": 4.2,
+    "reviews": 265,
+    "placeId": "ChIJUU_coHSjfDURTUn5Z_w0vGI",
+    "distance": 0.3306447077636148,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJUU_coHSjfDURTUn5Z_w0vGI",
+    "rank": 31
+  },
+  {
+    "id": 32,
+    "name": "도스타코스 강남역점",
+    "originalName": "도스 타코스 (DOS TACOS)",
+    "address": "대한민국 서울특별시 서초구 강남대로 455",
+    "position": {
+      "lat": 37.5028098,
+      "lng": 127.0245281
+    },
+    "rating": 4.3,
+    "reviews": 762,
+    "placeId": "ChIJ05mMr1ihfDUR_-UDFNDYHg8",
+    "distance": 0.09885062286300111,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ05mMr1ihfDUR_-UDFNDYHg8",
+    "rank": 32
+  },
+  {
+    "id": 33,
+    "name": "서울집",
+    "originalName": "서울집",
+    "address": "대한민국 서울특별시 강남구 역삼동 673-30",
+    "position": {
+      "lat": 37.5036448,
+      "lng": 127.0399059
+    },
+    "rating": 4.3,
+    "reviews": 16,
+    "placeId": "ChIJO3SP8D-jfDURALySruI1mPU",
+    "distance": 1.3772588144602926,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJO3SP8D-jfDURALySruI1mPU",
+    "rank": 33
+  },
+  {
+    "id": 34,
+    "name": "뜨돈 강남본점|DD'DON Gangnam - Korean Pork Cutlet Restaurant|韓国式とんかつ",
+    "originalName": "뜨돈 강남 본점",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 13 1층",
+    "position": {
+      "lat": 37.5039858,
+      "lng": 127.0259925
+    },
+    "rating": 4.9,
+    "reviews": 113,
+    "placeId": "ChIJKch6mEOjfDURs4G0PD4hbQw",
+    "distance": 0.15374938664026336,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJKch6mEOjfDURs4G0PD4hbQw",
+    "rank": 34
+  },
+  {
+    "id": 35,
+    "name": "리나스 신논현점",
+    "originalName": "(주)파리크라상 리나스 신논현점",
+    "address": "대한민국 서울특별시 서초구 강남대로 503",
+    "position": {
+      "lat": 37.5068776,
+      "lng": 127.0229176
+    },
+    "rating": 4.6,
+    "reviews": 5,
+    "placeId": "ChIJQYOtSxSjfDURf2FbKmIgVqQ",
+    "distance": 0.37579186186592195,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJQYOtSxSjfDURf2FbKmIgVqQ",
+    "rank": 35
+  },
+  {
+    "id": 36,
+    "name": "두꺼비1981",
+    "originalName": "두꺼비1981",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 4",
+    "position": {
+      "lat": 37.5034497,
+      "lng": 127.0226788
+    },
+    "rating": 5,
+    "reviews": 1,
+    "placeId": "ChIJ_eGyfiGhfDURfBYD9ea1_FM",
+    "distance": 0.14465761553325782,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_eGyfiGhfDURfBYD9ea1_FM",
+    "rank": 36
+  },
+  {
+    "id": 37,
+    "name": "중경마라탕 강남역점",
+    "originalName": "중경마라탕",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 44 2층",
+    "position": {
+      "lat": 37.5012373,
+      "lng": 127.0270496
+    },
+    "rating": 4.2,
+    "reviews": 369,
+    "placeId": "ChIJ7cHre9mhfDURjdiPzW1nwGA",
+    "distance": 0.364481441233685,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7cHre9mhfDURjdiPzW1nwGA",
+    "rank": 37
+  },
+  {
+    "id": 38,
+    "name": "파파야 리프 강남 PAPAYA LEAF GANGNAM",
+    "originalName": "파파야 리프(PAPAYA LEAF)",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 29",
+    "position": {
+      "lat": 37.5029524,
+      "lng": 127.0275987
+    },
+    "rating": 4.2,
+    "reviews": 247,
+    "placeId": "ChIJRzfbkOKjfDUR2EX48rAQ4fs",
+    "distance": 0.3025913125857467,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRzfbkOKjfDUR2EX48rAQ4fs",
+    "rank": 38
+  },
+  {
+    "id": 39,
+    "name": "위트앤미트 강남점",
+    "originalName": "위트앤미트",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 32",
+    "position": {
+      "lat": 37.5036414,
+      "lng": 127.0274771
+    },
+    "rating": 4.6,
+    "reviews": 342,
+    "placeId": "ChIJXUR56zqjfDURUZkQpCk5rlM",
+    "distance": 0.2809086703471679,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJXUR56zqjfDURUZkQpCk5rlM",
+    "rank": 39
+  },
+  {
+    "id": 40,
+    "name": "연남토마 강남점",
+    "originalName": "연남토마(강남점)",
+    "address": "대한민국 서울특별시 강남구 강남대로106길 15 1층",
+    "position": {
+      "lat": 37.503094,
+      "lng": 127.0267709
+    },
+    "rating": 3.9,
+    "reviews": 52,
+    "placeId": "ChIJl6j0q_KjfDURD6xR0Ku4FwE",
+    "distance": 0.22805647427727171,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJl6j0q_KjfDURD6xR0Ku4FwE",
+    "rank": 40
+  },
+  {
+    "id": 41,
+    "name": "호앙비엣 신논현점",
+    "originalName": "호앙비엣 신논현점",
+    "address": "대한민국 서울특별시 서초구 반포동 738-43",
+    "position": {
+      "lat": 37.5048473,
+      "lng": 127.0227016
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJYVtvfACjfDURh2Om2iOceKo",
+    "distance": 0.19126679536416294,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYVtvfACjfDURh2Om2iOceKo",
+    "rank": 41
+  },
+  {
+    "id": 42,
+    "name": "쿄베이커리x더 인피닛 카페 신논현점",
+    "originalName": "쿄 베이커리와 더 인피닛 카페",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-6",
+    "position": {
+      "lat": 37.5035345,
+      "lng": 127.0234736
+    },
+    "rating": 4.2,
+    "reviews": 132,
+    "placeId": "ChIJDy3dydmhfDURSiIOrUfo3J0",
+    "distance": 0.07404574234330201,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJDy3dydmhfDURSiIOrUfo3J0",
+    "rank": 42
+  },
+  {
+    "id": 43,
+    "name": "순남시래기 강남역점",
+    "originalName": "순남시래기 신논현역점",
+    "address": "대한민국 서울특별시 서초구 서초대로74길 23",
+    "position": {
+      "lat": 37.4956058,
+      "lng": 127.0270824
+    },
+    "rating": 4,
+    "reviews": 170,
+    "placeId": "ChIJWR5GVlqhfDURuen3IhoBpA4",
+    "distance": 0.930814349864404,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJWR5GVlqhfDURuen3IhoBpA4",
+    "rank": 43
+  },
+  {
+    "id": 44,
+    "name": "한감지식당",
+    "originalName": "한감지식당",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-10",
+    "position": {
+      "lat": 37.50316979999999,
+      "lng": 127.0234988
+    },
+    "rating": 4.3,
+    "reviews": 8,
+    "placeId": "ChIJ89vcUV-hfDUR6ZdT1cfJDFw",
+    "distance": 0.09007822515057826,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ89vcUV-hfDUR6ZdT1cfJDFw",
+    "rank": 44
+  },
+  {
+    "id": 45,
+    "name": "멘야시노기",
+    "originalName": "멘야시노기",
+    "address": "대한민국 서울특별시 서초구 주흥길 3",
+    "position": {
+      "lat": 37.5037267,
+      "lng": 127.0207918
+    },
+    "rating": 4.5,
+    "reviews": 260,
+    "placeId": "ChIJiTl_vr2hfDURwSG3TylKaPA",
+    "distance": 0.30889511612959486,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJiTl_vr2hfDURwSG3TylKaPA",
+    "rank": 45
+  },
+  {
+    "id": 46,
+    "name": "백소정 강남직영점",
+    "originalName": "백소정 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 10 1층",
+    "position": {
+      "lat": 37.5039061,
+      "lng": 127.0254854
+    },
+    "rating": 4.3,
+    "reviews": 78,
+    "placeId": "ChIJn6HtNSOjfDUR3PczRt1lVuU",
+    "distance": 0.10817324214152743,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJn6HtNSOjfDUR3PczRt1lVuU",
+    "rank": 46
+  },
+  {
+    "id": 47,
+    "name": "후추포인트",
+    "originalName": "후추포인트",
+    "address": "대한민국 서울특별시 강남구 봉은사로6길 30",
+    "position": {
+      "lat": 37.5028232,
+      "lng": 127.0278067
+    },
+    "rating": 4.2,
+    "reviews": 104,
+    "placeId": "ChIJ39oVp-WjfDURAw4l4HaIqig",
+    "distance": 0.3242330825983135,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ39oVp-WjfDURAw4l4HaIqig",
+    "rank": 47
+  },
+  {
+    "id": 48,
+    "name": "미미옥 강남 신논현점ㅣMIMIOKㅣSHABU-SHABUㅣしゃぶしゃぶ",
+    "originalName": "미미옥 강남 신논현점",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 24",
+    "position": {
+      "lat": 37.5032837,
+      "lng": 127.0264275
+    },
+    "rating": 4.7,
+    "reviews": 11,
+    "placeId": "ChIJf4dOM8ijfDURMMT23OIcwYs",
+    "distance": 0.19335263955474669,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJf4dOM8ijfDURMMT23OIcwYs",
+    "rank": 48
+  },
+  {
+    "id": 49,
+    "name": "강남삼계탕",
+    "originalName": "강남삼계탕",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 12",
+    "position": {
+      "lat": 37.5038223,
+      "lng": 127.0258088
+    },
+    "rating": 4.2,
+    "reviews": 128,
+    "placeId": "ChIJGwzmaOKjfDUR10ZF9EcABus",
+    "distance": 0.13465848711260295,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGwzmaOKjfDUR10ZF9EcABus",
+    "rank": 49
+  },
+  {
+    "id": 50,
+    "name": "굴다리식당 강남점",
+    "originalName": "굴다리식당",
+    "address": "대한민국 서울특별시 강남구 봉은사로 117 1층",
+    "position": {
+      "lat": 37.5052927,
+      "lng": 127.0265263
+    },
+    "rating": 3.9,
+    "reviews": 11,
+    "placeId": "ChIJO_BBuEKhfDUR5es9M6VSNmw",
+    "distance": 0.2664716669277394,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJO_BBuEKhfDUR5es9M6VSNmw",
+    "rank": 50
+  },
+  {
+    "id": 51,
+    "name": "하늘생태집",
+    "originalName": "하늘생태집",
+    "address": "대한민국 서울특별시 서초구 주흥길 10",
+    "position": {
+      "lat": 37.5042799,
+      "lng": 127.0207873
+    },
+    "rating": 4.3,
+    "reviews": 54,
+    "placeId": "ChIJ82syKnehfDURYCRISKlTcyI",
+    "distance": 0.3163814541616141,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ82syKnehfDURYCRISKlTcyI",
+    "rank": 51
+  },
+  {
+    "id": 52,
+    "name": "바리에가타 신논현점",
+    "originalName": "바리에가타신논현점(주)",
+    "address": "대한민국 서울특별시 서초구 사평대로55길 37",
+    "position": {
+      "lat": 37.5056816,
+      "lng": 127.0220333
+    },
+    "rating": 4,
+    "reviews": 25,
+    "placeId": "ChIJqcYIt-GjfDURwazt19ABeaM",
+    "distance": 0.29886255978196025,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJqcYIt-GjfDURwazt19ABeaM",
+    "rank": 52
+  },
+  {
+    "id": 53,
+    "name": "평가옥 반포점",
+    "originalName": "평가옥 (반포점)",
+    "address": "대한민국 서울특별시 서초구 반포동 사평대로 453",
+    "position": {
+      "lat": 37.5038942,
+      "lng": 127.0217337
+    },
+    "rating": 3.8,
+    "reviews": 681,
+    "placeId": "ChIJS635fF-hfDURqpPQSqZG31Y",
+    "distance": 0.22702659356795452,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS635fF-hfDURqpPQSqZG31Y",
+    "rank": 53
+  },
+  {
+    "id": 54,
+    "name": "해탄 신논현점",
+    "originalName": "해탄 신논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로114길 11",
+    "position": {
+      "lat": 37.5059718,
+      "lng": 127.025208
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJXRokRACjfDUR9KO2jWHh93M",
+    "distance": 0.2674190853074319,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJXRokRACjfDUR9KO2jWHh93M",
+    "rank": 54
+  },
+  {
+    "id": 55,
+    "name": "솔밭24시 해장국",
+    "originalName": "솔밭삼겹살",
+    "address": "대한민국 서울특별시 서초구 반포1동 746-10",
+    "position": {
+      "lat": 37.50382,
+      "lng": 127.021498
+    },
+    "rating": 4.1,
+    "reviews": 72,
+    "placeId": "ChIJ7b4OuUWhfDURSQqH9eimA9w",
+    "distance": 0.24705175866052206,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7b4OuUWhfDURSQqH9eimA9w",
+    "rank": 55
+  },
+  {
+    "id": 56,
+    "name": "강남모밀무이 강남본점",
+    "originalName": "강남모밀 무이",
+    "address": "대한민국 서울특별시 서초구 사평대로57길 44",
+    "position": {
+      "lat": 37.5062635,
+      "lng": 127.0227734
+    },
+    "rating": 4.5,
+    "reviews": 48,
+    "placeId": "ChIJiWPzBbOjfDUR0fE81l1t97k",
+    "distance": 0.31710775785589773,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJiWPzBbOjfDUR0fE81l1t97k",
+    "rank": 56
+  },
+  {
+    "id": 57,
+    "name": "멘카오리",
+    "originalName": "멘카오리",
+    "address": "대한민국 서울특별시 서초구 사평대로57길 39-2",
+    "position": {
+      "lat": 37.5060177,
+      "lng": 127.0226766
+    },
+    "rating": 4.5,
+    "reviews": 144,
+    "placeId": "ChIJV_mFQ1ajfDURRdz4tBgueSk",
+    "distance": 0.2965757181880143,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV_mFQ1ajfDURRdz4tBgueSk",
+    "rank": 57
+  },
+  {
+    "id": 58,
+    "name": "대가",
+    "originalName": "대가",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 22",
+    "position": {
+      "lat": 37.503334,
+      "lng": 127.0263671
+    },
+    "rating": 4.1,
+    "reviews": 351,
+    "placeId": "ChIJb-jCYuKjfDUR_uAA6Caanws",
+    "distance": 0.18694052348293408,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb-jCYuKjfDUR_uAA6Caanws",
+    "rank": 58
+  },
+  {
+    "id": 59,
+    "name": "데이페이 강남점",
+    "originalName": "당근페이(EPAY)_나이스",
+    "address": "대한민국 서울특별시 강남구 논현로 625",
+    "position": {
+      "lat": 37.5093716,
+      "lng": 127.0325719
+    },
+    "rating": 4,
+    "reviews": 8,
+    "placeId": "ChIJheHLzjGjfDURP_pficyZDYg",
+    "distance": 0.9664240139401539,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJheHLzjGjfDURP_pficyZDYg",
+    "rank": 59
+  },
+  {
+    "id": 60,
+    "name": "할랄가이즈 강남점",
+    "originalName": "TheHalalGuys(할랄가",
+    "address": "대한민국 서울특별시 서초구 강남대로69길 8",
+    "position": {
+      "lat": 37.50554,
+      "lng": 127.027035
+    },
+    "rating": 4.1,
+    "reviews": 767,
+    "placeId": "ChIJO4mVDuOjfDURLVEwDR99C4I",
+    "distance": 0.318316574692818,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJO4mVDuOjfDURLVEwDR99C4I",
+    "rank": 60
+  },
+  {
+    "id": 61,
+    "name": "시골야채된장",
+    "originalName": "시골 야채된장",
+    "address": "대한민국 서울특별시 서초구 강남대로69길 11",
+    "position": {
+      "lat": 37.5014603,
+      "lng": 127.0242446
+    },
+    "rating": 4.1,
+    "reviews": 700,
+    "placeId": "ChIJyS8X0VihfDURcNV6CUZFgXY",
+    "distance": 0.24674512554343914,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyS8X0VihfDURcNV6CUZFgXY",
+    "rank": 61
+  },
+  {
+    "id": 62,
+    "name": "버거킹 신논현역점",
+    "originalName": "버거킹 신논현역점",
+    "address": "대한민국 서울특별시 강남구 봉은사로 105",
+    "position": {
+      "lat": 37.5048786,
+      "lng": 127.0251113
+    },
+    "rating": 4.2,
+    "reviews": 478,
+    "placeId": "ChIJ94FTcLmjfDURegXCcTlmIHw",
+    "distance": 0.15166816166427138,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ94FTcLmjfDURegXCcTlmIHw",
+    "rank": 62
+  },
+  {
+    "id": 63,
+    "name": "코리아외국인학교",
+    "originalName": "KIS 정보통신_나이스",
+    "address": "대한민국 서울특별시 서초구 남부순환로364길 7-16",
+    "position": {
+      "lat": 37.484664,
+      "lng": 127.0410315
+    },
+    "rating": 4.6,
+    "reviews": 46,
+    "placeId": "ChIJ2TWzOLOmfDURALGZPlIUg-0",
+    "distance": 2.579013002286128,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ2TWzOLOmfDURALGZPlIUg-0",
+    "rank": 63
+  },
+  {
+    "id": 64,
+    "name": "쿠노카츠(KUNO KATSU)",
+    "originalName": "쿠노카츠",
+    "address": "대한민국 서울특별시 서초구 서운로 226 오피스텔 지하 1층 18호",
+    "position": {
+      "lat": 37.5030711,
+      "lng": 127.0218559
+    },
+    "rating": 5,
+    "reviews": 3,
+    "placeId": "ChIJtaS0PAChfDURCBOUIsYhmzE",
+    "distance": 0.22535990974585074,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtaS0PAChfDURCBOUIsYhmzE",
+    "rank": 64
+  },
+  {
+    "id": 65,
+    "name": "사보텐 신논현점",
+    "originalName": "사보텐 신논현점 ㈜캘리스코",
+    "address": "1층, 아이파크에비뉴, 1303-16 서초동 서초구 서울특별시 대한민국",
+    "position": {
+      "lat": 37.5027113,
+      "lng": 127.0238406
+    },
+    "rating": 3.9,
+    "reviews": 134,
+    "placeId": "ChIJxStVS1-hfDURUgzI4tHFhw4",
+    "distance": 0.11476538450973588,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJxStVS1-hfDURUgzI4tHFhw4",
+    "rank": 65
+  },
+  {
+    "id": 66,
+    "name": "초이다이닝 강남",
+    "originalName": "초이다이닝 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 7",
+    "position": {
+      "lat": 37.5029918,
+      "lng": 127.0262228
+    },
+    "rating": 4.9,
+    "reviews": 114,
+    "placeId": "ChIJM3cIKACjfDURXVuO9zUwhbc",
+    "distance": 0.18659675207078075,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJM3cIKACjfDURXVuO9zUwhbc",
+    "rank": 66
+  },
+  {
+    "id": 67,
+    "name": "삼육가",
+    "originalName": "삼육가",
+    "address": "대한민국 서울특별시 강남구 강남대로114길 8",
+    "position": {
+      "lat": 37.5056375,
+      "lng": 127.0249883
+    },
+    "rating": 4.3,
+    "reviews": 753,
+    "placeId": "ChIJD-eZy-OjfDURH4FGazoDOMA",
+    "distance": 0.22624731302527973,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJD-eZy-OjfDURH4FGazoDOMA",
+    "rank": 67
+  },
+  {
+    "id": 68,
+    "name": "연하동 신논현점",
+    "originalName": "연하동 신논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 19-1",
+    "position": {
+      "lat": 37.5039525,
+      "lng": 127.026436
+    },
+    "rating": 4.8,
+    "reviews": 115,
+    "placeId": "ChIJyxVZawChfDURHnV46pTJEUw",
+    "distance": 0.19146971951406078,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyxVZawChfDURHnV46pTJEUw",
+    "rank": 68
+  },
+  {
+    "id": 69,
+    "name": "또보겠지떡볶이집 강남헬로몽키점",
+    "originalName": "또보겠지떡볶이집강남헬로몽키점",
+    "address": "대한민국 서울특별시 강남구 봉은사로6길 30 2층",
+    "position": {
+      "lat": 37.5030385,
+      "lng": 127.0272429
+    },
+    "rating": 4.3,
+    "reviews": 68,
+    "placeId": "ChIJD0NQHBijfDURd6KVE6xgubU",
+    "distance": 0.26978952004225604,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJD0NQHBijfDURd6KVE6xgubU",
+    "rank": 69
+  },
+  {
+    "id": 70,
+    "name": "브라운돈까스 논현 아이파크점",
+    "originalName": "브라운돈까스(반포점)",
+    "address": "대한민국 서울특별시 강남구 논현2동 231-1",
+    "position": {
+      "lat": 37.5102841,
+      "lng": 127.0359887
+    },
+    "rating": 3.7,
+    "reviews": 12,
+    "placeId": "ChIJIcRki3OjfDUR5cdSS9RjzIs",
+    "distance": 1.266391570673112,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJIcRki3OjfDUR5cdSS9RjzIs",
+    "rank": 70
+  },
+  {
+    "id": 71,
+    "name": "아빠곰수제돈까스 신논현역점",
+    "originalName": "아빠곰 수제돈까스",
+    "address": "대한민국 서울특별시 서초구 서초4동 사평대로56길 7 112호",
+    "position": {
+      "lat": 37.50316979999999,
+      "lng": 127.0234988
+    },
+    "rating": 4.2,
+    "reviews": 70,
+    "placeId": "ChIJXzAynIqhfDUR_5w50PzxqKc",
+    "distance": 0.09007822515057826,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJXzAynIqhfDUR_5w50PzxqKc",
+    "rank": 71
+  },
+  {
+    "id": 72,
+    "name": "대박가야밀면",
+    "originalName": "대박가야밀면",
+    "address": "대한민국 서울특별시 서초구 강남대로83길 46 1층 103호",
+    "position": {
+      "lat": 37.5053134,
+      "lng": 127.0213189
+    },
+    "rating": 3.9,
+    "reviews": 48,
+    "placeId": "ChIJjUXSzOGjfDURIykudcFCXo4",
+    "distance": 0.31914862784423004,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjUXSzOGjfDURIykudcFCXo4",
+    "rank": 72
+  },
+  {
+    "id": 73,
+    "name": "주아드비브르",
+    "originalName": "주아 드 비브르",
+    "address": "대한민국 논현동 201-11번지 강남구 서울특별시 KR",
+    "position": {
+      "lat": 37.5051696,
+      "lng": 127.0258422
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJX0zLsuOjfDURRO0Bvsx-1Sw",
+    "distance": 0.21481942363007667,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJX0zLsuOjfDURRO0Bvsx-1Sw",
+    "rank": 73
+  },
+  {
+    "id": 74,
+    "name": "어거스트힐 강남점",
+    "originalName": "어거스트힐",
+    "address": "대한민국 서울특별시 강남구 강남대로106길 25",
+    "position": {
+      "lat": 37.5033475,
+      "lng": 127.0275692
+    },
+    "rating": 4.3,
+    "reviews": 486,
+    "placeId": "ChIJ_W39EAajfDUR881ZCIfXCNc",
+    "distance": 0.291343759908344,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_W39EAajfDUR881ZCIfXCNc",
+    "rank": 74
+  },
+  {
+    "id": 75,
+    "name": "우아한감 (Grace Back Bone Stew)",
+    "originalName": "우아한감",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 29",
+    "position": {
+      "lat": 37.5029695,
+      "lng": 127.0268744
+    },
+    "rating": 4,
+    "reviews": 1,
+    "placeId": "ChIJF3nMt_GjfDUR7R1Dtg6bAH8",
+    "distance": 0.24099217818792681,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJF3nMt_GjfDUR7R1Dtg6bAH8",
+    "rank": 75
+  },
+  {
+    "id": 76,
+    "name": "스타벅스 강남R점",
+    "originalName": "스타벅스코리아",
+    "address": "대한민국 서울특별시 강남구 강남대로 390",
+    "position": {
+      "lat": 37.497853,
+      "lng": 127.028587
+    },
+    "rating": 4.3,
+    "reviews": 1641,
+    "placeId": "ChIJobb671mhfDURrcE4SebLfyw",
+    "distance": 0.7504410831297162,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobb671mhfDURrcE4SebLfyw",
+    "rank": 76
+  },
+  {
+    "id": 77,
+    "name": "온센 강남점",
+    "originalName": "온센텐동 강남점",
+    "address": "대한민국 서울특별시 서초구 서초동 1308-26",
+    "position": {
+      "lat": 37.50112319999999,
+      "lng": 127.0243693
+    },
+    "rating": 4.2,
+    "reviews": 224,
+    "placeId": "ChIJYZKXRTyhfDURUiUVPpsY8iY",
+    "distance": 0.28427168679456627,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYZKXRTyhfDURUiUVPpsY8iY",
+    "rank": 77
+  },
+  {
+    "id": 78,
+    "name": "그린레시피",
+    "originalName": "그린레시피",
+    "address": "대한민국 서울특별시 강남구 논현동 번지 지상층 층 167-17 102호",
+    "position": {
+      "lat": 37.5075867,
+      "lng": 127.0256819
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJMWIWduSjfDURGl4QBXRlCuQ",
+    "distance": 0.4514581705564446,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMWIWduSjfDURGl4QBXRlCuQ",
+    "rank": 78
+  },
+  {
+    "id": 79,
+    "name": "이식일사",
+    "originalName": "이식일사",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 17 지하 1층",
+    "position": {
+      "lat": 37.5037134,
+      "lng": 127.026487
+    },
+    "rating": 4.7,
+    "reviews": 26,
+    "placeId": "ChIJlcPEegCjfDURZ4pgak52lEw",
+    "distance": 0.19357602000834054,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlcPEegCjfDURZ4pgak52lEw",
+    "rank": 79
+  },
+  {
+    "id": 80,
+    "name": "스파게티스토리 역삼초점",
+    "originalName": "스파게티스토리",
+    "address": "대한민국 서울특별시 강남구 역삼로 129",
+    "position": {
+      "lat": 37.4943427,
+      "lng": 127.0338784
+    },
+    "rating": 4.5,
+    "reviews": 13,
+    "placeId": "ChIJb7EU35KhfDURe7sORkG6HFQ",
+    "distance": 1.338955495445033,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb7EU35KhfDURe7sORkG6HFQ",
+    "rank": 80
+  },
+  {
+    "id": 81,
+    "name": "멘츠루 강남점",
+    "originalName": "멘츠루",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 13",
+    "position": {
+      "lat": 37.5020505,
+      "lng": 127.0268491
+    },
+    "rating": 4.8,
+    "reviews": 6,
+    "placeId": "ChIJeRpCsz6hfDURAQi7f39jayI",
+    "distance": 0.2891931107957114,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJeRpCsz6hfDURAQi7f39jayI",
+    "rank": 81
+  },
+  {
+    "id": 82,
+    "name": "라홍방마라탕 강남직영점",
+    "originalName": "라홍방마라탕 강남직영점",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 20",
+    "position": {
+      "lat": 37.50226019999999,
+      "lng": 127.0273118
+    },
+    "rating": 5,
+    "reviews": 7,
+    "placeId": "ChIJ4442c0ChfDUR19AX2MOuPKY",
+    "distance": 0.3095224733159328,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4442c0ChfDUR19AX2MOuPKY",
+    "rank": 82
+  },
+  {
+    "id": 83,
+    "name": "브릭오븐 강남점",
+    "originalName": "브릭오븐",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 31",
+    "position": {
+      "lat": 37.5030556,
+      "lng": 127.0277778
+    },
+    "rating": 4.1,
+    "reviews": 1172,
+    "placeId": "ChIJo5veluKjfDUR_HWmJHWH5hE",
+    "distance": 0.3151229902116148,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJo5veluKjfDUR_HWmJHWH5hE",
+    "rank": 83
+  },
+  {
+    "id": 84,
+    "name": "고양이부엌 교보타워점",
+    "originalName": "고양이부엌 교보타워점",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 7 고양이부엌 교보타워점 112호",
+    "position": {
+      "lat": 37.5032198,
+      "lng": 127.0235681
+    },
+    "rating": 3,
+    "reviews": 1,
+    "placeId": "ChIJ4Qfp4QyhfDURWv1eUpba4SM",
+    "distance": 0.0818304161152099,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4Qfp4QyhfDURWv1eUpba4SM",
+    "rank": 84
+  },
+  {
+    "id": 85,
+    "name": "석암생소금구이 강남점",
+    "originalName": "석암생소금구이 강남",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 1 21 2층",
+    "position": {
+      "lat": 37.5033413,
+      "lng": 127.0261247
+    },
+    "rating": 4.3,
+    "reviews": 3,
+    "placeId": "ChIJEzOXbACjfDURIAN1D9BxZxk",
+    "distance": 0.16588517773053407,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEzOXbACjfDURIAN1D9BxZxk",
+    "rank": 85
+  },
+  {
+    "id": 86,
+    "name": "이가식당(이가해장국)",
+    "originalName": "이가해장국",
+    "address": "대한민국 서울특별시 서초구 사평대로 362",
+    "position": {
+      "lat": 37.5038024,
+      "lng": 127.022721
+    },
+    "rating": 4,
+    "reviews": 94,
+    "placeId": "ChIJkc-j_0CjfDURayOlEplis2o",
+    "distance": 0.13934718480777677,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkc-j_0CjfDURayOlEplis2o",
+    "rank": 86
+  },
+  {
+    "id": 87,
+    "name": "탁심 케밥",
+    "originalName": "탁심케밥(TAKSIM KEBAB)",
+    "address": "대한민국 서울특별시 서초구 서초대로77길",
+    "position": {
+      "lat": 37.502471,
+      "lng": 127.0244421
+    },
+    "rating": 4.2,
+    "reviews": 15,
+    "placeId": "ChIJbXbTwJahfDURhtlIEA1zM-A",
+    "distance": 0.13496586853979153,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJbXbTwJahfDURhtlIEA1zM-A",
+    "rank": 87
+  },
+  {
+    "id": 88,
+    "name": "봉추찜닭 강남주공공이점",
+    "originalName": "봉추찜닭주공공이",
+    "address": "대한민국 서울특별시 강남구 강남대로 442",
+    "position": {
+      "lat": 37.5021269,
+      "lng": 127.0264111
+    },
+    "rating": 3.9,
+    "reviews": 176,
+    "placeId": "ChIJvcMfj1ihfDURxyojB751UGA",
+    "distance": 0.2543556847718831,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvcMfj1ihfDURxyojB751UGA",
+    "rank": 88
+  },
+  {
+    "id": 89,
+    "name": "에스엔컴퍼니랩",
+    "originalName": "에스엔컴퍼니 랩",
+    "address": "대한민국 서울특별시 강남구 역삼동 615-2번지 1층",
+    "position": {
+      "lat": 37.5043262,
+      "lng": 127.0273653
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJMfRf4-KjfDURx3xw7aHJ_oY",
+    "distance": 0.2804062802021425,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMfRf4-KjfDURx3xw7aHJ_oY",
+    "rank": 89
+  },
+  {
+    "id": 90,
+    "name": "주나도리",
+    "originalName": "주나도리(주)세시서",
+    "address": "대한민국 서울특별시 서초구 서초동 1302-45",
+    "position": {
+      "lat": 37.5031714,
+      "lng": 127.0228855
+    },
+    "rating": 4.7,
+    "reviews": 6,
+    "placeId": "ChIJk7l2dQChfDURh6uwuNlnpPk",
+    "distance": 0.1363867777596018,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJk7l2dQChfDURh6uwuNlnpPk",
+    "rank": 90
+  },
+  {
+    "id": 91,
+    "name": "대기정",
+    "originalName": "대기정",
+    "address": "대한민국 서울특별시 서초구 반포동 747-12 105호",
+    "position": {
+      "lat": 37.5042488,
+      "lng": 127.0229045
+    },
+    "rating": 3.8,
+    "reviews": 18,
+    "placeId": "ChIJT2CLlLujfDURgzE8q8XDKd4",
+    "distance": 0.13789973753680465,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJT2CLlLujfDURgzE8q8XDKd4",
+    "rank": 91
+  },
+  {
+    "id": 92,
+    "name": "장작구이쌈밥",
+    "originalName": "장쌈",
+    "address": "대한민국 서울특별시 서초구 반포1동 사평대로57길 56",
+    "position": {
+      "lat": 37.5067106,
+      "lng": 127.0225851
+    },
+    "rating": 4.2,
+    "reviews": 93,
+    "placeId": "ChIJiTm1DOGjfDURBgcNsONzoiQ",
+    "distance": 0.3692321568773817,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJiTm1DOGjfDURBgcNsONzoiQ",
+    "rank": 92
+  },
+  {
+    "id": 93,
+    "name": "스폰티니 강남점",
+    "originalName": "(주)스타럭스 스폰티니 강남점",
+    "address": "대한민국 서울특별시 강남구 역삼동 강남대로 442",
+    "position": {
+      "lat": 37.5021078,
+      "lng": 127.0261636
+    },
+    "rating": 4.2,
+    "reviews": 306,
+    "placeId": "ChIJfQ43VXqhfDUR3n3BdVUsq6M",
+    "distance": 0.2403172562148787,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJfQ43VXqhfDUR3n3BdVUsq6M",
+    "rank": 93
+  },
+  {
+    "id": 94,
+    "name": "키오스크이피 서초점",
+    "originalName": "키오스크(3)_코페이",
+    "address": "대한민국 서울특별시 서초구 서초동 강남대로 49 길 10 1층 3호",
+    "position": {
+      "lat": 37.4897666,
+      "lng": 127.0298285
+    },
+    "rating": 5,
+    "reviews": 4,
+    "placeId": "ChIJlXB6twChfDURAyKOA0TDnZA",
+    "distance": 1.6222374990071593,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlXB6twChfDURAyKOA0TDnZA",
+    "rank": 94
+  },
+  {
+    "id": 95,
+    "name": "힘난다버거 신논현역점",
+    "originalName": "힘난다짬뽕앤버거 신논현역점",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 7",
+    "position": {
+      "lat": 37.5034556,
+      "lng": 127.0232173
+    },
+    "rating": 4.7,
+    "reviews": 6,
+    "placeId": "ChIJ3-X2-l-hfDURx_7OUq1f5ek",
+    "distance": 0.09808797612199378,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ3-X2-l-hfDURx_7OUq1f5ek",
+    "rank": 95
+  },
+  {
+    "id": 96,
+    "name": "무월식탁 강남본점",
+    "originalName": "무월식탁 강남점",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 23",
+    "position": {
+      "lat": 37.502574,
+      "lng": 127.0272953
+    },
+    "rating": 3.9,
+    "reviews": 724,
+    "placeId": "ChIJx2m-nOKjfDURpbUu3mryIJ8",
+    "distance": 0.29195656322439395,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJx2m-nOKjfDURpbUu3mryIJ8",
+    "rank": 96
+  },
+  {
+    "id": 97,
+    "name": "미분당 강남점",
+    "originalName": "미분당",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 16",
+    "position": {
+      "lat": 37.5037544,
+      "lng": 127.0262044
+    },
+    "rating": 4.3,
+    "reviews": 467,
+    "placeId": "ChIJkx80Z-KjfDUR3_XSluh9H3c",
+    "distance": 0.168817646100304,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkx80Z-KjfDUR3_XSluh9H3c",
+    "rank": 97
+  },
+  {
+    "id": 98,
+    "name": "진대감 강남역 교보타워점",
+    "originalName": "진대감강남역교보타워",
+    "address": "대한민국 서울특별시 서초구 서초대로73길 54",
+    "position": {
+      "lat": 37.5019696,
+      "lng": 127.0240448
+    },
+    "rating": 4,
+    "reviews": 376,
+    "placeId": "ChIJxwvvzFihfDURUpsFFxET5jI",
+    "distance": 0.19133345285897027,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJxwvvzFihfDURUpsFFxET5jI",
+    "rank": 98
+  },
+  {
+    "id": 99,
+    "name": "춘천한옥집",
+    "originalName": "춘천한옥집",
+    "address": "대한민국 서울특별시 강남구 역삼동 617-3",
+    "position": {
+      "lat": 37.502942,
+      "lng": 127.0275891
+    },
+    "rating": 3.3,
+    "reviews": 10,
+    "placeId": "ChIJGZllNQCjfDUR179lrB8XGqQ",
+    "distance": 0.30208698252025,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGZllNQCjfDUR179lrB8XGqQ",
+    "rank": 99
+  },
+  {
+    "id": 100,
+    "name": "성신식당",
+    "originalName": "성신식당",
+    "address": "대한민국 서울특별시 강남구 역삼동 번지 1층 813-2",
+    "position": {
+      "lat": 37.5028768,
+      "lng": 127.0266433
+    },
+    "rating": 4.5,
+    "reviews": 4,
+    "placeId": "ChIJzWRRh-KjfDURurxVOKV7sPU",
+    "distance": 0.22570163108493588,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJzWRRh-KjfDURurxVOKV7sPU",
+    "rank": 100
+  },
+  {
+    "id": 101,
+    "name": "강남교자 본점",
+    "originalName": "강남교자 칼국수",
+    "address": "대한민국 서울특별시 서초구 강남대로69길 11",
+    "position": {
+      "lat": 37.5013618,
+      "lng": 127.0242077
+    },
+    "rating": 4,
+    "reviews": 815,
+    "placeId": "ChIJi5Jc0VihfDURVehi4__2aVQ",
+    "distance": 0.2577707342432636,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJi5Jc0VihfDURVehi4__2aVQ",
+    "rank": 101
+  },
+  {
+    "id": 102,
+    "name": "강남 원주추어탕",
+    "originalName": "강남원주추어탕",
+    "address": "대한민국 서울특별시 강남구 역삼동 809-1",
+    "position": {
+      "lat": 37.5040021,
+      "lng": 127.0254378
+    },
+    "rating": 4.3,
+    "reviews": 821,
+    "placeId": "ChIJ8ecMa-KjfDURziclPr7YjbY",
+    "distance": 0.10718591849685023,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8ecMa-KjfDURziclPr7YjbY",
+    "rank": 102
+  },
+  {
+    "id": 103,
+    "name": "스타벅스 강남R점",
+    "originalName": "스타벅스(사이렌오더)_이니시스",
+    "address": "대한민국 서울특별시 강남구 강남대로 390",
+    "position": {
+      "lat": 37.497853,
+      "lng": 127.028587
+    },
+    "rating": 4.3,
+    "reviews": 1641,
+    "placeId": "ChIJobb671mhfDURrcE4SebLfyw",
+    "distance": 0.7504410831297162,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobb671mhfDURrcE4SebLfyw",
+    "rank": 103
+  },
+  {
+    "id": 104,
+    "name": "부대찌개잘하는남자 신논현본점",
+    "originalName": "부찌남 부대찌개잘하는남자",
+    "address": "대한민국 서울특별시 서초구 서운로 226 B106-1호",
+    "position": {
+      "lat": 37.50316,
+      "lng": 127.021755
+    },
+    "rating": 4.7,
+    "reviews": 6,
+    "placeId": "ChIJNUfWokKhfDURE7mNuaWzW5M",
+    "distance": 0.23120246001083042,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNUfWokKhfDURE7mNuaWzW5M",
+    "rank": 104
+  },
+  {
+    "id": 105,
+    "name": "헬로브라질",
+    "originalName": "본 인 브라질(Born in Brazil)",
+    "address": "대한민국 서울특별시 강남구 강남대로98길 12",
+    "position": {
+      "lat": 37.5006136,
+      "lng": 127.0276893
+    },
+    "rating": 4.3,
+    "reviews": 39,
+    "placeId": "ChIJz8BfrKOhfDURZNQ0Lh-F224",
+    "distance": 0.4538116375218427,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJz8BfrKOhfDURZNQ0Lh-F224",
+    "rank": 105
+  },
+  {
+    "id": 106,
+    "name": "전주현대옥 강남교보점",
+    "originalName": "현대옥 강남교보점",
+    "address": "대한민국 서울특별시 서초구 서초4동 1302-16",
+    "position": {
+      "lat": 37.5033745,
+      "lng": 127.0219975
+    },
+    "rating": 4.1,
+    "reviews": 307,
+    "placeId": "ChIJs0XnbV-hfDURS74UdZoJc4A",
+    "distance": 0.20530351736977528,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJs0XnbV-hfDURS74UdZoJc4A",
+    "rank": 106
+  },
+  {
+    "id": 107,
+    "name": "와촌",
+    "originalName": "와촌",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-35",
+    "position": {
+      "lat": 37.5028472,
+      "lng": 127.0245444
+    },
+    "rating": 4.4,
+    "reviews": 42,
+    "placeId": "ChIJJQjpr1ihfDURKH9Yd3D_38g",
+    "distance": 0.09511344409360788,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJQjpr1ihfDURKH9Yd3D_38g",
+    "rank": 107
+  },
+  {
+    "id": 108,
+    "name": "라브리크",
+    "originalName": "라브리크",
+    "address": "대한민국 서울특별시 강남구 봉은사로18길 66",
+    "position": {
+      "lat": 37.5023841,
+      "lng": 127.0279158
+    },
+    "rating": 4.1,
+    "reviews": 86,
+    "placeId": "ChIJ0TqCegejfDUR7mAFprceOMM",
+    "distance": 0.35051797548078134,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0TqCegejfDUR7mAFprceOMM",
+    "rank": 108
+  },
+  {
+    "id": 109,
+    "name": "하이웨이 기사식당 강남 신논현점",
+    "originalName": "하이웨이드라이버 강남신논현",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 23 2층",
+    "position": {
+      "lat": 37.5025927,
+      "lng": 127.0273479
+    },
+    "rating": 4.9,
+    "reviews": 115,
+    "placeId": "ChIJ6b_hik-hfDURTgXOjQY3V9g",
+    "distance": 0.2953154829565349,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6b_hik-hfDURTgXOjQY3V9g",
+    "rank": 109
+  },
+  {
+    "id": 110,
+    "name": "Portal PC",
+    "originalName": "포탈 피시방 강남역점 (Portal PC방 강남역점)",
+    "address": "대한민국 서초동 지하 2층 1303-16 KR 서울특별시 서초구 서초대로77길 62",
+    "position": {
+      "lat": 37.5026174,
+      "lng": 127.0240502
+    },
+    "rating": 4.3,
+    "reviews": 115,
+    "placeId": "ChIJi0HgxsKhfDUR689D6abDh78",
+    "distance": 0.11997186868373154,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJi0HgxsKhfDUR689D6abDh78",
+    "rank": 110
+  },
+  {
+    "id": 111,
+    "name": "타이가",
+    "originalName": "타이가",
+    "address": "대한민국 서울특별시 서초구 주흥길 13 1층",
+    "position": {
+      "lat": 37.5043625,
+      "lng": 127.0201041
+    },
+    "rating": 4.3,
+    "reviews": 44,
+    "placeId": "ChIJtSCHeK-hfDURKhu649EHXc4",
+    "distance": 0.3772468474815811,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtSCHeK-hfDURKhu649EHXc4",
+    "rank": 111
+  },
+  {
+    "id": 112,
+    "name": "솔솥 강남점",
+    "originalName": "솔솥 강남역점",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 28-8",
+    "position": {
+      "lat": 37.500265,
+      "lng": 127.0281147
+    },
+    "rating": 4.2,
+    "reviews": 39,
+    "placeId": "ChIJC6hJPmehfDURn1ZSriQuORg",
+    "distance": 0.5077078346148167,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC6hJPmehfDURn1ZSriQuORg",
+    "rank": 112
+  },
+  {
+    "id": 113,
+    "name": "강남 키친콤마",
+    "originalName": "키친콤마",
+    "address": "대한민국 서울특별시 서초구 강남대로 495 1층",
+    "position": {
+      "lat": 37.5062825,
+      "lng": 127.0231086
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJ7cCR0LKjfDURSChIHZfhUzc",
+    "distance": 0.3077716535922044,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7cCR0LKjfDURSChIHZfhUzc",
+    "rank": 113
+  },
+  {
+    "id": 114,
+    "name": "노브랜드버거 신논현역점",
+    "originalName": "노브랜드버거 신논현역점2",
+    "address": "대한민국 서울 강남구 사평대로 371 1층",
+    "position": {
+      "lat": 37.5044522,
+      "lng": 127.0236472
+    },
+    "rating": 4.2,
+    "reviews": 167,
+    "placeId": "ChIJK6NT8eGjfDURfMqlE2Nx6qo",
+    "distance": 0.10313649864197869,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK6NT8eGjfDURfMqlE2Nx6qo",
+    "rank": 114
+  },
+  {
+    "id": 115,
+    "name": "키토분식 강남스타점",
+    "originalName": "키토분식 강남스타점",
+    "address": "대한민국 서울특별시 서초구 서초동 1309-9",
+    "position": {
+      "lat": 37.5020587,
+      "lng": 127.0246728
+    },
+    "rating": 4.8,
+    "reviews": 6,
+    "placeId": "ChIJ6ZafQgChfDURIk6YGqlt_uY",
+    "distance": 0.1832577473269523,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6ZafQgChfDURIk6YGqlt_uY",
+    "rank": 115
+  },
+  {
+    "id": 116,
+    "name": "하이디라오 서초지점",
+    "originalName": "하이디라오코리아(유)",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 54 2 층",
+    "position": {
+      "lat": 37.5026042,
+      "lng": 127.0247371
+    },
+    "rating": 4.2,
+    "reviews": 1586,
+    "placeId": "ChIJhwWopFihfDURI3SzTAsozb8",
+    "distance": 0.1257692664635689,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJhwWopFihfDURI3SzTAsozb8",
+    "rank": 116
+  },
+  {
+    "id": 117,
+    "name": "모범갈빗살",
+    "originalName": "강남역 모범갈빗살",
+    "address": "대한민국 서울특별시 서초구 서초대로73길 40",
+    "position": {
+      "lat": 37.5008606,
+      "lng": 127.0245329
+    },
+    "rating": 4.3,
+    "reviews": 340,
+    "placeId": "ChIJa0eMKFmhfDURMS9co7ZbauA",
+    "distance": 0.31410549736340837,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa0eMKFmhfDURMS9co7ZbauA",
+    "rank": 117
+  },
+  {
+    "id": 118,
+    "name": "성천막국수 논현점",
+    "originalName": "성천막국수",
+    "address": "대한민국 서울특별시 서초구 강남대로 545-12",
+    "position": {
+      "lat": 37.5104153,
+      "lng": 127.020614
+    },
+    "rating": 4.2,
+    "reviews": 227,
+    "placeId": "ChIJd_0H6A2jfDURuCb6aCQP77I",
+    "distance": 0.8163193104736383,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJd_0H6A2jfDURuCb6aCQP77I",
+    "rank": 118
+  },
+  {
+    "id": 119,
+    "name": "(주)제이에스에프앤비",
+    "originalName": "(주)제이에스에프앤비",
+    "address": "대한민국 서울특별시 강남구 역삼동 616 14번지 1층",
+    "position": {
+      "lat": 37.5034605,
+      "lng": 127.0278301
+    },
+    "rating": 3,
+    "reviews": 1,
+    "placeId": "ChIJNYJQ6uKjfDUR_HnteQxEQsY",
+    "distance": 0.3129614730297481,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNYJQ6uKjfDUR_HnteQxEQsY",
+    "rank": 119
+  },
+  {
+    "id": 120,
+    "name": "동달식당 강남본점",
+    "originalName": "서울식당",
+    "address": "대한민국 서울특별시 서초구 서운로 133",
+    "position": {
+      "lat": 37.4953391,
+      "lng": 127.024704
+    },
+    "rating": 3.9,
+    "reviews": 884,
+    "placeId": "ChIJvZdYaFuhfDURx5B0QbG_rv4",
+    "distance": 0.9280630867782663,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvZdYaFuhfDURx5B0QbG_rv4",
+    "rank": 120
+  },
+  {
+    "id": 121,
+    "name": "윙스탑 강남점",
+    "originalName": "윙스탑 강남점",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 20",
+    "position": {
+      "lat": 37.5033842,
+      "lng": 127.0257562
+    },
+    "rating": 4,
+    "reviews": 126,
+    "placeId": "ChIJe-h5jDmjfDURWuzzLIHEofM",
+    "distance": 0.1331703307565589,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJe-h5jDmjfDURWuzzLIHEofM",
+    "rank": 121
+  },
+  {
+    "id": 122,
+    "name": "김밥속으로",
+    "originalName": "김밥속으로",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 17",
+    "position": {
+      "lat": 37.5034673,
+      "lng": 127.0260175
+    },
+    "rating": 3.7,
+    "reviews": 88,
+    "placeId": "ChIJgYlsZeKjfDURwa7IDGfnsmI",
+    "distance": 0.15393325728609625,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJgYlsZeKjfDURwa7IDGfnsmI",
+    "rank": 122
+  },
+  {
+    "id": 123,
+    "name": "샤브로21 강남(Gangnam)",
+    "originalName": "샤브로21 강남점",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 13-5",
+    "position": {
+      "lat": 37.5022982,
+      "lng": 127.0267351
+    },
+    "rating": 4.7,
+    "reviews": 3,
+    "placeId": "ChIJFUxXLwChfDURN1ZtEqv7Jsg",
+    "distance": 0.264541439277547,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJFUxXLwChfDURN1ZtEqv7Jsg",
+    "rank": 123
+  },
+  {
+    "id": 124,
+    "name": "평안도찹쌀순대 강남직영점",
+    "originalName": "(주)평안도식당",
+    "address": "대한민국 서울특별시 강남구 봉은사로2길 13",
+    "position": {
+      "lat": 37.5037426,
+      "lng": 127.0258894
+    },
+    "rating": 3.8,
+    "reviews": 196,
+    "placeId": "ChIJyRY4b-KjfDURw2BkS8b7ur4",
+    "distance": 0.14099987004896428,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyRY4b-KjfDURw2BkS8b7ur4",
+    "rank": 124
+  },
+  {
+    "id": 125,
+    "name": "구구당",
+    "originalName": "구구당",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 35",
+    "position": {
+      "lat": 37.5032812,
+      "lng": 127.0278706
+    },
+    "rating": 4.1,
+    "reviews": 388,
+    "placeId": "ChIJ5_s0xRijfDUR_7eXUXiyepA",
+    "distance": 0.3186747653355785,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5_s0xRijfDUR_7eXUXiyepA",
+    "rank": 125
+  },
+  {
+    "id": 126,
+    "name": "족발장인네 칼국수",
+    "originalName": "족발장인네 칼국수",
+    "address": "대한민국 서울특별시 강남구 논현동 197-13 족발장인네 칼국수 101호",
+    "position": {
+      "lat": 37.506327,
+      "lng": 127.0269089
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJ-2_hP0mjfDURjA-PIjVPRuY",
+    "distance": 0.3740901073184623,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ-2_hP0mjfDURjA-PIjVPRuY",
+    "rank": 126
+  },
+  {
+    "id": 127,
+    "name": "던킨 강남대로점",
+    "originalName": "던킨 강남대로점",
+    "address": "대한민국 서울특별시 서초구 강남대로 455",
+    "position": {
+      "lat": 37.5028813,
+      "lng": 127.0247963
+    },
+    "rating": 3.9,
+    "reviews": 170,
+    "placeId": "ChIJHUQzZByhfDURrST_ccnp0HA",
+    "distance": 0.09919108316155356,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHUQzZByhfDURrST_ccnp0HA",
+    "rank": 127
+  },
+  {
+    "id": 128,
+    "name": "오레노라멘 강남",
+    "originalName": "(주)오레노라멘강남",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 28-9 2층",
+    "position": {
+      "lat": 37.5004994,
+      "lng": 127.0280802
+    },
+    "rating": 4.7,
+    "reviews": 510,
+    "placeId": "ChIJn9Q_8RShfDURIrHH9LmtMRU",
+    "distance": 0.48643044730313656,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJn9Q_8RShfDURIrHH9LmtMRU",
+    "rank": 128
+  },
+  {
+    "id": 129,
+    "name": "동명닭집 논현직영",
+    "originalName": "동명닭집논현직영",
+    "address": "대한민국 서울특별시 강남구 강남대로116길 8",
+    "position": {
+      "lat": 37.5060827,
+      "lng": 127.0247073
+    },
+    "rating": 4.9,
+    "reviews": 30,
+    "placeId": "ChIJX4RkN0ejfDURyLaHgjQ5hWE",
+    "distance": 0.2697661852124567,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJX4RkN0ejfDURyLaHgjQ5hWE",
+    "rank": 129
+  },
+  {
+    "id": 130,
+    "name": "애슐리퀸즈 강남역점",
+    "originalName": "애슐리퀸즈 강남역점",
+    "address": "대한민국 서울특별시 강남구 강남대로 324",
+    "position": {
+      "lat": 37.4921345,
+      "lng": 127.0308577
+    },
+    "rating": 3.9,
+    "reviews": 14,
+    "placeId": "ChIJH0bYcAChfDUR06iMJvM1yGw",
+    "distance": 1.4082809329868295,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJH0bYcAChfDUR06iMJvM1yGw",
+    "rank": 130
+  },
+  {
+    "id": 131,
+    "name": "누들톡",
+    "originalName": "누들톡(신논현역점)",
+    "address": "대한민국 서울특별시 강남구 봉은사로 지하 102",
+    "position": {
+      "lat": 37.5045503,
+      "lng": 127.0249225
+    },
+    "rating": 2.5,
+    "reviews": 28,
+    "placeId": "ChIJrTAhPOKjfDUR4LdDVB-yANY",
+    "distance": 0.1116694099495481,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJrTAhPOKjfDUR4LdDVB-yANY",
+    "rank": 131
+  },
+  {
+    "id": 132,
+    "name": "매우매오 강남역별관",
+    "originalName": "매우매오 강남역별관",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 19",
+    "position": {
+      "lat": 37.5035649,
+      "lng": 127.0265466
+    },
+    "rating": 4.1,
+    "reviews": 27,
+    "placeId": "ChIJaZOvPRajfDURQGpXqj429V0",
+    "distance": 0.19920033414410115,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJaZOvPRajfDURQGpXqj429V0",
+    "rank": 132
+  },
+  {
+    "id": 133,
+    "name": "영차떡볶이",
+    "originalName": "영차떡볶이",
+    "address": "대한민국 서울특별시 강남구 역삼동 813-10",
+    "position": {
+      "lat": 37.5024963,
+      "lng": 127.0268427
+    },
+    "rating": 4.7,
+    "reviews": 3,
+    "placeId": "ChIJNYHtEQCjfDUR28SxB98CrOI",
+    "distance": 0.260543104755015,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNYHtEQCjfDUR28SxB98CrOI",
+    "rank": 133
+  },
+  {
+    "id": 134,
+    "name": "위대한밥상영광",
+    "originalName": "위대한밥상",
+    "address": "대한민국 서울특별시 서초구 서초동 1309",
+    "position": {
+      "lat": 37.5023768,
+      "lng": 127.0236891
+    },
+    "rating": 3.9,
+    "reviews": 41,
+    "placeId": "ChIJyWBaS1-hfDURQHKjcV0rB0I",
+    "distance": 0.15428667163743362,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyWBaS1-hfDURQHKjcV0rB0I",
+    "rank": 134
+  },
+  {
+    "id": 135,
+    "name": "강남짬뽕",
+    "originalName": "강남짬뽕",
+    "address": "대한민국 서울특별시 서초구 서초동 1602-10",
+    "position": {
+      "lat": 37.4849922,
+      "lng": 127.0158041
+    },
+    "rating": 3.7,
+    "reviews": 116,
+    "placeId": "ChIJoUrcTBShfDURrkQTJwnhNyg",
+    "distance": 2.2087229110588904,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoUrcTBShfDURrkQTJwnhNyg",
+    "rank": 135
+  },
+  {
+    "id": 136,
+    "name": "제로밥상 강남점",
+    "originalName": "제로밥상강남점",
+    "address": "대한민국 서울특별시 강남구 논현동 184-3 2층",
+    "position": {
+      "lat": 37.5061498,
+      "lng": 127.0248747
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJGYGouFejfDURDhrBO3my-UQ",
+    "distance": 0.279491074426747,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGYGouFejfDURDhrBO3my-UQ",
+    "rank": 136
+  },
+  {
+    "id": 137,
+    "name": "82올리언즈 강남점",
+    "originalName": "(주)82올리언즈강남점",
+    "address": "대한민국 서울특별시 강남구 강남대로98길 28 1층",
+    "position": {
+      "lat": 37.5008756,
+      "lng": 127.0286725
+    },
+    "rating": 4.7,
+    "reviews": 101,
+    "placeId": "ChIJAShsNl-hfDURqgDleAxPt_o",
+    "distance": 0.49641284222146315,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJAShsNl-hfDURqgDleAxPt_o",
+    "rank": 137
+  },
+  {
+    "id": 138,
+    "name": "데이페이 강남점",
+    "originalName": "당근페이(간편결제)_KCP",
+    "address": "대한민국 서울특별시 강남구 논현로 625",
+    "position": {
+      "lat": 37.5093716,
+      "lng": 127.0325719
+    },
+    "rating": 4,
+    "reviews": 8,
+    "placeId": "ChIJheHLzjGjfDURP_pficyZDYg",
+    "distance": 0.9664240139401539,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJheHLzjGjfDURP_pficyZDYg",
+    "rank": 138
+  },
+  {
+    "id": 139,
+    "name": "원할머니 논현직영점",
+    "originalName": "원할머니보쌈 족발 논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로120길 9",
+    "position": {
+      "lat": 37.5070967,
+      "lng": 127.0242744
+    },
+    "rating": 3.8,
+    "reviews": 251,
+    "placeId": "ChIJAXPL5uOjfDURbkj4juv7Syk",
+    "distance": 0.38003444252377433,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJAXPL5uOjfDURbkj4juv7Syk",
+    "rank": 139
+  },
+  {
+    "id": 140,
+    "name": "버거킹 강남대로점",
+    "originalName": "BKR버거킹강남대로점",
+    "address": "대한민국 서울특별시 강남구 강남대로 406",
+    "position": {
+      "lat": 37.4988495,
+      "lng": 127.0275222
+    },
+    "rating": 3.9,
+    "reviews": 1053,
+    "placeId": "ChIJp_ucvlmhfDURvEO6F9omyvw",
+    "distance": 0.6078932387489009,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJp_ucvlmhfDURvEO6F9omyvw",
+    "rank": 140
+  },
+  {
+    "id": 141,
+    "name": "로쿄 신논현",
+    "originalName": "로쿄 신논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로120길 13",
+    "position": {
+      "lat": 37.5072583,
+      "lng": 127.0245224
+    },
+    "rating": 4.8,
+    "reviews": 4,
+    "placeId": "ChIJneGzsG2jfDURDO0HihygK1w",
+    "distance": 0.3985140836530795,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJneGzsG2jfDURDO0HihygK1w",
+    "rank": 141
+  },
+  {
+    "id": 142,
+    "name": "반포김치찌개",
+    "originalName": "반포김치찌개",
+    "address": "대한민국 서울특별시 서초구 반포1동 사평대로 365",
+    "position": {
+      "lat": 37.5042488,
+      "lng": 127.0229045
+    },
+    "rating": 4.4,
+    "reviews": 82,
+    "placeId": "ChIJZ6fyVW2jfDURtzdJ8-yxCsw",
+    "distance": 0.13789973753680465,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJZ6fyVW2jfDURtzdJ8-yxCsw",
+    "rank": 142
+  },
+  {
+    "id": 143,
+    "name": "명동피자 신논현점",
+    "originalName": "명동피자신논현점(주)까페공작단",
+    "address": "대한민국 서울특별시 서초구 강남대로79길 36 1층",
+    "position": {
+      "lat": 37.5045374,
+      "lng": 127.0221757
+    },
+    "rating": 4.4,
+    "reviews": 102,
+    "placeId": "ChIJBaAsRYSjfDUROKbcZjv32Bs",
+    "distance": 0.20974786396294112,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJBaAsRYSjfDUROKbcZjv32Bs",
+    "rank": 143
+  },
+  {
+    "id": 144,
+    "name": "땀땀",
+    "originalName": "땀땀",
+    "address": "대한민국 서울특별시 강남구 강남대로98길 12-5",
+    "position": {
+      "lat": 37.5003867,
+      "lng": 127.027994
+    },
+    "rating": 4.1,
+    "reviews": 1378,
+    "placeId": "ChIJcb64yqa7fDURWQfcJDm_PhI",
+    "distance": 0.49052018903163586,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcb64yqa7fDURWQfcJDm_PhI",
+    "rank": 144
+  },
+  {
+    "id": 145,
+    "name": "깡우동 신논현역점",
+    "originalName": "깡우동 신논현역점",
+    "address": "대한민국 서울특별시 서초구 사평대로 349",
+    "position": {
+      "lat": 37.50379849999999,
+      "lng": 127.0212002
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJxUwWaQChfDURiEHD3br6aL0",
+    "distance": 0.27314686042722575,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJxUwWaQChfDURiEHD3br6aL0",
+    "rank": 145
+  },
+  {
+    "id": 146,
+    "name": "Poke all day 포케&샐러드 신논현점",
+    "originalName": "포케올데이 신논현점",
+    "address": "대한민국 서울특별시 서초구 강남대로 521-4 2층 202호",
+    "position": {
+      "lat": 37.5085065,
+      "lng": 127.0221067
+    },
+    "rating": 5,
+    "reviews": 1,
+    "placeId": "ChIJlUIlbOKjfDUR0s-Wq5TNIus",
+    "distance": 0.570385371279325,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlUIlbOKjfDUR0s-Wq5TNIus",
+    "rank": 146
+  },
+  {
+    "id": 147,
+    "name": "함수라",
+    "originalName": "함수라",
+    "address": "대한민국 서울특별시 강남구 지상 강남대로114길 8 2층",
+    "position": {
+      "lat": 37.5056571,
+      "lng": 127.0249133
+    },
+    "rating": 4.4,
+    "reviews": 22,
+    "placeId": "ChIJ4508-NajfDUREDfMUSXpjeg",
+    "distance": 0.22665848344639272,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4508-NajfDUREDfMUSXpjeg",
+    "rank": 147
+  },
+  {
+    "id": 148,
+    "name": "닭발여행X윤이불닭발",
+    "originalName": "윤이불닭발",
+    "address": "대한민국 서울특별시 강남구 역삼동 번지 지하 818-3 1층",
+    "position": {
+      "lat": 37.4997906,
+      "lng": 127.0282769
+    },
+    "rating": 5,
+    "reviews": 1,
+    "placeId": "ChIJV96DNFihfDURt3rtnGUDGb8",
+    "distance": 0.5571835414276824,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV96DNFihfDURt3rtnGUDGb8",
+    "rank": 148
+  },
+  {
+    "id": 149,
+    "name": "팔백집강남점",
+    "originalName": "팔백집 강남점",
+    "address": "1st floor, 15 봉은사로2길 강남구 서울특별시 대한민국",
+    "position": {
+      "lat": 37.50362860000001,
+      "lng": 127.025943
+    },
+    "rating": 4.4,
+    "reviews": 33,
+    "placeId": "ChIJwbrG2_ejfDURET9kId3k-R8",
+    "distance": 0.14565855820558077,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwbrG2_ejfDURET9kId3k-R8",
+    "rank": 149
+  },
+  {
+    "id": 150,
+    "name": "겐조라멘 강남점",
+    "originalName": "겐조라멘",
+    "address": "대한민국 서울특별시 서초구 서초동 1308-13",
+    "position": {
+      "lat": 37.5026845,
+      "lng": 127.0243197
+    },
+    "rating": 3.5,
+    "reviews": 189,
+    "placeId": "ChIJOdifH1mhfDURD8Xdq0BFHwo",
+    "distance": 0.11060843409907391,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOdifH1mhfDURD8Xdq0BFHwo",
+    "rank": 150
+  },
+  {
+    "id": 151,
+    "name": "키오스크이피 서초점",
+    "originalName": "키오스크(4)_페이스토리",
+    "address": "대한민국 서울특별시 서초구 서초동 강남대로 49 길 10 1층 3호",
+    "position": {
+      "lat": 37.4897666,
+      "lng": 127.0298285
+    },
+    "rating": 5,
+    "reviews": 4,
+    "placeId": "ChIJlXB6twChfDURAyKOA0TDnZA",
+    "distance": 1.6222374990071593,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlXB6twChfDURAyKOA0TDnZA",
+    "rank": 151
+  },
+  {
+    "id": 152,
+    "name": "카사데타코 신논현점",
+    "originalName": "카사데타코 신논현점",
+    "address": "대한민국 서울특별시 강남구 봉은사로1길 8",
+    "position": {
+      "lat": 37.5054993,
+      "lng": 127.0250796
+    },
+    "rating": 4,
+    "reviews": 1,
+    "placeId": "ChIJGSZgXwCjfDURNqMkFDke8Gw",
+    "distance": 0.2139710769640877,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGSZgXwCjfDURNqMkFDke8Gw",
+    "rank": 152
+  },
+  {
+    "id": 153,
+    "name": "육전국밥 강남역점",
+    "originalName": "육전국밥 논현역점",
+    "address": "대한민국 서울특별시 강남구 강남대로94길 15",
+    "position": {
+      "lat": 37.4996351,
+      "lng": 127.0285951
+    },
+    "rating": 4.7,
+    "reviews": 13,
+    "placeId": "ChIJH_pofwChfDURfVP0oNEZCjA",
+    "distance": 0.5884067603220974,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJH_pofwChfDURfVP0oNEZCjA",
+    "rank": 153
+  },
+  {
+    "id": 154,
+    "name": "나순대국 신논현역점",
+    "originalName": "나순대국(신논현역점)",
+    "address": "대한민국 서울특별시 서초구 사평대로 349",
+    "position": {
+      "lat": 37.50379849999999,
+      "lng": 127.0212002
+    },
+    "rating": 4.2,
+    "reviews": 6,
+    "placeId": "ChIJl2ChBgChfDURY7FHU-HIcDE",
+    "distance": 0.27314686042722575,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJl2ChBgChfDURY7FHU-HIcDE",
+    "rank": 154
+  },
+  {
+    "id": 155,
+    "name": "해몽",
+    "originalName": "해몽",
+    "address": "대한민국 서울특별시 강남구 논현2동 학동로41길 32",
+    "position": {
+      "lat": 37.5180735,
+      "lng": 127.0363645
+    },
+    "rating": 4.5,
+    "reviews": 203,
+    "placeId": "ChIJuRn-LE2jfDURONZYFScxFck",
+    "distance": 1.9223964855375901,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJuRn-LE2jfDURONZYFScxFck",
+    "rank": 155
+  },
+  {
+    "id": 156,
+    "name": "투썸플레이스 신논현점",
+    "originalName": "투썸플레이스_나이스",
+    "address": "대한민국 서울특별시 강남구 봉은사로 125 1층",
+    "position": {
+      "lat": 37.505672,
+      "lng": 127.0274505
+    },
+    "rating": 4.4,
+    "reviews": 57,
+    "placeId": "ChIJm0MWHmujfDURalu_Irx4Keo",
+    "distance": 0.35593414609575597,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJm0MWHmujfDURalu_Irx4Keo",
+    "rank": 156
+  },
+  {
+    "id": 157,
+    "name": "도치피자",
+    "originalName": "도치피자 강남",
+    "address": "대한민국 서울특별시 강남구 강남대로98길 27",
+    "position": {
+      "lat": 37.5009655,
+      "lng": 127.0288718
+    },
+    "rating": 4,
+    "reviews": 688,
+    "placeId": "ChIJJ3x6QFGhfDURK4B8l-7yNAc",
+    "distance": 0.5041692476651887,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ3x6QFGhfDURK4B8l-7yNAc",
+    "rank": 157
+  },
+  {
+    "id": 158,
+    "name": "미도인 강남",
+    "originalName": "미도인강남",
+    "address": "대한민국 서울특별시 강남구 강남대로102길 16",
+    "position": {
+      "lat": 37.5020701,
+      "lng": 127.0271684
+    },
+    "rating": 4.2,
+    "reviews": 298,
+    "placeId": "ChIJ8VTNn8KhfDURUeL4IrGT8Vo",
+    "distance": 0.310392613386389,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8VTNn8KhfDURUeL4IrGT8Vo",
+    "rank": 158
+  },
+  {
+    "id": 159,
+    "name": "편편집 강남역점",
+    "originalName": "(주)편편집 강남역점",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 17 BLOCK77 8층",
+    "position": {
+      "lat": 37.5006258,
+      "lng": 127.0253614
+    },
+    "rating": 4.7,
+    "reviews": 11,
+    "placeId": "ChIJ3YUSKwChfDUR3mGngFUlNCI",
+    "distance": 0.35233961983559675,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ3YUSKwChfDUR3mGngFUlNCI",
+    "rank": 159
+  },
+  {
+    "id": 160,
+    "name": "삼산회관 신논현점",
+    "originalName": "삼산회관 신논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로114길 10",
+    "position": {
+      "lat": 37.5057648,
+      "lng": 127.0252199
+    },
+    "rating": 4.4,
+    "reviews": 8,
+    "placeId": "ChIJj_WZRgCjfDURPssfBqtEcB4",
+    "distance": 0.2459205061489994,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj_WZRgCjfDURPssfBqtEcB4",
+    "rank": 160
+  },
+  {
+    "id": 161,
+    "name": "어메이징타이",
+    "originalName": "어메이징타이",
+    "address": "대한민국 서울특별시 서초구 강남대로65길 12 207 호",
+    "position": {
+      "lat": 37.5004766,
+      "lng": 127.02471
+    },
+    "rating": 4.1,
+    "reviews": 199,
+    "placeId": "ChIJB0DQzFihfDURDSSbzXuOU18",
+    "distance": 0.35798562168638387,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJB0DQzFihfDURDSSbzXuOU18",
+    "rank": 161
+  },
+  {
+    "id": 162,
+    "name": "남쪽나라",
+    "originalName": "남쪽나라",
+    "address": "대한민국 서초동 1302-1번지 지하동 1층 101호 서초오피스텔 서초구 서울특별시 KR",
+    "position": {
+      "lat": 37.5030566,
+      "lng": 127.0215854
+    },
+    "rating": 4.2,
+    "reviews": 5,
+    "placeId": "ChIJ0eV1DF-hfDURYn93YGBajj0",
+    "distance": 0.24866995226299346,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0eV1DF-hfDURYn93YGBajj0",
+    "rank": 162
+  },
+  {
+    "id": 163,
+    "name": "금강바베큐치킨",
+    "originalName": "금강바베큐",
+    "address": "대한민국 서울특별시 서초구 사평대로 349",
+    "position": {
+      "lat": 37.50373769999999,
+      "lng": 127.0211615
+    },
+    "rating": 4,
+    "reviews": 369,
+    "placeId": "ChIJ5VmHnV-hfDURCrayKyJ6Wrg",
+    "distance": 0.2763145004631746,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5VmHnV-hfDURCrayKyJ6Wrg",
+    "rank": 163
+  },
+  {
+    "id": 164,
+    "name": "통돼지두루치기김치찌개",
+    "originalName": "통돼지두루치기김치찌개전문점",
+    "address": "대한민국 역삼동 839-3번지 지상 1층 강남구 서울특별시 KR",
+    "position": {
+      "lat": 37.4906427,
+      "lng": 127.0338312
+    },
+    "rating": 4.2,
+    "reviews": 42,
+    "placeId": "ChIJCbMKHU6hfDURVnUzh3BsqRw",
+    "distance": 1.676100498154691,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJCbMKHU6hfDURVnUzh3BsqRw",
+    "rank": 164
+  },
+  {
+    "id": 165,
+    "name": "베네티",
+    "originalName": "베네티",
+    "address": "대한민국 서울특별시 강남구 강남대로110길 14",
+    "position": {
+      "lat": 37.5038126,
+      "lng": 127.0260588
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJAWoEAwCjfDUR8iKFRG5r7xU",
+    "distance": 0.15647232933225605,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJAWoEAwCjfDUR8iKFRG5r7xU",
+    "rank": 165
+  },
+  {
+    "id": 166,
+    "name": "달래해장 신논현점",
+    "originalName": "달래해장 신논현점",
+    "address": "대한민국 서울특별시 서초구 사평대로56길 14",
+    "position": {
+      "lat": 37.5027197,
+      "lng": 127.0232036
+    },
+    "rating": 3.5,
+    "reviews": 24,
+    "placeId": "ChIJ1RZ8lqahfDURh24h85HYlbI",
+    "distance": 0.14357374607793388,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ1RZ8lqahfDURh24h85HYlbI",
+    "rank": 166
+  },
+  {
+    "id": 167,
+    "name": "장인닭갈비 강남점 | Gangnam JangIn Dakgalbi Restaurants | 職人チキンカルビ江南店 | 工匠烤鸡排江南店",
+    "originalName": "장인닭갈비",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 19 지하 1층",
+    "position": {
+      "lat": 37.4996075,
+      "lng": 127.0275466
+    },
+    "rating": 3.9,
+    "reviews": 925,
+    "placeId": "ChIJtR3B7eGjfDURESksGTJHh0k",
+    "distance": 0.5360436673344264,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtR3B7eGjfDURESksGTJHh0k",
+    "rank": 167
+  },
+  {
+    "id": 168,
+    "name": "디어밀 (Dear meal)",
+    "originalName": "디어밀",
+    "address": "대한민국 서울특별시 서초구 반포동 709 8번지 1층",
+    "position": {
+      "lat": 37.5091508,
+      "lng": 127.0204138
+    },
+    "rating": 5,
+    "reviews": 2,
+    "placeId": "ChIJl-YwBgCjfDURWbPF60B9DLk",
+    "distance": 0.6980565938769524,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJl-YwBgCjfDURWbPF60B9DLk",
+    "rank": 168
+  },
+  {
+    "id": 169,
+    "name": "쿄코코 신논현점",
+    "originalName": "쿄코코 신논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로106길 23 지하 1층",
+    "position": {
+      "lat": 37.5033263,
+      "lng": 127.0274103
+    },
+    "rating": 4.7,
+    "reviews": 53,
+    "placeId": "ChIJR8tpIACjfDURIMBSNQE1Djc",
+    "distance": 0.27776812757453534,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR8tpIACjfDURIMBSNQE1Djc",
+    "rank": 169
+  },
+  {
+    "id": 170,
+    "name": "용가훠궈 강남점",
+    "originalName": "용가회전훠궈",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 43 3층",
+    "position": {
+      "lat": 37.5013927,
+      "lng": 127.0248966
+    },
+    "rating": 4.7,
+    "reviews": 3,
+    "placeId": "ChIJs5K_dQChfDURPVaoMg7_4So",
+    "distance": 0.2597411321356221,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJs5K_dQChfDURPVaoMg7_4So",
+    "rank": 170
+  },
+  {
+    "id": 171,
+    "name": "떡도리탕",
+    "originalName": "떡도리탕 강남점",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 28-9 1층",
+    "position": {
+      "lat": 37.5004611,
+      "lng": 127.0280669
+    },
+    "rating": 4.2,
+    "reviews": 377,
+    "placeId": "ChIJlTbUS1ihfDUREvOT4eilh6E",
+    "distance": 0.4887347305553743,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlTbUS1ihfDUREvOT4eilh6E",
+    "rank": 171
+  },
+  {
+    "id": 172,
+    "name": "영동곰탕",
+    "originalName": "영동곰탕",
+    "address": "대한민국 서울특별시 강남구 학동로4길 38 영동곰탕 1층",
+    "position": {
+      "lat": 37.508911,
+      "lng": 127.0239496
+    },
+    "rating": 4.3,
+    "reviews": 114,
+    "placeId": "ChIJJXeBA-SjfDURI75Ge5uvu04",
+    "distance": 0.5825599063534901,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJXeBA-SjfDURI75Ge5uvu04",
+    "rank": 172
+  },
+  {
+    "id": 173,
+    "name": "구테로이테 강남구청점",
+    "originalName": "(주)에스이오홀딩스구테로이테 강남구청지점",
+    "address": "대한민국 서울특별시 강남구 선릉로131길 16",
+    "position": {
+      "lat": 37.5175985,
+      "lng": 127.0396637
+    },
+    "rating": 4.6,
+    "reviews": 270,
+    "placeId": "ChIJJbtq_8mjfDUR9ZWrfUyQozs",
+    "distance": 2.0575971457962567,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJbtq_8mjfDUR9ZWrfUyQozs",
+    "rank": 173
+  },
+  {
+    "id": 174,
+    "name": "이마트24 R강남역삼점",
+    "originalName": "이마트 논현타워",
+    "address": "대한민국 서울특별시 강남구 역삼동 815-4",
+    "position": {
+      "lat": 37.5005883,
+      "lng": 127.027129
+    },
+    "rating": 4,
+    "reviews": 2,
+    "placeId": "ChIJ_SGJSLOhfDURT8QrmnLrEeI",
+    "distance": 0.4250848759277992,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_SGJSLOhfDURT8QrmnLrEeI",
+    "rank": 174
+  },
+  {
+    "id": 175,
+    "name": "폴바셋 교보문고",
+    "originalName": "폴바셋교보문고강남점",
+    "address": "대한민국 서울특별시 서초구 강남대로 465 교보 타워 B1F B2F",
+    "position": {
+      "lat": 37.5037755,
+      "lng": 127.0241115
+    },
+    "rating": 4.1,
+    "reviews": 215,
+    "placeId": "ChIJdQbKA-KjfDURuTYvRTwB8Mo",
+    "distance": 0.019273755658388816,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdQbKA-KjfDURuTYvRTwB8Mo",
+    "rank": 175
+  },
+  {
+    "id": 176,
+    "name": "요멘야 고에몬 강남점",
+    "originalName": "고에몬",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 7 1층",
+    "position": {
+      "lat": 37.4984321,
+      "lng": 127.0263548
+    },
+    "rating": 4,
+    "reviews": 1198,
+    "placeId": "ChIJwYiKeVmhfDURazOVYWaH-ag",
+    "distance": 0.6111222582906617,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwYiKeVmhfDURazOVYWaH-ag",
+    "rank": 176
+  },
+  {
+    "id": 177,
+    "name": "프레퍼스 다이어트 푸드 강남직영점(preppers diet food)",
+    "originalName": "프레퍼스다이어트푸드",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 30 1층, B1층",
+    "position": {
+      "lat": 37.5002941,
+      "lng": 127.027525
+    },
+    "rating": 4.8,
+    "reviews": 77,
+    "placeId": "ChIJ259AL0ChfDUR2FLwGmlNzq8",
+    "distance": 0.4721779571605387,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ259AL0ChfDUR2FLwGmlNzq8",
+    "rank": 177
+  },
+  {
+    "id": 178,
+    "name": "(주)에스앤케이디",
+    "originalName": "(주)에스앤케이디",
+    "address": "대한민국 서울특별시 서초구 반포동 720 24번지 103호",
+    "position": {
+      "lat": 37.5078865,
+      "lng": 127.020423
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJheoD7-CjfDURysclo4EO5UM",
+    "distance": 0.57915586497852,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJheoD7-CjfDURysclo4EO5UM",
+    "rank": 178
+  },
+  {
+    "id": 179,
+    "name": "무인양품 강남점",
+    "originalName": "무인양품(주)강남점",
+    "address": "대한민국 서울특별시 서초구 강남대로 419",
+    "position": {
+      "lat": 37.4997752,
+      "lng": 127.0263109
+    },
+    "rating": 4.2,
+    "reviews": 893,
+    "placeId": "ChIJx3p6VlihfDURPsjn2fxjyIc",
+    "distance": 0.46916408021929334,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJx3p6VlihfDURPsjn2fxjyIc",
+    "rank": 179
+  },
+  {
+    "id": 180,
+    "name": "팀호완 강남역점",
+    "originalName": "팀호완 강남점",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 29 용일빌딩 1층",
+    "position": {
+      "lat": 37.5001152,
+      "lng": 127.0273617
+    },
+    "rating": 4.1,
+    "reviews": 8,
+    "placeId": "ChIJceNV5JChfDURIh3BoRsg8LM",
+    "distance": 0.47991230760688336,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJceNV5JChfDURIh3BoRsg8LM",
+    "rank": 180
+  },
+  {
+    "id": 181,
+    "name": "강남쌀국수 신논현점",
+    "originalName": "강남쌀국수",
+    "address": "대한민국 서울특별시 서초구 사평대로55길 10-11",
+    "position": {
+      "lat": 37.5047184,
+      "lng": 127.0231869
+    },
+    "rating": 4.7,
+    "reviews": 3,
+    "placeId": "ChIJCUSKbACjfDURbVMHrsV_Ku0",
+    "distance": 0.15125458753489365,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJCUSKbACjfDURbVMHrsV_Ku0",
+    "rank": 181
+  },
+  {
+    "id": 182,
+    "name": "은행골",
+    "originalName": "은행골 강남역점",
+    "address": "대한민국 서울특별시 서초구 서초대로75길 34 은행골 3층",
+    "position": {
+      "lat": 37.5005481,
+      "lng": 127.0251754
+    },
+    "rating": 3.9,
+    "reviews": 472,
+    "placeId": "ChIJ_e-JQVihfDURRLa6FP6hshQ",
+    "distance": 0.35673620158975533,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_e-JQVihfDURRLa6FP6hshQ",
+    "rank": 182
+  },
+  {
+    "id": 183,
+    "name": "나오리장작구이 신논현점",
+    "originalName": "나오리장작구이 신논현역점",
+    "address": "대한민국 서울특별시 서초구 사평대로 349 2층 206호",
+    "position": {
+      "lat": 37.5038059,
+      "lng": 127.021426
+    },
+    "rating": 4.4,
+    "reviews": 8,
+    "placeId": "ChIJ8bqMdgChfDURoyGlI5Epfvs",
+    "distance": 0.2532984192600888,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8bqMdgChfDURoyGlI5Epfvs",
+    "rank": 183
+  },
+  {
+    "id": 184,
+    "name": "호미호식 강남본점",
+    "originalName": "호미호식",
+    "address": "대한민국 서울특별시 강남구 봉은사로4길 36",
+    "position": {
+      "lat": 37.50251859999999,
+      "lng": 127.0268809
+    },
+    "rating": 4.1,
+    "reviews": 70,
+    "placeId": "ChIJOVXQz1-hfDURtTXcBLdKOcc",
+    "distance": 0.26222857830328306,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOVXQz1-hfDURtTXcBLdKOcc",
+    "rank": 184
+  },
+  {
+    "id": 185,
+    "name": "우리칼국수",
+    "originalName": "우리칼국수",
+    "address": "대한민국 서울특별시 서초구 사평대로55길 10",
+    "position": {
+      "lat": 37.5046281,
+      "lng": 127.022875
+    },
+    "rating": 4.3,
+    "reviews": 3,
+    "placeId": "ChIJyTytLgCjfDURc7KwBjw7Y94",
+    "distance": 0.16365758464359995,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyTytLgCjfDURc7KwBjw7Y94",
+    "rank": 185
+  },
+  {
+    "id": 186,
+    "name": "칠백한우국밥",
+    "originalName": "칠백한우국밥",
+    "address": "대한민국 서울특별시 서초구 사평대로 365",
+    "position": {
+      "lat": 37.5043052,
+      "lng": 127.022901
+    },
+    "rating": 4.5,
+    "reviews": 195,
+    "placeId": "ChIJiTgw6J2jfDURHwe4nHVAB6s",
+    "distance": 0.14115976758620474,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJiTgw6J2jfDURHwe4nHVAB6s",
+    "rank": 186
+  },
+  {
+    "id": 187,
+    "name": "보나비",
+    "originalName": "(주)보나비",
+    "address": "대한민국 서울특별시 강남구 테헤란로28길 32",
+    "position": {
+      "lat": 37.499006,
+      "lng": 127.039213
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJD-JjZzOjfDUROyNnXWVaN70",
+    "distance": 1.4150290739558387,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJD-JjZzOjfDUROyNnXWVaN70",
+    "rank": 187
+  },
+  {
+    "id": 188,
+    "name": "영동교집 강남직영점 | 江南サムギョプサル焼肉グルメ ヨンドンギョジプ江南店",
+    "originalName": "영동교집 강남직영점",
+    "address": "대한민국 서울특별시 서초구 강남대로 499 동양빌딩 2층",
+    "position": {
+      "lat": 37.5065679,
+      "lng": 127.0230488
+    },
+    "rating": 4.8,
+    "reviews": 323,
+    "placeId": "ChIJMcyOmAijfDURl2OT7dm9lxI",
+    "distance": 0.3394625880253268,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMcyOmAijfDURl2OT7dm9lxI",
+    "rank": 188
+  },
+  {
+    "id": 189,
+    "name": "산솔 신논현점",
+    "originalName": "산솔 신논현점",
+    "address": "대한민국 서울특별시 강남구 지상 강남대로112길 15 1층",
+    "position": {
+      "lat": 37.5056584,
+      "lng": 127.0256094
+    },
+    "rating": 5,
+    "reviews": 3,
+    "placeId": "ChIJ8W0oWV-jfDURuChzCzCSdVQ",
+    "distance": 0.248853087288985,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8W0oWV-jfDURuChzCzCSdVQ",
+    "rank": 189
+  },
+  {
+    "id": 190,
+    "name": "에그드랍 신논현역점",
+    "originalName": "에그드랍 신논현역점",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 62",
+    "position": {
+      "lat": 37.5026803,
+      "lng": 127.0238741
+    },
+    "rating": 4.1,
+    "reviews": 28,
+    "placeId": "ChIJmZAQT9ehfDURCM9g_Dbo6Hs",
+    "distance": 0.1170370478128912,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJmZAQT9ehfDURCM9g_Dbo6Hs",
+    "rank": 190
+  },
+  {
+    "id": 191,
+    "name": "랜돌프비어 강남점",
+    "originalName": "랜돌프비어 강남점",
+    "address": "대한민국 서울특별시 서초구 강남대로65길 9",
+    "position": {
+      "lat": 37.5002111,
+      "lng": 127.0251184
+    },
+    "rating": 3.8,
+    "reviews": 5,
+    "placeId": "ChIJv8D7XTWhfDURx1T6aOk3sxc",
+    "distance": 0.3924269736692515,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv8D7XTWhfDURx1T6aOk3sxc",
+    "rank": 191
+  },
+  {
+    "id": 192,
+    "name": "논현동맛집 태양곱창 신논현 (江南 新論峴 美食 グルメ Seoul Gangnam Sinnonhyeon Restaurants)",
+    "originalName": "태양곱창 신논현점",
+    "address": "대한민국 서울특별시 강남구 봉은사로1길 27 1층",
+    "position": {
+      "lat": 37.5065035,
+      "lng": 127.0243102
+    },
+    "rating": 4.9,
+    "reviews": 250,
+    "placeId": "ChIJNYNq7s2jfDUR9i2JZxaWmCY",
+    "distance": 0.3140737350366244,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJNYNq7s2jfDUR9i2JZxaWmCY",
+    "rank": 192
+  },
+  {
+    "id": 193,
+    "name": "신촌황소곱창 강남역직영점",
+    "originalName": "신촌황소곱창강남역점",
+    "address": "대한민국 서울특별시 강남구 강남대로100길 13 1층",
+    "position": {
+      "lat": 37.5018305,
+      "lng": 127.0272289
+    },
+    "rating": 3.9,
+    "reviews": 281,
+    "placeId": "ChIJE3rSelihfDURy6oJKt6dxEY",
+    "distance": 0.3306390608060492,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJE3rSelihfDURy6oJKt6dxEY",
+    "rank": 193
+  },
+  {
+    "id": 194,
+    "name": "이마트24강남더인피닛점",
+    "originalName": "이마트24 강남더인피닛스퀘어점",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-6번지 104-1호",
+    "position": {
+      "lat": 37.5035345,
+      "lng": 127.0234736
+    },
+    "rating": 2,
+    "reviews": 2,
+    "placeId": "ChIJq5_vVl-hfDURe1ZJY76cp6A",
+    "distance": 0.07404574234330201,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJq5_vVl-hfDURe1ZJY76cp6A",
+    "rank": 194
+  },
+  {
+    "id": 195,
+    "name": "삼송빵집",
+    "originalName": "카모스코리아 삼송빵집 신논현역점",
+    "address": "대한민국 서울특별시 서초구 강남대로 465",
+    "position": {
+      "lat": 37.5044394,
+      "lng": 127.0244823
+    },
+    "rating": 4.5,
+    "reviews": 13,
+    "placeId": "ChIJH4RVTl-hfDURQ8Py9WEuSFo",
+    "distance": 0.08618577219148214,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJH4RVTl-hfDURQ8Py9WEuSFo",
+    "rank": 195
+  },
+  {
+    "id": 196,
+    "name": "베트남이랑",
+    "originalName": "(주)베트남이랑 강남점",
+    "address": "대한민국 서울특별시 서초구 서초동 서초대로77길 15",
+    "position": {
+      "lat": 37.498887,
+      "lng": 127.026039
+    },
+    "rating": 4.2,
+    "reviews": 455,
+    "placeId": "ChIJ4SJCfQyhfDURTIfVjZ1ntNo",
+    "distance": 0.554660569400289,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4SJCfQyhfDURTIfVjZ1ntNo",
+    "rank": 196
+  },
+  {
+    "id": 197,
+    "name": "나즈드라비",
+    "originalName": "나즈드라비",
+    "address": "대한민국 서울특별시 강남구 강남대로 442",
+    "position": {
+      "lat": 37.501893,
+      "lng": 127.0261356
+    },
+    "rating": 4.2,
+    "reviews": 116,
+    "placeId": "ChIJ_ZKWeIShfDURkkLt7QK-9xE",
+    "distance": 0.2566313349627529,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_ZKWeIShfDURkkLt7QK-9xE",
+    "rank": 197
+  },
+  {
+    "id": 198,
+    "name": "딜리셧 부티끄",
+    "originalName": "딜리셧 부티끄",
+    "address": "대한민국 서울특별시 강남구 테헤란로4길 6 219호",
+    "position": {
+      "lat": 37.4977256,
+      "lng": 127.0292972
+    },
+    "rating": 3.4,
+    "reviews": 8,
+    "placeId": "ChIJoRO4dFuhfDURx92bL0dpb_Y",
+    "distance": 0.7956799988001769,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoRO4dFuhfDURx92bL0dpb_Y",
+    "rank": 198
+  },
+  {
+    "id": 199,
+    "name": "딘타이펑 강남점",
+    "originalName": "딘타이펑 강남지점",
+    "address": "대한민국 서울특별시 서초구 서초대로73길 12 2층",
+    "position": {
+      "lat": 37.4985718,
+      "lng": 127.0256424
+    },
+    "rating": 3.9,
+    "reviews": 2310,
+    "placeId": "ChIJuf-WY1mhfDURjHhHuSJXUiI",
+    "distance": 0.5802365723337854,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJuf-WY1mhfDURjHhHuSJXUiI",
+    "rank": 199
+  },
+  {
+    "id": 200,
+    "name": "강남N타워",
+    "originalName": "N대표(1)_KSNET",
+    "address": "대한민국 서울특별시 강남구 테헤란로 129",
+    "position": {
+      "lat": 37.4997777,
+      "lng": 127.0324107
+    },
+    "rating": 4.2,
+    "reviews": 5,
+    "placeId": "ChIJM6MGr_GhfDUR91eSMxEexbQ",
+    "distance": 0.8372502052610584,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJM6MGr_GhfDUR91eSMxEexbQ",
+    "rank": 200
+  },
+  {
+    "id": 201,
+    "name": "두르가 강남점",
+    "originalName": "능두네 구로점",
+    "address": "대한민국 서울특별시 강남구 지상 강남대로94길 21 1 충",
+    "position": {
+      "lat": 37.499745,
+      "lng": 127.0289618
+    },
+    "rating": 4.2,
+    "reviews": 14,
+    "placeId": "ChIJicGCwwihfDUR8xWxm2dOiFk",
+    "distance": 0.6008169931176984,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJicGCwwihfDUR8xWxm2dOiFk",
+    "rank": 201
+  },
+  {
+    "id": 202,
+    "name": "슬로우캘리 논현점",
+    "originalName": "슬로우캘리논현점",
+    "address": "대한민국 서울특별시 강남구 강남대로118길 60",
+    "position": {
+      "lat": 37.5072138,
+      "lng": 127.0276641
+    },
+    "rating": 4.3,
+    "reviews": 3,
+    "placeId": "ChIJ67-0FDejfDURNOGHdnx_io0",
+    "distance": 0.49286548547865333,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ67-0FDejfDURNOGHdnx_io0",
+    "rank": 202
+  },
+  {
+    "id": 203,
+    "name": "맘스터치LAB 강남점",
+    "originalName": "맘스터치LAB 강남대로점",
+    "address": "대한민국 서울특별시 서초구 강남대로 423",
+    "position": {
+      "lat": 37.50023669999999,
+      "lng": 127.025839
+    },
+    "rating": 4.7,
+    "reviews": 7,
+    "placeId": "ChIJ6TlYXgChfDURCPGt_KPmQm0",
+    "distance": 0.40633663354655297,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6TlYXgChfDURCPGt_KPmQm0",
+    "rank": 203
+  },
+  {
+    "id": 204,
+    "name": "틴틴",
+    "originalName": "틴틴",
+    "address": "대한민국 서울특별시 강남구 역삼동 810-4",
+    "position": {
+      "lat": 37.50354220000001,
+      "lng": 127.0261472
+    },
+    "rating": 4.3,
+    "reviews": 48,
+    "placeId": "ChIJR9z3JMejfDUR3DT6SvkuBOk",
+    "distance": 0.1642696158610116,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR9z3JMejfDUR3DT6SvkuBOk",
+    "rank": 204
+  },
+  {
+    "id": 205,
+    "name": "을밀대 강남점",
+    "originalName": "(주)을밀대",
+    "address": "대한민국 서울특별시 강남구 테헤란로4길 46",
+    "position": {
+      "lat": 37.4953323,
+      "lng": 127.0303725
+    },
+    "rating": 4,
+    "reviews": 1406,
+    "placeId": "ChIJb5f_5lChfDURM-SVFD0z_TY",
+    "distance": 1.0719265115024057,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb5f_5lChfDURM-SVFD0z_TY",
+    "rank": 205
+  },
+  {
+    "id": 206,
+    "name": "팀프에프앤비",
+    "originalName": "(주) 일만에프앤비",
+    "address": "대한민국 서울특별시 강남구 봉은사로37길 7-9",
+    "position": {
+      "lat": 37.50845,
+      "lng": 127.0361229
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJRe1KpOmlfDURN6tZmwypN5g",
+    "distance": 1.1706233765894847,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRe1KpOmlfDURN6tZmwypN5g",
+    "rank": 206
+  },
+  {
+    "id": 207,
+    "name": "농민백암순대",
+    "originalName": "농민백암왕순대",
+    "address": "대한민국 서울특별시 강남구 역삼로3길 20-4",
+    "position": {
+      "lat": 37.4949208,
+      "lng": 127.0314964
+    },
+    "rating": 4.6,
+    "reviews": 1392,
+    "placeId": "ChIJObIZ6sehfDUR_umyNvHFjZM",
+    "distance": 1.1628570229196777,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJObIZ6sehfDUR_umyNvHFjZM",
+    "rank": 207
+  },
+  {
+    "id": 208,
+    "name": "부산아지매국밥 신논현역점",
+    "originalName": "부산 아지매 국밥 신논현역점",
+    "address": "대한민국 서울특별시 강남구 논현동 강남대로112길 30",
+    "position": {
+      "lat": 37.5056892,
+      "lng": 127.0267878
+    },
+    "rating": 3.5,
+    "reviews": 58,
+    "placeId": "ChIJa43-2LSjfDUR49aooMIsBDA",
+    "distance": 0.31367760503452796,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa43-2LSjfDUR49aooMIsBDA",
+    "rank": 208
+  },
+  {
+    "id": 209,
+    "name": "사가라멘강남역점",
+    "originalName": "사가라멘 강남역점",
+    "address": "대한민국 서울특별시 서초구 서초대로77길 9",
+    "position": {
+      "lat": 37.4985792,
+      "lng": 127.0262036
+    },
+    "rating": 4.1,
+    "reviews": 316,
+    "placeId": "ChIJTZRJelmhfDUReZ3ICtwMBvk",
+    "distance": 0.5915892205210805,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTZRJelmhfDUReZ3ICtwMBvk",
+    "rank": 209
+  },
+  {
+    "id": 210,
+    "name": "고메스시",
+    "originalName": "고메스시",
+    "address": "대한민국 서울특별시 강남구 테헤란로1길 26",
+    "position": {
+      "lat": 37.4999579,
+      "lng": 127.0276745
+    },
+    "rating": 3.9,
+    "reviews": 229,
+    "placeId": "ChIJjYFmS1ihfDURIvH4C39E5RA",
+    "distance": 0.5100835555164805,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjYFmS1ihfDURIvH4C39E5RA",
+    "rank": 210
+  },
+  {
+    "id": 211,
+    "name": "유가네닭갈비 강남역점",
+    "originalName": "유가네닭갈비(강남역점)",
+    "address": "대한민국 서울특별시 강남구 강남대로 438",
+    "position": {
+      "lat": 37.5015541,
+      "lng": 127.0264179
+    },
+    "rating": 3.9,
+    "reviews": 440,
+    "placeId": "ChIJSSgr31ihfDURtFeGdfJprvs",
+    "distance": 0.30160095713615304,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSSgr31ihfDURtFeGdfJprvs",
+    "rank": 211
+  },
+  {
+    "id": 212,
+    "name": "쿠시루",
+    "originalName": "쿠시쿠로",
+    "address": "3 층, 15 선릉로161길 강남구 서울특별시 대한민국",
+    "position": {
+      "lat": 37.5272257,
+      "lng": 127.0392439
+    },
+    "rating": 4.7,
+    "reviews": 26,
+    "placeId": "ChIJQ_MtC-ejfDUR_An0AAQUNmY",
+    "distance": 2.931584978285356,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJQ_MtC-ejfDUR_An0AAQUNmY",
+    "rank": 212
+  },
+  {
+    "id": 213,
+    "name": "강남설렁탕",
+    "originalName": "강남설렁탕",
+    "address": "대한민국 서울특별시 강남구 학동로2길 13",
+    "position": {
+      "lat": 37.5104074,
+      "lng": 127.0227115
+    },
+    "rating": 4.2,
+    "reviews": 75,
+    "placeId": "ChIJq0B9Ec-jfDURJLfDv1Gr9WM",
+    "distance": 0.7610585021269123,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJq0B9Ec-jfDURJLfDv1Gr9WM",
+    "rank": 213
+  },
+  {
+    "id": 214,
+    "name": "담뿍 화로된장찌개",
+    "originalName": "담뿍 화로된장",
+    "address": "대한민국 서울특별시 강남구 강남대로94길 95 태양빌딩",
+    "position": {
+      "lat": 37.5010716,
+      "lng": 127.0349103
+    },
+    "rating": 4.3,
+    "reviews": 175,
+    "placeId": "ChIJqTtqgFWhfDURsdFpJK1yHGo",
+    "distance": 0.9804436033000733,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJqTtqgFWhfDURsdFpJK1yHGo",
+    "rank": 214
+  },
+  {
+    "id": 215,
+    "name": "올리브영 강남중앙점",
+    "originalName": "CJ올리브영 강남 플래그십",
+    "address": "대한민국 서울특별시 강남구 강남대로 374",
+    "position": {
+      "lat": 37.4962484,
+      "lng": 127.0287983
+    },
+    "rating": 4.4,
+    "reviews": 165,
+    "placeId": "ChIJx6ARDFqhfDURU_zzHU5iaB4",
+    "distance": 0.9168654666761675,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJx6ARDFqhfDURU_zzHU5iaB4",
+    "rank": 215
+  },
+  {
+    "id": 216,
+    "name": "뚜레쥬르 강남직영점",
+    "originalName": "뚜레쥬르 강남직영점",
+    "address": "대한민국 서울특별시 강남구 강남대로 438",
+    "position": {
+      "lat": 37.501652,
+      "lng": 127.0263751
+    },
+    "rating": 5,
+    "reviews": 2,
+    "placeId": "ChIJTX2kUQChfDURDXY3ygY9SSs",
+    "distance": 0.2907510867298959,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTX2kUQChfDURDXY3ygY9SSs",
+    "rank": 216
+  },
+  {
+    "id": 217,
+    "name": "사누키제면소",
+    "originalName": "사누키제면소",
+    "address": "대한민국 서울특별시 강남구 역삼동 815-4",
+    "position": {
+      "lat": 37.5008024,
+      "lng": 127.0270488
+    },
+    "rating": 3.4,
+    "reviews": 44,
+    "placeId": "ChIJDXozgJShfDURX7BKu_DAEKA",
+    "distance": 0.40175928064437,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJDXozgJShfDURX7BKu_DAEKA",
+    "rank": 217
+  },
+  {
+    "id": 218,
+    "name": "투썸플레이스 교보타워사거리점",
+    "originalName": "투썸플레이스 교보타워사거리점",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-3",
+    "position": {
+      "lat": 37.503795,
+      "lng": 127.023482
+    },
+    "rating": 4,
+    "reviews": 318,
+    "placeId": "ChIJdZq9_eGjfDUR4G8gR-yw51w",
+    "distance": 0.07269379900266563,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdZq9_eGjfDUR4G8gR-yw51w",
+    "rank": 218
+  },
+  {
+    "id": 219,
+    "name": "하이콴",
+    "originalName": "하이콴",
+    "address": "대한민국 서울특별시 서초구 신반포로 340 1 층",
+    "position": {
+      "lat": 37.5107161,
+      "lng": 127.0208939
+    },
+    "rating": 4.2,
+    "reviews": 67,
+    "placeId": "ChIJawawU7ijfDUR7MxCkbZMFWE",
+    "distance": 0.837966449991604,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJawawU7ijfDUR7MxCkbZMFWE",
+    "rank": 219
+  },
+  {
+    "id": 220,
+    "name": "더형제 강남점",
+    "originalName": "더이츠푸드",
+    "address": "대한민국 서울특별시 강남구 학동로 110 1층",
+    "position": {
+      "lat": 37.51133900000001,
+      "lng": 127.0230547
+    },
+    "rating": 4.6,
+    "reviews": 31,
+    "placeId": "ChIJLf_tWQCjfDURrvqrBq2DPiI",
+    "distance": 0.858728219707061,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJLf_tWQCjfDURrvqrBq2DPiI",
+    "rank": 220
+  },
+  {
+    "id": 221,
+    "name": "팀홀튼 신논현역점",
+    "originalName": "(주)비케이알 팀홀튼신논현역점",
+    "address": "대한민국 서울특별시 강남구 강남대로 476",
+    "position": {
+      "lat": 37.5048044,
+      "lng": 127.0248381
+    },
+    "rating": 3.7,
+    "reviews": 217,
+    "placeId": "ChIJDamBM7qjfDURWWErdbSyIuM",
+    "distance": 0.13405897976827966,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJDamBM7qjfDURWWErdbSyIuM",
+    "rank": 221
+  },
+  {
+    "id": 222,
+    "name": "써브웨이 강남역점",
+    "originalName": "(주)써브웨이 강남역점",
+    "address": "대한민국 서울특별시 강남구 강남대로96길 12",
+    "position": {
+      "lat": 37.4997613,
+      "lng": 127.0279958
+    },
+    "rating": 4,
+    "reviews": 341,
+    "placeId": "ChIJlfObylmhfDURTpVsTCHU2z4",
+    "distance": 0.5444878277081948,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfObylmhfDURTpVsTCHU2z4",
+    "rank": 222
+  },
+  {
+    "id": 223,
+    "name": "손국시",
+    "originalName": "손국시",
+    "address": "대한민국 서울특별시 강남구 학동로2길 19",
+    "position": {
+      "lat": 37.510146,
+      "lng": 127.0229181
+    },
+    "rating": 4.4,
+    "reviews": 182,
+    "placeId": "ChIJgfs_wKGjfDURiVsbuPhRrvQ",
+    "distance": 0.7292528588490438,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJgfs_wKGjfDURiVsbuPhRrvQ",
+    "rank": 223
+  },
+  {
+    "id": 224,
+    "name": "청기와타운 강남역점",
+    "originalName": "청기와타운 구로디지털점",
+    "address": "대한민국 서울특별시 강남구 강남대로78길 8",
+    "position": {
+      "lat": 37.4947875,
+      "lng": 127.0300669
+    },
+    "rating": 4.3,
+    "reviews": 51,
+    "placeId": "ChIJg1K6p8ehfDURs7DgF9yNtzU",
+    "distance": 1.1121850199187606,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJg1K6p8ehfDURs7DgF9yNtzU",
+    "rank": 224
+  },
+  {
+    "id": 225,
+    "name": "뉴욕러브베이글 강남본점",
+    "originalName": "뉴욕러브베이글 강남본점",
+    "address": "대한민국 서울특별시 강남구 역삼동 813-5",
+    "position": {
+      "lat": 37.5025598,
+      "lng": 127.0264554
+    },
+    "rating": 5,
+    "reviews": 249,
+    "placeId": "ChIJV_Z_DwChfDURT7DLwFXoLec",
+    "distance": 0.22775872940788183,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV_Z_DwChfDURT7DLwFXoLec",
+    "rank": 225
+  },
+  {
+    "id": 226,
+    "name": "강남진해장",
+    "originalName": "강남진해장",
+    "address": "대한민국 서울특별시 강남구 테헤란로5길 11",
+    "position": {
+      "lat": 37.4994553,
+      "lng": 127.0292471
+    },
+    "rating": 4.2,
+    "reviews": 1375,
+    "placeId": "ChIJSyqIKlihfDUR_Ro-TA8RqW8",
+    "distance": 0.6415345820560413,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSyqIKlihfDUR_Ro-TA8RqW8",
+    "rank": 226
+  },
+  {
+    "id": 227,
+    "name": "흑우정 강남본점",
+    "originalName": "흑우정 강남본점",
+    "address": "대한민국 서울특별시 서초구 강남대로69길 10",
+    "position": {
+      "lat": 37.5017467,
+      "lng": 127.0242578
+    },
+    "rating": 5,
+    "reviews": 34,
+    "placeId": "ChIJwbdTVwChfDURHIbuY0n88r0",
+    "distance": 0.21488439272403204,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwbdTVwChfDURHIbuY0n88r0",
+    "rank": 227
+  },
+  {
+    "id": 228,
+    "name": "동경규동 반포점",
+    "originalName": "동경규동 반포점",
+    "address": "대한민국 서울특별시 서초구 사평대로57길 87",
+    "position": {
+      "lat": 37.5079875,
+      "lng": 127.0217349
+    },
+    "rating": 3.6,
+    "reviews": 7,
+    "placeId": "ChIJ686Byi6jfDURAlsR4k1eD3w",
+    "distance": 0.5295646715967347,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ686Byi6jfDURAlsR4k1eD3w",
+    "rank": 228
+  },
+  {
+    "id": 229,
+    "name": "신전떡볶이 도곡점",
+    "originalName": "신전떡볶이",
+    "address": "대한민국 서울특별시 강남구 남부순환로359길 27 1층",
+    "position": {
+      "lat": 37.4865226,
+      "lng": 127.035873
+    },
+    "rating": 4.1,
+    "reviews": 14,
+    "placeId": "ChIJEz5lFUyhfDURDXLtdE7dlKc",
+    "distance": 2.1640335009379386,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEz5lFUyhfDURDXLtdE7dlKc",
+    "rank": 229
+  },
+  {
+    "id": 230,
+    "name": "역전우동 신논현역점",
+    "originalName": "역전우동0410 신논현역점",
+    "address": "대한민국 서울특별시 서초구 사평대로 349",
+    "position": {
+      "lat": 37.50369370000001,
+      "lng": 127.0210917
+    },
+    "rating": 3.5,
+    "reviews": 2,
+    "placeId": "ChIJj1oMYgChfDURtv7CgJCZMpg",
+    "distance": 0.2823994423994161,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj1oMYgChfDURtv7CgJCZMpg",
+    "rank": 230
+  },
+  {
+    "id": 231,
+    "name": "청간막국수",
+    "originalName": "청간막국수",
+    "address": "대한민국 서울특별시 서초구 서초동 1327-3",
+    "position": {
+      "lat": 37.4958139,
+      "lng": 127.0275877
+    },
+    "rating": 4.2,
+    "reviews": 64,
+    "placeId": "ChIJzWZnq2uhfDURD8PUqUHeaLM",
+    "distance": 0.9215914073851943,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJzWZnq2uhfDURD8PUqUHeaLM",
+    "rank": 231
+  },
+  {
+    "id": 232,
+    "name": "로드샌드위치 신논현역점",
+    "originalName": "로드샌드위치 신논현역점",
+    "address": "대한민국 지하1층 108 KR 서울특별시 서초구 서운로 226 1호",
+    "position": {
+      "lat": 37.50316,
+      "lng": 127.021755
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJmXsYDNmhfDUR4PpD-gLH1P8",
+    "distance": 0.23120246001083042,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJmXsYDNmhfDUR4PpD-gLH1P8",
+    "rank": 232
+  },
+  {
+    "id": 233,
+    "name": "GS25 강남센타점",
+    "originalName": "지에스(GS)25 강남센타점",
+    "address": "대한민국 서울특별시 서초구 서초동 1303-22",
+    "position": {
+      "lat": 37.5037208,
+      "lng": 127.0240967
+    },
+    "rating": 4,
+    "reviews": 2,
+    "placeId": "ChIJoU-4AeKjfDURB6TDfqCPeLI",
+    "distance": 0.01792905971109504,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoU-4AeKjfDURB6TDfqCPeLI",
+    "rank": 233
+  },
+  {
+    "id": 234,
+    "name": "본죽 역삼특허청점",
+    "originalName": "본죽",
+    "address": "대한민국 서울특별시 강남구 테헤란로14길 8",
+    "position": {
+      "lat": 37.4985827,
+      "lng": 127.032946
+    },
+    "rating": 3.9,
+    "reviews": 41,
+    "placeId": "ChIJ1dMFRFahfDURcFJ7UJhn-JU",
+    "distance": 0.9506841880479691,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ1dMFRFahfDURcFJ7UJhn-JU",
+    "rank": 234
+  },
+  {
+    "id": 235,
+    "name": "종로계림닭도리탕원조",
+    "originalName": "종로계림닭도리탕원조 구로디지털단지점",
+    "address": "대한민국 서울특별시 강남구 논현동 141-9",
+    "position": {
+      "lat": 37.51003,
+      "lng": 127.0232318
+    },
+    "rating": 4.6,
+    "reviews": 31,
+    "placeId": "ChIJS96u6Y2jfDUR5klY0iEwvFc",
+    "distance": 0.7123758106133329,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS96u6Y2jfDUR5klY0iEwvFc",
+    "rank": 235
+  },
+  {
+    "id": 236,
+    "name": "만추",
+    "originalName": "만추",
+    "address": "대한민국 서울특별시 서초구 사평대로55길 82-14",
+    "position": {
+      "lat": 37.5078443,
+      "lng": 127.0217761
+    },
+    "rating": 4.4,
+    "reviews": 90,
+    "placeId": "ChIJzXAUvmajfDURJ7uu3wQHt-w",
+    "distance": 0.5136228727969782,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJzXAUvmajfDURJ7uu3wQHt-w",
+    "rank": 236
+  },
+  {
+    "id": 237,
+    "name": "하우마라탕",
+    "originalName": "하우마라탕",
+    "address": "대한민국 서울특별시 강남구 강남대로94길 23 2층",
+    "position": {
+      "lat": 37.4997686,
+      "lng": 127.0291746
+    },
+    "rating": 4.4,
+    "reviews": 56,
+    "placeId": "ChIJW62fHUuhfDURy06yf_lkdg4",
+    "distance": 0.6119700067150564,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJW62fHUuhfDURy06yf_lkdg4",
+    "rank": 237
+  },
+  {
+    "id": 238,
+    "name": "김나라분식",
+    "originalName": "김나라분식",
+    "address": "대한민국 서울특별시 서초구 주흥길 3",
+    "position": {
+      "lat": 37.5037267,
+      "lng": 127.0207918
+    },
+    "rating": 4.7,
+    "reviews": 6,
+    "placeId": "ChIJU3YQmV-hfDURbyir9q8rnjE",
+    "distance": 0.30889511612959486,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJU3YQmV-hfDURbyir9q8rnjE",
+    "rank": 238
+  },
+  {
+    "id": 239,
+    "name": "이태리부대찌개",
+    "originalName": "이태리부대찌개 (구로점)",
+    "address": "대한민국 서울특별시 강남구 테헤란로4길 40 2층",
+    "position": {
+      "lat": 37.49582780000001,
+      "lng": 127.0305132
+    },
+    "rating": 4.3,
+    "reviews": 6,
+    "placeId": "ChIJyQNUQPihfDUR1iNR3Qk6kYA",
+    "distance": 1.0311428499886373,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyQNUQPihfDUR1iNR3Qk6kYA",
+    "rank": 239
+  },
+  {
+    "id": 240,
+    "name": "뉴욕비앤비버거",
+    "originalName": "뉴욕버거",
+    "address": "대한민국 서울특별시 강남구 테헤란로6길 30",
+    "position": {
+      "lat": 37.4965257,
+      "lng": 127.0310831
+    },
+    "rating": 0,
+    "reviews": 0,
+    "placeId": "ChIJhe-TDJyhfDURzpNEDIxTJQQ",
+    "distance": 0.9957307659718593,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJhe-TDJyhfDURzpNEDIxTJQQ",
+    "rank": 240
+  },
+  {
+    "id": 241,
+    "name": "농민백암순대",
+    "originalName": "백암순대국.뻐해장국",
+    "address": "대한민국 서울특별시 강남구 역삼로3길 20-4",
+    "position": {
+      "lat": 37.4949208,
+      "lng": 127.0314964
+    },
+    "rating": 4.6,
+    "reviews": 1392,
+    "placeId": "ChIJObIZ6sehfDUR_umyNvHFjZM",
+    "distance": 1.1628570229196777,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJObIZ6sehfDUR_umyNvHFjZM",
+    "rank": 241
+  },
+  {
+    "id": 242,
+    "name": "아이러브그릭 i love greek",
+    "originalName": "아이러브그릭",
+    "address": "대한민국 서울특별시 강남구 논현동 159-23 1floor ilovegreek 1 층",
+    "position": {
+      "lat": 37.5089723,
+      "lng": 127.0266848
+    },
+    "rating": 5,
+    "reviews": 6,
+    "placeId": "ChIJuzarUJKjfDURoCNttHxbWVQ",
+    "distance": 0.6252584993252902,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJuzarUJKjfDURoCNttHxbWVQ",
+    "rank": 242
+  },
+  {
+    "id": 243,
+    "name": "153구포국수 강남역점",
+    "originalName": "153구포국수 논현점",
+    "address": "대한민국 서울특별시 강남구 테헤란로4길 6",
+    "position": {
+      "lat": 37.4977256,
+      "lng": 127.0292972
+    },
+    "rating": 3.4,
+    "reviews": 8,
+    "placeId": "ChIJq9x5XAChfDUR3kmX-upBW-s",
+    "distance": 0.7956799988001769,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJq9x5XAChfDUR3kmX-upBW-s",
+    "rank": 243
+  },
+  {
+    "id": 244,
+    "name": "마포껍데기집",
+    "originalName": "마포껍데기집",
+    "address": "대한민국 서울특별시 강남구 역삼동 831-32번지 1층",
+    "position": {
+      "lat": 37.4944037,
+      "lng": 127.0306333
+    },
+    "rating": 4.2,
+    "reviews": 25,
+    "placeId": "ChIJdWU1i1ChfDUR_dLsWDb6_hQ",
+    "distance": 1.1732710295818785,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdWU1i1ChfDUR_dLsWDb6_hQ",
+    "rank": 244
+  },
+  {
+    "id": 245,
+    "name": "커먼위켄드",
+    "originalName": "(주)커먼위켄드 강남2호지점",
+    "address": "대한민국 서울특별시 강남구 역삼동 봉은사로6길 34",
+    "position": {
+      "lat": 37.5028348,
+      "lng": 127.0274599
+    },
+    "rating": 3.8,
+    "reviews": 18,
+    "placeId": "ChIJu4jOEIKjfDURE7Smr6IPB6A",
+    "distance": 0.29471128073182534,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJu4jOEIKjfDURE7Smr6IPB6A",
+    "rank": 245
+  },
+  {
+    "id": 246,
+    "name": "보승회관 강남역직영점",
+    "originalName": "보승회관 논현역점",
+    "address": "대한민국 서울특별시 강남구 역삼동 820-2",
+    "position": {
+      "lat": 37.4993913,
+      "lng": 127.027599
+    },
+    "rating": 3.8,
+    "reviews": 164,
+    "placeId": "ChIJr7tDk_ehfDURoXCTAe8wM3Y",
+    "distance": 0.5588947868017339,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr7tDk_ehfDURoXCTAe8wM3Y",
+    "rank": 246
+  },
+  {
+    "id": 247,
+    "name": "탕화쿵푸마라탕 강남직영점",
+    "originalName": "탕화쿵푸마라탕",
+    "address": "대한민국 호 강남구 강남대로 438 2 서울 층 202호, 203호, 204",
+    "position": {
+      "lat": 37.501652,
+      "lng": 127.0263751
+    },
+    "rating": 4.5,
+    "reviews": 4,
+    "placeId": "ChIJPdsnNAChfDURory4RPh3zzc",
+    "distance": 0.2907510867298959,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPdsnNAChfDURory4RPh3zzc",
+    "rank": 247
+  },
+  {
+    "id": 248,
+    "name": "써브웨이 강남역점",
+    "originalName": "써브웨이강남역지티타워점",
+    "address": "대한민국 서울특별시 강남구 강남대로96길 12",
+    "position": {
+      "lat": 37.4997613,
+      "lng": 127.0279958
+    },
+    "rating": 4,
+    "reviews": 341,
+    "placeId": "ChIJlfObylmhfDURTpVsTCHU2z4",
+    "distance": 0.5444878277081948,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfObylmhfDURTpVsTCHU2z4",
+    "rank": 248
+  }
+]
