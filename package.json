@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "process-restaurants": "ts-node scripts/process-restaurants.ts",
-    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.2",

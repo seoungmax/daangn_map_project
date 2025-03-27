@@ -77,8 +77,8 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       // 레스토랑 위치를 그리드로 분할하여 같은 영역에 여러 레스토랑이 있을 경우 순위가 높은 것만 오버레이 표시
       const gridSize = currentZoomLevel <= 16 ? 0.0008 : 0.0004; // 줌 레벨에 따라 그리드 크기 조정
       
-      // JavaScript 기본 Map 객체 사용
-      const gridMap = new Map();
+      // 그리드 맵 객체 사용
+      const gridMap: Record<string, Restaurant> = {};
       
       // 각 레스토랑을 그리드에 할당
       filteredRestaurants.forEach(restaurant => {
@@ -89,9 +89,9 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         const gridKey = `${gridX}-${gridY}`;
         
         // 해당 그리드에 레스토랑이 없거나, 새 레스토랑의 순위가 더 높은 경우 업데이트
-        const existingRestaurant = gridMap.get(gridKey);
+        const existingRestaurant = gridMap[gridKey];
         if (!existingRestaurant || (existingRestaurant.rank || 999) > (restaurant.rank || 999)) {
-          gridMap.set(gridKey, restaurant);
+          gridMap[gridKey] = restaurant;
         }
       });
       
@@ -99,7 +99,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       const newOverlays: google.maps.OverlayView[] = [];
       
       // 타입 안정성을 위해 명시적으로 타입 처리
-      gridMap.forEach((restaurant: any) => {
+      Object.values(gridMap).forEach((restaurant: Restaurant) => {
         if (createOverlayRef.current && restaurant && restaurant.position) {
           try {
             const overlay = createOverlayRef.current(
