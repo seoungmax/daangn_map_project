@@ -10,15 +10,6 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
 
-  // 디버깅용 상태 표시
-  console.log('Page state:', { 
-    restaurantsCount: restaurants.length, 
-    isLoading, 
-    error, 
-    retryCount,
-    apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? 'Set' : 'Not set'
-  });
-
   const loadRestaurants = useCallback(async () => {
     try {
       if (restaurants.length > 0) return;

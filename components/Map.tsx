@@ -23,6 +23,15 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   // createOverlay 함수를 저장하는 ref를 생성
   const createOverlayRef = useRef<((position: google.maps.LatLng, name: string, isSelected: boolean) => google.maps.OverlayView) | null>(null);
 
+  // 줌 레벨별 최대 마커 수 최적화 (모바일 성능 고려)
+  const getMaxMarkersForZoom = useCallback((zoom: number) => {
+    if (zoom <= 12) return 10;
+    if (zoom <= 14) return 20;
+    if (zoom <= 16) return 40;
+    if (zoom <= 17) return 60;
+    return 80; // 최대 80개로 제한
+  }, []);
+
   // 디버깅용 상태 표시
   console.log('Map state:', { 
     restaurantsReceived: restaurants.length, 
@@ -71,12 +80,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     
     try {
       // 줌 레벨에 따라 표시할 레스토랑 수 결정
-      let maxRestaurantsToShow = 100;
-      if (currentZoomLevel <= 16) {
-        maxRestaurantsToShow = 20;
-      } else if (currentZoomLevel <= 17) {
-        maxRestaurantsToShow = 50;
-      }
+      let maxRestaurantsToShow = getMaxMarkersForZoom(currentZoomLevel);
       
       // 상위 레스토랑 필터링
       const filteredRestaurants = restaurants
@@ -315,6 +319,16 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
           mapTypeControl: false,
           streetViewControl: false,
           fullscreenControl: false,
+          zoomControl: true,
+          scaleControl: false,
+          rotateControl: false,
+          // 모바일 성능 최적화 설정
+          gestureHandling: 'greedy',
+          disableDoubleClickZoom: false,
+          keyboardShortcuts: false,
+          // 렌더링 최적화
+          backgroundColor: '#f0f0f0',
+          clickableIcons: false, // POI 클릭 비활성화로 성능 향상
         };
         
         console.log('Creating map with options:', mapOptions);
@@ -385,10 +399,12 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     overlays.forEach(overlay => overlay.setMap(null));
     
     const newMarkers: google.maps.Marker[] = [];
+    const currentZoomLevel = map.getZoom() || 15;
+    const maxMarkers = getMaxMarkersForZoom(currentZoomLevel);
     
-    // 상위 음식점만 필터링
+    // 상위 음식점만 필터링 (성능 최적화)
     const filteredRestaurants = restaurants
-      .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 100)
+      .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= maxMarkers)
       .sort((a, b) => (a.rank || 0) - (b.rank || 0));
     
     filteredRestaurants.forEach(restaurant => {
@@ -405,11 +421,12 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
             text: restaurant.rank?.toString() || '',
             className: 'marker-label',
             color: '#FFFFFF',
-            fontSize: '14px',
+            fontSize: '12px', // 폰트 크기 최적화
             fontWeight: 'bold',
           },
-          icon: getMarkerIcon(selectedRestaurant?.id === restaurant.id, zoomLevel),
+          icon: getMarkerIcon(selectedRestaurant?.id === restaurant.id, currentZoomLevel),
           zIndex: zIndexValue,
+          optimized: true, // 성능 최적화 옵션
         });
 
         marker.addListener('click', () => handleMarkerClick(restaurant, marker));
@@ -421,11 +438,12 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     setMarkers(newMarkers);
     
-    // 초기 오버레이 설정
-    const currentZoomLevel = map.getZoom() || 15;
-    updateOverlaysBasedOnZoom(currentZoomLevel);
+    // 초기 오버레이 설정 (줌 레벨 17 이상에서만)
+    if (currentZoomLevel >= 17) {
+      updateOverlaysBasedOnZoom(currentZoomLevel);
+    }
     
-  }, [map, restaurants]); // 의존성 배열을 간소화
+  }, [map, restaurants, getMaxMarkersForZoom]); // 의존성 배열 최적화
 
   // 줌 레벨이나 선택된 레스토랑이 변경될 때만 스타일 업데이트
   useEffect(() => {
@@ -502,14 +520,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
           </div>
         </div>
       )}
-      
-      {/* 디버깅용 정보 표시 */}
-      <div className="absolute top-4 left-4 bg-black text-white p-2 text-sm rounded z-50" style={{ zIndex: 1000 }}>
-        <div>레스토랑: {restaurants.length}</div>
-        <div>마커: {markers.length}</div>
-        <div>지도 로드: {mapLoaded ? 'Yes' : 'No'}</div>
-        <div>지도 객체: {map ? 'Yes' : 'No'}</div>
-      </div>
       
       {/* 바텀시트 */}
       {selectedRestaurant && selectedMarker && (
