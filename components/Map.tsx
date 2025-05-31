@@ -33,13 +33,21 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     return 80; // 최대 80개로 제한
   }, []);
 
-  // 마커 스타일 설정 함수 - 보라색으로 변경하고 모든 줌 레벨에서 일관된 크기
-  const getMarkerIcon = useCallback((isSelected: boolean, currentZoomLevel: number) => {
+  // 줌 레벨별 오버레이 개수 (업체 이름 텍스트)
+  const getMaxOverlaysForZoom = useCallback((zoom: number) => {
+    if (zoom <= 15) return 0;  // 15 이하에서는 텍스트 없음
+    if (zoom <= 16) return 5;  // 16에서는 5개
+    if (zoom <= 17) return 8;  // 17에서는 8개
+    return 10; // 18 이상에서는 최대 10개
+  }, []);
+
+  // 마커 스타일 설정 함수 - 50위까지는 순위 마커, 51위부터는 보라색 점
+  const getMarkerIcon = useCallback((restaurant: Restaurant, isSelected: boolean, currentZoomLevel: number) => {
     if (isSelected) {
       // 선택된 마커는 핀 모양 (원형이 내부에 있는 형태)
       return {
         path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
-        fillColor: '#9C27B0', // 보라색으로 변경
+        fillColor: '#FF6B00', // 선택된 마커는 주황색
         fillOpacity: 1,
         strokeColor: '#FFFFFF',
         strokeWeight: 2,
@@ -47,14 +55,27 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         anchor: new google.maps.Point(12, 22),
       };
     }
-    // 일반 마커는 모든 줌 레벨에서 일관된 원형 크기
+    
+    // 50위까지는 순위가 표시되는 원형 마커
+    if (restaurant.rank && restaurant.rank <= 50) {
+      return {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 12,
+        fillColor: '#9C27B0', // 보라색
+        fillOpacity: 1,
+        strokeColor: '#FFFFFF',
+        strokeWeight: 2,
+      };
+    }
+    
+    // 51위부터는 작은 보라색 점
     return {
       path: google.maps.SymbolPath.CIRCLE,
-      scale: 12, // 모든 줌 레벨에서 동일한 크기
-      fillColor: '#9C27B0', // 보라색으로 변경
-      fillOpacity: 1,
+      scale: 6, // 더 작은 크기
+      fillColor: '#9C27B0',
+      fillOpacity: 0.8,
       strokeColor: '#FFFFFF',
-      strokeWeight: 2,
+      strokeWeight: 1,
     };
   }, []);
 
@@ -69,14 +90,13 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       });
       setOverlays([]); // 상태 초기화
       
-      // 줌 레벨 15 이하에서는 오버레이 전혀 표시 안함
-      if (currentZoomLevel <= 15) {
+      // 줌 레벨에 따른 최대 오버레이 개수 계산
+      const maxOverlays = getMaxOverlaysForZoom(currentZoomLevel);
+      
+      // 오버레이가 0개인 경우 (줌 레벨 15 이하) 리턴
+      if (maxOverlays === 0) {
         return;
       }
-      
-      // 엄격한 규칙: 최소 5개, 최대 10개
-      const minOverlays = 5;
-      const maxOverlays = 10;
       
       // 지도 경계 가져오기
       const bounds = map.getBounds();
@@ -104,7 +124,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       const projection = map.getProjection();
       if (!projection) return;
 
-      // 최대 10개까지만 처리
+      // 최대 개수까지만 처리
       const candidateRestaurants = visibleRestaurants.slice(0, maxOverlays * 2); // 여유있게 2배수로 후보 선정
 
       for (const restaurant of candidateRestaurants) {
@@ -137,7 +157,8 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         if (overlayPositions.length >= maxOverlays) break;
       }
       
-      // 최소 개수에 미달하는 경우 거리 제한을 완화하여 추가
+      // 최소 개수에 미달하는 경우 거리 제한을 완화하여 추가 (줌 레벨 17 이상에서만)
+      const minOverlays = currentZoomLevel >= 17 ? Math.min(5, maxOverlays) : 0;
       if (overlayPositions.length < minOverlays && visibleRestaurants.length >= minOverlays) {
         const relaxedPixelDistance = 30; // 더 짧은 거리
         
@@ -194,7 +215,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     } catch (error) {
       console.error("Error in updateOverlaysBasedOnZoom:", error);
     }
-  }, [map, restaurants, selectedRestaurant, overlays]);
+  }, [map, restaurants, selectedRestaurant, overlays, getMaxOverlaysForZoom]);
 
   // 마커 클릭 핸들러
   const handleMarkerClick = useCallback((restaurant: Restaurant, marker: google.maps.Marker) => {
@@ -202,19 +223,19 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     // 이전 선택된 마커 스타일 초기화
     if (selectedMarker && selectedMarker !== marker) {
-      selectedMarker.setIcon(getMarkerIcon(false, zoomLevel));
+      selectedMarker.setIcon(getMarkerIcon(restaurant, false, zoomLevel));
     }
 
     // 같은 마커를 다시 클릭한 경우 선택 해제
     if (selectedMarker === marker) {
-      marker.setIcon(getMarkerIcon(false, zoomLevel));
+      marker.setIcon(getMarkerIcon(restaurant, false, zoomLevel));
       setSelectedMarker(null);
       setSelectedRestaurant(null);
       return;
     }
 
     // 새로운 마커 선택
-    marker.setIcon(getMarkerIcon(true, zoomLevel));
+    marker.setIcon(getMarkerIcon(restaurant, true, zoomLevel));
     setSelectedMarker(marker);
     setSelectedRestaurant(restaurant);
 
@@ -236,7 +257,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     const mapClickListener = map.addListener('click', () => {
       if (selectedMarker) {
-        selectedMarker.setIcon(getMarkerIcon(false, zoomLevel));
+        selectedMarker.setIcon(getMarkerIcon(selectedRestaurant!, false, zoomLevel));
         setSelectedMarker(null);
         setSelectedRestaurant(null);
       }
@@ -469,40 +490,37 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   // 레스토랑 데이터가 변경될 때만 마커 업데이트
   useEffect(() => {
     if (!map || !restaurants.length) return;
-    
+
     // 이전 마커와 오버레이 제거
     markers.forEach(marker => marker.setMap(null));
     overlays.forEach(overlay => overlay.setMap(null));
     
     const newMarkers: google.maps.Marker[] = [];
     const currentZoomLevel = map.getZoom() || 15;
-    const maxMarkers = getMaxMarkersForZoom(currentZoomLevel);
     
-    // 상위 음식점만 필터링 (성능 최적화)
-    const filteredRestaurants = restaurants
-      .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= maxMarkers)
-      .sort((a, b) => (a.rank || 0) - (b.rank || 0));
-    
-    filteredRestaurants.forEach(restaurant => {
+    // 모든 레스토랑을 표시 (50위까지는 순위 마커, 51위부터는 점 마커)
+    restaurants.forEach(restaurant => {
       if (!restaurant.position) return;
       
       try {
-        const zIndexValue = 1000 - (restaurant.rank || 0);
+        const zIndexValue = restaurant.rank ? 1000 - restaurant.rank : 500;
+        const isRanked = restaurant.rank && restaurant.rank <= 50;
         
         const marker = new google.maps.Marker({
           position: restaurant.position,
           map: map,
-          title: `${restaurant.name} (${restaurant.rank}위)`,
-          label: {
+          title: restaurant.rank ? `${restaurant.name} (${restaurant.rank}위)` : restaurant.name,
+          // 50위까지만 순위 라벨 표시
+          label: isRanked ? {
             text: restaurant.rank?.toString() || '',
             className: 'marker-label',
             color: '#FFFFFF',
-            fontSize: '12px', // 폰트 크기 최적화
+            fontSize: '12px',
             fontWeight: 'bold',
-          },
-          icon: getMarkerIcon(selectedRestaurant?.id === restaurant.id, currentZoomLevel),
+          } : undefined,
+          icon: getMarkerIcon(restaurant, selectedRestaurant?.id === restaurant.id, currentZoomLevel),
           zIndex: zIndexValue,
-          optimized: true, // 성능 최적화 옵션
+          optimized: true,
         });
 
         marker.addListener('click', () => handleMarkerClick(restaurant, marker));
@@ -514,12 +532,10 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     setMarkers(newMarkers);
     
-    // 초기 오버레이 설정 (줌 레벨 17 이상에서만)
-    if (currentZoomLevel >= 17) {
-      updateOverlaysBasedOnZoom(currentZoomLevel);
-    }
+    // 초기 오버레이 설정
+    updateOverlaysBasedOnZoom(currentZoomLevel);
     
-  }, [map, restaurants, getMaxMarkersForZoom]); // 의존성 배열 최적화
+  }, [map, restaurants, getMarkerIcon, handleMarkerClick, selectedRestaurant, updateOverlaysBasedOnZoom]);
 
   // 줌 레벨이나 선택된 레스토랑이 변경될 때만 스타일 업데이트
   useEffect(() => {
@@ -527,16 +543,17 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     
     markers.forEach(marker => {
       const restaurant = restaurants.find(r => 
-        r.position.lat === marker.getPosition()?.lat() && 
-        r.position.lng === marker.getPosition()?.lng()
+        r.position && marker.getPosition() &&
+        Math.abs(r.position.lat - marker.getPosition()!.lat()) < 0.0001 && 
+        Math.abs(r.position.lng - marker.getPosition()!.lng()) < 0.0001
       );
       if (restaurant) {
-        marker.setIcon(getMarkerIcon(selectedRestaurant?.id === restaurant.id, zoomLevel));
+        marker.setIcon(getMarkerIcon(restaurant, selectedRestaurant?.id === restaurant.id, zoomLevel));
       }
     });
     
     updateOverlaysBasedOnZoom(zoomLevel);
-  }, [zoomLevel, selectedRestaurant]); // 의존성 배열에서 불필요한 항목들 제거
+  }, [zoomLevel, selectedRestaurant, getMarkerIcon, updateOverlaysBasedOnZoom]);
 
   // 순위 목록에서 음식점 선택 핸들러
   const handleRestaurantListClick = useCallback((restaurant: Restaurant) => {
@@ -556,11 +573,11 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     if (targetMarker) {
       // 이전 선택된 마커 초기화
       if (selectedMarker) {
-        selectedMarker.setIcon(getMarkerIcon(false, zoomLevel));
+        selectedMarker.setIcon(getMarkerIcon(restaurant, false, zoomLevel));
       }
 
       // 새로운 마커 선택
-      targetMarker.setIcon(getMarkerIcon(true, zoomLevel));
+      targetMarker.setIcon(getMarkerIcon(restaurant, true, zoomLevel));
       setSelectedMarker(targetMarker);
       setSelectedRestaurant(restaurant);
 
