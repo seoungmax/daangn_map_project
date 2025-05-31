@@ -391,23 +391,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
         // 회사 위치 마커
         try {
-          const companyMarker = new googleMaps.maps.Marker({
-            position: { lat: 37.503679, lng: 127.024293 },
-            map: mapInstance,
-            title: '당근마켓',
-            icon: {
-              path: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z', // 집 모양 path
-              fillColor: '#FF6B00', // 주황색 집
-              fillOpacity: 1,
-              strokeColor: '#FFFFFF',
-              strokeWeight: 2,
-              scale: 1.5,
-              anchor: new googleMaps.maps.Point(12, 21),
-            },
-            zIndex: 9999, // 가장 위에 표시
-          });
-
-          // 회사 마커 원형 배경 (별도 마커로 생성)
+          // 회사 마커 원형 배경 (먼저 생성)
           const companyBackground = new googleMaps.maps.Marker({
             position: { lat: 37.503679, lng: 127.024293 },
             map: mapInstance,
@@ -417,9 +401,25 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
               fillOpacity: 0.9,
               strokeColor: '#FF6B00',
               strokeWeight: 3,
-              scale: 20,
+              scale: 22, // 조금 더 크게
             },
             zIndex: 9998, // 집 아이콘 뒤에
+          });
+
+          const companyMarker = new googleMaps.maps.Marker({
+            position: { lat: 37.503679, lng: 127.024293 },
+            map: mapInstance,
+            title: '당근마켓',
+            icon: {
+              path: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z', // 집 모양 path
+              fillColor: '#FF6B00', // 주황색 집
+              fillOpacity: 1,
+              strokeColor: '#FFFFFF',
+              strokeWeight: 1,
+              scale: 1.2, // 크기 조정
+              anchor: new googleMaps.maps.Point(12, 12), // 중앙 정렬
+            },
+            zIndex: 9999, // 가장 위에 표시
           });
         } catch (markerError) {
           console.error('Error creating company marker:', markerError);

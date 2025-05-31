@@ -11,11 +11,11 @@ export default function Home() {
   const [retryCount, setRetryCount] = useState(0);
 
   const loadRestaurants = useCallback(async () => {
-    try {
+      try {
       if (restaurants.length > 0) return;
       
-      setIsLoading(true);
-      setError(null);
+        setIsLoading(true);
+        setError(null);
       
       const response = await fetch('/data/restaurants.json', {
         headers: {
@@ -23,12 +23,12 @@ export default function Home() {
           'Pragma': 'no-cache'
         }
       });
-      
-      if (!response.ok) {
+        
+        if (!response.ok) {
         throw new Error(`데이터 로드 실패 (${response.status}): ${response.statusText}`);
-      }
-      
-      const data = await response.json();
+        }
+        
+        const data = await response.json();
       
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error('맛집 데이터가 없습니다.');
@@ -40,8 +40,8 @@ export default function Home() {
       
       setRestaurants(uniqueData);
       setRetryCount(0);
-    } catch (err) {
-      console.error('Error loading restaurants:', err);
+      } catch (err) {
+        console.error('Error loading restaurants:', err);
       let errorMessage = '맛집 데이터를 불러오는데 실패했습니다.';
       
       if (err instanceof Error) {
@@ -53,9 +53,9 @@ export default function Home() {
       }
       
       setError(errorMessage);
-    } finally {
-      setIsLoading(false);
-    }
+      } finally {
+        setIsLoading(false);
+      }
   }, [restaurants.length]);
 
   useEffect(() => {
@@ -100,12 +100,12 @@ export default function Home() {
           <p className="text-gray-600 mb-4">{error}</p>
           <div className="space-y-2">
             {retryCount < 3 && (
-              <button 
+          <button 
                 onClick={handleRetry}
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-              >
-                다시 시도
-              </button>
+          >
+            다시 시도
+          </button>
             )}
             <button 
               onClick={() => window.location.reload()}
