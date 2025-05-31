@@ -122,7 +122,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     } catch (error) {
       console.error("Error in updateOverlaysBasedOnZoom:", error);
     }
-  }, [map, restaurants, overlays, selectedRestaurant]);
+  }, [map, restaurants, selectedRestaurant]);
 
   // 마커 클릭 핸들러
   const handleMarkerClick = useCallback((restaurant: Restaurant, marker: google.maps.Marker) => {
@@ -345,19 +345,22 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   useEffect(() => {
     // 맵이 로드되었고 줌 레벨이 변경된 경우 오버레이 업데이트
     if (map && mapLoaded && createOverlayRef.current) {
-      updateOverlaysBasedOnZoom(zoomLevel);
+      const currentZoomLevel = map.getZoom() || 15;
+      updateOverlaysBasedOnZoom(currentZoomLevel);
     }
-  }, [map, mapLoaded, zoomLevel, updateOverlaysBasedOnZoom]);
+  }, [map, mapLoaded, zoomLevel]);
 
+  // 레스토랑 데이터가 변경될 때만 마커 업데이트
   useEffect(() => {
     if (!map || !restaurants.length) return;
-
+    
     console.log('Received restaurants:', restaurants.length);
     console.log('First restaurant:', restaurants[0]);
     
     // 기존 마커와 오버레이 제거
     markers.forEach(marker => marker.setMap(null));
     overlays.forEach(overlay => overlay.setMap(null));
+    
     const newMarkers: google.maps.Marker[] = [];
     
     // 줌 레벨에 따라 표시할 레스토랑 수 결정
@@ -377,12 +380,10 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     console.log('Filtered restaurants:', filteredRestaurants.length);
     
-    // 음식점 마커 추가
     filteredRestaurants.forEach(restaurant => {
-      if (!map) return;
+      if (!restaurant.position) return;
       
       try {
-        // 마커 생성 시 zIndex 설정 - 순위가 높을수록 위에 표시
         const zIndexValue = 1000 - (restaurant.rank || 0);
         
         const marker = new google.maps.Marker({
@@ -397,27 +398,19 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
             fontWeight: 'bold',
           },
           icon: getMarkerIcon(selectedRestaurant?.id === restaurant.id, zoomLevel),
-          zIndex: zIndexValue
+          zIndex: zIndexValue,
         });
 
-        // 클릭 이벤트 수정
         marker.addListener('click', () => handleMarkerClick(restaurant, marker));
-
         newMarkers.push(marker);
-      } catch (error) {
-        console.error(`Error creating marker for ${restaurant.name}:`, error);
+      } catch (err) {
+        console.error('Error creating marker:', err);
       }
     });
 
-    console.log('Added restaurant markers:', newMarkers.length);
     setMarkers(newMarkers);
-    
-    // 초기 오버레이 설정 (createOverlay 함수가 있는 경우에만)
-    if (createOverlayRef.current) {
-      updateOverlaysBasedOnZoom(zoomLevel);
-    }
-    
-  }, [map, restaurants, zoomLevel, getMarkerIcon, handleMarkerClick, selectedRestaurant, updateOverlaysBasedOnZoom]);
+    updateOverlaysBasedOnZoom(zoomLevel);
+  }, [map, restaurants, zoomLevel, selectedRestaurant, getMarkerIcon, handleMarkerClick]);
 
   if (error) {
     return (
