@@ -77,39 +77,26 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
   // 마커 스타일 설정 함수 - 50위까지는 순위 마커, 51위부터는 보라색 점
   const getMarkerIcon = useCallback((restaurant: Restaurant, isSelected: boolean, currentZoomLevel: number) => {
-    if (isSelected) {
-      // 선택된 마커는 핀 모양 (원형이 내부에 있는 형태)
-      return {
-        path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
-        fillColor: '#FF6B00', // 선택된 마커는 주황색
-        fillOpacity: 1,
-        strokeColor: '#FFFFFF',
-        strokeWeight: 2,
-        scale: 2,
-        anchor: new google.maps.Point(12, 22),
-      };
-    }
-    
     // 50위까지는 순위가 표시되는 원형 마커
     if (restaurant.rank && restaurant.rank <= 50) {
       return {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 12,
-        fillColor: '#9C27B0', // 보라색
+        scale: isSelected ? 16 : 12, // 선택시 더 크게
+        fillColor: '#9C27B0', // 보라색 유지
         fillOpacity: 1,
-        strokeColor: '#FFFFFF',
-        strokeWeight: 2,
+        strokeColor: isSelected ? '#FF6B00' : '#FFFFFF', // 선택시 주황색 테두리
+        strokeWeight: isSelected ? 3 : 2, // 선택시 더 두꺼운 테두리
       };
     }
     
     // 51위부터는 작은 보라색 점
     return {
       path: google.maps.SymbolPath.CIRCLE,
-      scale: 6, // 더 작은 크기
+      scale: isSelected ? 10 : 6, // 선택시 더 크게
       fillColor: '#9C27B0',
-      fillOpacity: 0.8,
-      strokeColor: '#FFFFFF',
-      strokeWeight: 1,
+      fillOpacity: isSelected ? 1 : 0.8, // 선택시 더 진하게
+      strokeColor: isSelected ? '#FF6B00' : '#FFFFFF', // 선택시 주황색 테두리
+      strokeWeight: isSelected ? 2 : 1, // 선택시 더 두꺼운 테두리
     };
   }, []);
 
@@ -361,11 +348,10 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
               font-weight: ${fontWeight};
               color: #000000;
               white-space: nowrap;
-              transform: translate(-50%, -100%);
+              transform: translate(-50%, 10px);
               box-shadow: 0 1px 3px rgba(0,0,0,0.15);
               z-index: 1;
               pointer-events: none;
-              margin-top: -8px;
             `;
             div.textContent = this.name;
             this.div = div;
