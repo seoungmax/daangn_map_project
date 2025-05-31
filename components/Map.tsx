@@ -20,8 +20,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [selectedMarker, setSelectedMarker] = useState<google.maps.Marker | null>(null);
   const [sidePanelOpen, setSidePanelOpen] = useState(false);
-  const [touchStartY, setTouchStartY] = useState<number | null>(null);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   
   // createOverlay 함수를 저장하는 ref를 생성
   const createOverlayRef = useRef<((position: google.maps.LatLng, name: string, isSelected: boolean) => google.maps.OverlayView) | null>(null);
@@ -60,7 +58,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 지도 중앙 기준 우선순위
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 강화된 규칙 적용
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !restaurants.length || !createOverlayRef.current) return;
     
@@ -74,76 +72,89 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     }
     
     try {
-      // 최소 5개, 최대 10개의 가게 이름 표시
+      // 엄격한 규칙: 최소 5개, 최대 10개
       const minOverlays = 5;
       const maxOverlays = 10;
       
-      // 지도 중앙 좌표 가져오기
-      const mapCenter = map.getCenter();
-      if (!mapCenter) return;
+      // 지도 경계 가져오기
+      const bounds = map.getBounds();
+      if (!bounds) return;
       
-      const centerLat = mapCenter.lat();
-      const centerLng = mapCenter.lng();
-      
-      // 상위 레스토랑을 지도 중앙에서 가까운 순으로 정렬
-      const topRestaurants = restaurants
-        .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 50) // 상위 50개에서 선별
-        .map(restaurant => {
-          if (!restaurant.position) return null;
-          
-          // 지도 중앙에서의 거리 계산
-          const distance = Math.sqrt(
-            Math.pow(restaurant.position.lat - centerLat, 2) + 
-            Math.pow(restaurant.position.lng - centerLng, 2)
-          );
-          
-          return { ...restaurant, distanceFromCenter: distance };
+      // 현재 화면에 보이는 레스토랑들만 필터링
+      const visibleRestaurants = restaurants
+        .filter(restaurant => {
+          if (!restaurant.position || !restaurant.rank || restaurant.rank > 50) return false;
+          const position = new google.maps.LatLng(restaurant.position.lat, restaurant.position.lng);
+          return bounds.contains(position);
         })
-        .filter(restaurant => restaurant !== null)
-        .sort((a, b) => a.distanceFromCenter - b.distanceFromCenter); // 중앙에서 가까운 순으로 정렬
-      
-      // 텍스트 겹침 방지를 위한 충돌 감지 시스템 (50m 거리)
+        .sort((a, b) => {
+          // 평점 높은 순서로 정렬
+          if (a.rating !== b.rating) return b.rating - a.rating;
+          // 평점이 같으면 순위 높은 순
+          return (a.rank || 0) - (b.rank || 0);
+        });
+
+      // 마커와의 거리 기준으로 텍스트 위치 최적화
       const overlayPositions: { lat: number; lng: number; name: string; restaurant: Restaurant }[] = [];
-      const minDistance = 0.0005; // 최소 거리 (약 50m)
+      const minPixelDistance = 50; // 50px 이내
       
-      // 지도 중앙에서 가까운 순서로 위치 충돌 검사하며 추가
-      for (const restaurant of topRestaurants) {
+      // 지도 projection을 사용하여 픽셀 거리 계산
+      const projection = map.getProjection();
+      if (!projection) return;
+
+      for (const restaurant of visibleRestaurants) {
         if (!restaurant.position || overlayPositions.length >= maxOverlays) break;
         
         const { lat, lng } = restaurant.position;
+        const position = new google.maps.LatLng(lat, lng);
+        const pixel = projection.fromLatLngToPoint(position);
         
-        // 기존 오버레이들과의 거리 계산
+        if (!pixel) continue;
+        
+        // 기존 오버레이들과의 픽셀 거리 계산
         const hasCollision = overlayPositions.some(existing => {
-          const distance = Math.sqrt(
-            Math.pow(lat - existing.lat, 2) + Math.pow(lng - existing.lng, 2)
+          const existingPosition = new google.maps.LatLng(existing.lat, existing.lng);
+          const existingPixel = projection.fromLatLngToPoint(existingPosition);
+          if (!existingPixel) return false;
+          
+          const pixelDistance = Math.sqrt(
+            Math.pow((pixel.x - existingPixel.x) * Math.pow(2, currentZoomLevel), 2) + 
+            Math.pow((pixel.y - existingPixel.y) * Math.pow(2, currentZoomLevel), 2)
           );
-          return distance < minDistance;
+          return pixelDistance < minPixelDistance;
         });
         
-        // 충돌이 없으면 추가
         if (!hasCollision) {
           overlayPositions.push({ lat, lng, name: restaurant.name, restaurant });
         }
       }
       
-      // 최소 개수 보장: 만약 5개 미만이면 거리 조건을 완화하여 추가
-      if (overlayPositions.length < minOverlays) {
-        const relaxedMinDistance = 0.0003; // 더 짧은 거리 (약 30m)
+      // 최소 개수 보장
+      if (overlayPositions.length < minOverlays && visibleRestaurants.length >= minOverlays) {
+        const relaxedPixelDistance = 30; // 더 짧은 거리
         
-        for (const restaurant of topRestaurants) {
+        for (const restaurant of visibleRestaurants) {
           if (!restaurant.position || overlayPositions.length >= minOverlays) break;
-          
+        
           // 이미 추가된 레스토랑은 건너뛰기
           if (overlayPositions.some(existing => existing.restaurant.id === restaurant.id)) continue;
           
           const { lat, lng } = restaurant.position;
+          const position = new google.maps.LatLng(lat, lng);
+          const pixel = projection.fromLatLngToPoint(position);
           
-          // 완화된 거리 조건으로 검사
+          if (!pixel) continue;
+          
           const hasCollision = overlayPositions.some(existing => {
-            const distance = Math.sqrt(
-              Math.pow(lat - existing.lat, 2) + Math.pow(lng - existing.lng, 2)
+            const existingPosition = new google.maps.LatLng(existing.lat, existing.lng);
+            const existingPixel = projection.fromLatLngToPoint(existingPosition);
+            if (!existingPixel) return false;
+            
+            const pixelDistance = Math.sqrt(
+              Math.pow((pixel.x - existingPixel.x) * Math.pow(2, currentZoomLevel), 2) + 
+              Math.pow((pixel.y - existingPixel.y) * Math.pow(2, currentZoomLevel), 2)
             );
-            return distance < relaxedMinDistance;
+            return pixelDistance < relaxedPixelDistance;
           });
           
           if (!hasCollision) {
@@ -175,7 +186,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     } catch (error) {
       console.error("Error in updateOverlaysBasedOnZoom:", error);
     }
-  }, [map, restaurants, selectedRestaurant]);
+  }, [map, restaurants, selectedRestaurant, overlays]);
 
   // 마커 클릭 핸들러
   const handleMarkerClick = useCallback((restaurant: Restaurant, marker: google.maps.Marker) => {
@@ -246,6 +257,29 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     };
   }, [map, updateOverlaysBasedOnZoom]);
 
+  // 지도 이동 이벤트 리스너 추가 (throttling 적용)
+  useEffect(() => {
+    if (!map) return;
+
+    let timeoutId: NodeJS.Timeout | null = null;
+
+    const boundsChangedListener = map.addListener('bounds_changed', () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      
+      timeoutId = setTimeout(() => {
+        const currentZoomLevel = map.getZoom() || 15;
+        if (createOverlayRef.current && currentZoomLevel >= 16) {
+          updateOverlaysBasedOnZoom(currentZoomLevel);
+        }
+      }, 300); // 300ms throttling
+    });
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      google.maps.event.removeListener(boundsChangedListener);
+    };
+  }, [map, updateOverlaysBasedOnZoom]);
+
   // Google Maps 로드 및 RestaurantOverlay 클래스 생성
   useEffect(() => {
     const initMap = async () => {
@@ -295,14 +329,16 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
               background: white;
               border: 1.5px solid ${borderColor};
               border-radius: 6px;
-              padding: 4px 8px;
-              font-size: 12px;
+              padding: 2px 6px;
+              font-size: 11px;
               font-weight: ${fontWeight};
               color: #000000;
               white-space: nowrap;
-              transform: translate(-50%, 120%);
-              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+              transform: translate(-50%, -100%);
+              box-shadow: 0 1px 3px rgba(0,0,0,0.15);
               z-index: 1;
+              pointer-events: none;
+              margin-top: -8px;
             `;
             div.textContent = this.name;
             this.div = div;
@@ -530,31 +566,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     }
   }, [map, markers, selectedMarker, zoomLevel, getMarkerIcon, onRestaurantSelect]);
 
-  // 터치 제스처 핸들러
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if (e.touches.length === 1) {
-      setTouchStartY(e.touches[0].clientY);
-      setTouchStartX(e.touches[0].clientX);
-    }
-  }, []);
-
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if (!touchStartY || !touchStartX) return;
-
-    const touchEndY = e.changedTouches[0].clientY;
-    const touchEndX = e.changedTouches[0].clientX;
-    const deltaY = touchStartY - touchEndY;
-    const deltaX = touchStartX - touchEndX;
-
-    // 세로 스와이프가 가로 스와이프보다 크고, 아래쪽으로 충분히 스와이프한 경우
-    if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY < -100) {
-      setSidePanelOpen(false);
-    }
-
-    setTouchStartY(null);
-    setTouchStartX(null);
-  }, [touchStartY, touchStartX]);
-
   // 성능 최적화를 위한 가상화된 레스토랑 목록
   const getVisibleRestaurants = useCallback(() => {
     const sortedRestaurants = restaurants
@@ -600,67 +611,35 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
   return (
     <div className="w-full h-full relative" style={{ minHeight: '100vh', position: 'relative' }}>
-      {/* 햄버거 메뉴 버튼 */}
+      {/* 햄버거 메뉴 버튼 - 토글 기능 */}
       <button
-        onClick={() => setSidePanelOpen(true)}
-        className="fixed top-4 right-4 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-200 z-50"
+        onClick={() => setSidePanelOpen(!sidePanelOpen)}
+        className="fixed top-4 right-4 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-200 z-50"
         style={{ zIndex: 1001 }}
-        aria-label="메뉴 열기"
+        aria-label={sidePanelOpen ? "메뉴 닫기" : "메뉴 열기"}
       >
-        <svg 
-          className="w-6 h-6 text-white" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M4 6h16M4 12h16M4 18h16" 
-          />
-        </svg>
-      </button>
-
-      {/* 사이드 패널 오버레이 */}
-      {sidePanelOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
-          onClick={() => setSidePanelOpen(false)}
-          style={{ zIndex: 999 }}
-        />
-      )}
-
-      {/* 사이드 패널 */}
-      <div
-        className={`fixed bottom-0 right-0 bg-white rounded-tl-2xl shadow-2xl transition-transform duration-300 ease-in-out z-50 ${
-          sidePanelOpen ? 'transform translate-y-0' : 'transform translate-y-full'
-        }`}
-        style={{ 
-          zIndex: 1000,
-          height: '100vh',
-          width: '80%',
-          maxWidth: '400px'
-        }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        {/* 스와이프 인디케이터 */}
-        <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mt-2 mb-2" />
-        
-        {/* 헤더 */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white rounded-tl-2xl">
-          <div>
-            <h2 className="text-lg font-bold text-gray-900">당근러가 사랑한 점심 맛집</h2>
-            <p className="text-sm text-gray-500">총 {restaurants.length}개 음식점</p>
-          </div>
-          <button
-            onClick={() => setSidePanelOpen(false)}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
-            aria-label="메뉴 닫기"
-          >
+        <div className="relative w-6 h-6">
+          {/* 햄버거 아이콘 */}
+          <div className={`absolute inset-0 transition-all duration-200 ${sidePanelOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`}>
             <svg 
-              className="w-6 h-6 text-gray-600" 
+              className="w-6 h-6 text-white" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
+            </svg>
+          </div>
+          
+          {/* X 아이콘 */}
+          <div className={`absolute inset-0 transition-all duration-200 ${sidePanelOpen ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'}`}>
+            <svg 
+              className="w-6 h-6 text-white" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -672,23 +651,58 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
                 d="M6 18L18 6M6 6l12 12" 
               />
             </svg>
-          </button>
+          </div>
+        </div>
+      </button>
+
+      {/* 사이드 패널 오버레이 */}
+      {sidePanelOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+          onClick={() => setSidePanelOpen(false)}
+          style={{ zIndex: 999 }}
+        />
+      )}
+
+      {/* 바텀시트 스타일 패널 */}
+      <div
+        className={`fixed inset-x-0 bottom-0 bg-white shadow-2xl transition-transform duration-300 ease-in-out z-50 ${
+          sidePanelOpen ? 'transform translate-y-0' : 'transform translate-y-full'
+        }`}
+        style={{ 
+          zIndex: 1000,
+          height: '85vh',
+          borderTopLeftRadius: '20px',
+          borderTopRightRadius: '20px',
+          paddingTop: 'env(safe-area-inset-top, 0px)', // safe area 고려
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)'
+        }}
+      >
+        {/* 드래그 핸들 */}
+        <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mt-3 mb-4" />
+        
+        {/* 헤더 */}
+        <div className="flex items-center justify-between px-6 pb-4 border-b border-gray-200">
+          <div>
+            <h2 className="text-lg font-bold text-gray-900">당근러가 사랑한 점심 맛집</h2>
+            <p className="text-sm text-gray-500">총 {restaurants.length}개 음식점</p>
+          </div>
         </div>
 
         {/* 순위 목록 */}
         <div 
           className="flex-1 overflow-y-auto" 
           style={{ 
-            height: 'calc(100vh - 120px)', // 스와이프 인디케이터 공간 고려
+            height: 'calc(85vh - 100px)', // 헤더와 핸들 공간 고려
             WebkitOverflowScrolling: 'touch' // iOS 모멘텀 스크롤링
           }}
         >
-          <div className="p-4">
+          <div className="px-6 py-4">
             {getVisibleRestaurants().map((restaurant, index, array) => (
               <div key={restaurant.id}>
                 <div
                   onClick={() => handleRestaurantListClick(restaurant)}
-                  className="bg-white p-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200 active:bg-gray-100"
+                  className="bg-white py-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200 active:bg-gray-100"
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
@@ -746,14 +760,14 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
                 
                 {/* 구분선 - 마지막 항목이 아닌 경우에만 표시 */}
                 {index < array.length - 1 && (
-                  <div className="border-b border-gray-100 mx-4" />
+                  <div className="border-b border-gray-100" />
                 )}
               </div>
             ))}
             
             {/* 더 많은 항목이 있을 경우 안내 메시지 */}
             {restaurants.length > 100 && (
-              <div className="text-center py-4 text-sm text-gray-500">
+              <div className="text-center py-6 text-sm text-gray-500">
                 상위 100개 음식점을 표시하고 있습니다
               </div>
             )}
