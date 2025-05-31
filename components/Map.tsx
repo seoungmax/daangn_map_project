@@ -198,19 +198,25 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     const initMap = async () => {
       try {
         console.log('Initializing Google Maps...');
-        console.log('API Key:', process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? 'exists' : 'not found');
+        
+        if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+          throw new Error('Google Maps API 키가 설정되지 않았습니다.');
+        }
         
         if (!mapRef.current) {
-          throw new Error('Map container not found');
+          throw new Error('지도를 표시할 요소를 찾을 수 없습니다.');
         }
         
         const loader = new Loader({
-          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
           version: 'weekly',
           libraries: ['places'],
         });
 
-        const googleMaps = await loader.load();
+        const googleMaps = await loader.load().catch((error) => {
+          throw new Error(`Google Maps API 로드 실패: ${error.message}`);
+        });
+        
         console.log('Google Maps loaded successfully');
         
         // RestaurantOverlay 클래스 정의
@@ -333,7 +339,18 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         }
       } catch (error) {
         console.error('Error loading Google Maps:', error);
-        setError(`지도를 불러오는데 실패했습니다: ${error instanceof Error ? error.message : String(error)}`);
+        let errorMessage = '지도를 불러오는데 실패했습니다.';
+        
+        if (error instanceof Error) {
+          if (error.message.includes('API 키')) {
+            errorMessage = '지도 서비스 설정에 문제가 있습니다. 잠시 후 다시 시도해주세요.';
+          } else if (error.message.includes('로드 실패')) {
+            errorMessage = '지도 서비스 연결에 실패했습니다. 인터넷 연결을 확인해주세요.';
+          }
+        }
+        
+        setError(errorMessage);
+        setMapLoaded(false);
       }
     };
 
@@ -354,31 +371,18 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   useEffect(() => {
     if (!map || !restaurants.length) return;
     
-    console.log('Received restaurants:', restaurants.length);
-    console.log('First restaurant:', restaurants[0]);
-    
-    // 기존 마커와 오버레이 제거
+    // 이전 마커와 오버레이 제거
     markers.forEach(marker => marker.setMap(null));
     overlays.forEach(overlay => overlay.setMap(null));
     
     const newMarkers: google.maps.Marker[] = [];
     
-    // 줌 레벨에 따라 표시할 레스토랑 수 결정
-    let maxRestaurantsToShow = 100;
-    if (zoomLevel <= 13) {
-      maxRestaurantsToShow = 10;
-    } else if (zoomLevel <= 15) {
-      maxRestaurantsToShow = 30;
-    } else if (zoomLevel <= 16) {
-      maxRestaurantsToShow = 50;
-    }
-
     // 상위 음식점만 필터링
     const filteredRestaurants = restaurants
-      .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= maxRestaurantsToShow)
+      .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 100)
       .sort((a, b) => (a.rank || 0) - (b.rank || 0));
 
-    console.log('Filtered restaurants:', filteredRestaurants.length);
+    console.log('Updating markers for restaurants:', filteredRestaurants.length);
     
     filteredRestaurants.forEach(restaurant => {
       if (!restaurant.position) return;
@@ -409,13 +413,60 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     });
 
     setMarkers(newMarkers);
-    updateOverlaysBasedOnZoom(zoomLevel);
-  }, [map, restaurants, zoomLevel, selectedRestaurant, getMarkerIcon, handleMarkerClick]);
+    
+    // 초기 오버레이 설정
+    const currentZoomLevel = map.getZoom() || 15;
+    updateOverlaysBasedOnZoom(currentZoomLevel);
+    
+  }, [map, restaurants]); // zoomLevel과 selectedRestaurant는 제거하고 별도의 useEffect로 분리
+
+  // 줌 레벨이나 선택된 레스토랑이 변경될 때만 스타일 업데이트
+  useEffect(() => {
+    if (!map || !markers.length) return;
+    
+    markers.forEach(marker => {
+      const restaurant = restaurants.find(r => 
+        r.position.lat === marker.getPosition()?.lat() && 
+        r.position.lng === marker.getPosition()?.lng()
+      );
+      if (restaurant) {
+        marker.setIcon(getMarkerIcon(selectedRestaurant?.id === restaurant.id, zoomLevel));
+      }
+    });
+    
+    const currentZoomLevel = map.getZoom() || 15;
+    updateOverlaysBasedOnZoom(currentZoomLevel);
+  }, [zoomLevel, selectedRestaurant, map, markers, restaurants, getMarkerIcon, updateOverlaysBasedOnZoom]);
 
   if (error) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
-        <p className="text-red-500">{error}</p>
+      <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6">
+        <div className="text-center max-w-md">
+          <div className="mb-4">
+            <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">지도 로드 실패</h3>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <div className="space-y-2">
+            <button 
+              onClick={() => {
+                setError(null);
+                setMapLoaded(false);
+              }}
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+            >
+              다시 시도
+            </button>
+            <button 
+              onClick={() => window.location.reload()}
+              className="block w-full text-sm text-gray-600 hover:text-gray-900 mt-2"
+            >
+              페이지 새로고침
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
@@ -497,12 +548,14 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         </div>
       )}
 
-      <style jsx global>{`
-        #google-map {
-          width: 100% !important;
-          height: 100% !important;
-        }
-      `}</style>
+      <style>
+        {`
+          #google-map {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        `}
+      </style>
     </div>
   );
 } 
