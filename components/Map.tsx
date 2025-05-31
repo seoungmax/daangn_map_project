@@ -478,21 +478,38 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   }
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative" style={{ minHeight: '100vh', position: 'relative' }}>
       <div 
         ref={mapRef} 
         id="google-map"
         className="w-full h-full rounded-lg shadow-lg" 
-        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          minHeight: '100vh',
+          position: 'absolute', 
+          top: 0, 
+          left: 0,
+          zIndex: 1,
+          backgroundColor: '#f0f0f0'
+        }}
       />
       {!mapLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80">
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80" style={{ zIndex: 10 }}>
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto"></div>
             <p className="mt-4 text-gray-600">지도를 불러오는 중...</p>
           </div>
         </div>
       )}
+      
+      {/* 디버깅용 정보 표시 */}
+      <div className="absolute top-4 left-4 bg-black text-white p-2 text-sm rounded z-50" style={{ zIndex: 1000 }}>
+        <div>레스토랑: {restaurants.length}</div>
+        <div>마커: {markers.length}</div>
+        <div>지도 로드: {mapLoaded ? 'Yes' : 'No'}</div>
+        <div>지도 객체: {map ? 'Yes' : 'No'}</div>
+      </div>
       
       {/* 바텀시트 */}
       {selectedRestaurant && selectedMarker && (
@@ -557,6 +574,11 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       <style>
         {`
           #google-map {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 100vh !important;
+          }
+          .gm-style {
             width: 100% !important;
             height: 100% !important;
           }

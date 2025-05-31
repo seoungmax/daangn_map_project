@@ -129,7 +129,7 @@ export default function Home() {
   }
 
   return (
-    <main className="h-screen">
+    <main className="h-screen w-full" style={{ height: '100vh', width: '100vw', position: 'relative' }}>
       <Map restaurants={restaurants} />
     </main>
   );
