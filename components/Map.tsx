@@ -67,12 +67,10 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       .slice(0, maxMarkers);
   }, [getFilteredRestaurants, getMaxMarkersForZoom]);
 
-  // 줌 레벨별 오버레이 개수 (업체 이름 텍스트)
+  // 줌 레벨별 오버레이 개수 (업체 이름 텍스트) - 단순화
   const getMaxOverlaysForZoom = useCallback((zoom: number) => {
     if (zoom <= 15) return 0;  // 15 이하에서는 텍스트 없음
-    if (zoom <= 16) return 5;  // 16에서는 5개
-    if (zoom <= 17) return 8;  // 17에서는 8개
-    return 10; // 18 이상에서는 최대 10개
+    return 10; // 16 이상에서는 항상 10개 고정
   }, []);
 
   // 마커 스타일 설정 함수 - 50위까지는 순위 마커, 51위부터는 보라색 점
@@ -113,7 +111,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 필터 적용 수정
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 상위 10개 고정
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !createOverlayRef.current) return;
     
@@ -132,75 +130,26 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         return;
       }
       
-      // 현재 필터에 따라 표시된 레스토랑들 중에서 오버레이 생성
+      // 현재 필터에 따라 표시된 레스토랑들 중 상위 10개만 선택
       const displayRestaurants = getDisplayRestaurants(currentZoomLevel);
       if (!displayRestaurants.length) return;
       
-      // 지도 경계 가져오기
-      const bounds = map.getBounds();
-      if (!bounds) return;
-      
-      // 현재 화면에 보이는 필터된 레스토랑들만 선별
-      const visibleRestaurants = displayRestaurants
-        .filter(restaurant => {
-          if (!restaurant.position) return false;
-          const position = new google.maps.LatLng(restaurant.position.lat, restaurant.position.lng);
-          return bounds.contains(position);
-        })
-        .sort((a, b) => {
-          // 평점 높은 순서로 정렬
-          if (a.rating !== b.rating) return b.rating - a.rating;
-          // 평점이 같으면 순위 높은 순
-          return (a.rank || 0) - (b.rank || 0);
-        });
+      // 순위 높은 순으로 정렬하여 상위 10개만 선택 (화면 영역 상관없이)
+      const topRestaurants = displayRestaurants
+        .sort((a, b) => (a.rank || 0) - (b.rank || 0))
+        .slice(0, maxOverlays);
 
-      // 마커와의 거리 기준으로 텍스트 위치 최적화
-      const overlayPositions: { lat: number; lng: number; name: string; restaurant: Restaurant }[] = [];
-      const minPixelDistance = 50; // 50px 이내
-      
-      // 지도 projection을 사용하여 픽셀 거리 계산
-      const projection = map.getProjection();
-      if (!projection) return;
-
-      // 최대 개수까지만 처리
-      const candidateRestaurants = visibleRestaurants.slice(0, maxOverlays);
-
-      for (const restaurant of candidateRestaurants) {
-        if (!restaurant.position || overlayPositions.length >= maxOverlays) break;
-        
-        const { lat, lng } = restaurant.position;
-        const position = new google.maps.LatLng(lat, lng);
-        const pixel = projection.fromLatLngToPoint(position);
-        
-        if (!pixel) continue;
-        
-        // 기존 오버레이들과의 픽셀 거리 계산
-        const hasCollision = overlayPositions.some(existing => {
-          const existingPosition = new google.maps.LatLng(existing.lat, existing.lng);
-          const existingPixel = projection.fromLatLngToPoint(existingPosition);
-          if (!existingPixel) return false;
-          
-          const pixelDistance = Math.sqrt(
-            Math.pow((pixel.x - existingPixel.x) * Math.pow(2, currentZoomLevel), 2) + 
-            Math.pow((pixel.y - existingPixel.y) * Math.pow(2, currentZoomLevel), 2)
-          );
-          return pixelDistance < minPixelDistance;
-        });
-        
-        if (!hasCollision) {
-          overlayPositions.push({ lat, lng, name: restaurant.name, restaurant });
-        }
-      }
-      
       // 새로운 오버레이 생성 및 적용
       const newOverlays: google.maps.OverlayView[] = [];
       
-      overlayPositions.forEach(({ lat, lng, name, restaurant }) => {
+      topRestaurants.forEach((restaurant) => {
+        if (!restaurant.position) return;
+        
         if (createOverlayRef.current) {
           try {
             const overlay = createOverlayRef.current(
-              new google.maps.LatLng(lat, lng),
-              name,
+              new google.maps.LatLng(restaurant.position.lat, restaurant.position.lng),
+              restaurant.name,
               selectedRestaurant?.id === restaurant.id
             );
             overlay.setMap(map);
@@ -447,9 +396,30 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
             map: mapInstance,
             title: '당근마켓',
             icon: {
-              url: '/company-marker.svg',
-              scaledSize: new googleMaps.maps.Size(40, 40),
+              path: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z', // 집 모양 path
+              fillColor: '#FF6B00', // 주황색 집
+              fillOpacity: 1,
+              strokeColor: '#FFFFFF',
+              strokeWeight: 2,
+              scale: 1.5,
+              anchor: new googleMaps.maps.Point(12, 21),
             },
+            zIndex: 9999, // 가장 위에 표시
+          });
+
+          // 회사 마커 원형 배경 (별도 마커로 생성)
+          const companyBackground = new googleMaps.maps.Marker({
+            position: { lat: 37.503679, lng: 127.024293 },
+            map: mapInstance,
+            icon: {
+              path: googleMaps.maps.SymbolPath.CIRCLE,
+              fillColor: '#FFFFFF',
+              fillOpacity: 0.9,
+              strokeColor: '#FF6B00',
+              strokeWeight: 3,
+              scale: 20,
+            },
+            zIndex: 9998, // 집 아이콘 뒤에
           });
         } catch (markerError) {
           console.error('Error creating company marker:', markerError);
