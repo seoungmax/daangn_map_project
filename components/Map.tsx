@@ -52,6 +52,74 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     });
   }, [restaurants, selectedRankFilter]);
 
+  // 마커 겹침 방지를 위한 위치 조정 함수
+  const adjustMarkerPosition = useCallback((
+    targetPosition: google.maps.LatLng, 
+    existingMarkers: google.maps.Marker[],
+    map: google.maps.Map
+  ): google.maps.LatLng => {
+    if (!existingMarkers.length) return targetPosition;
+
+    const projection = map.getProjection();
+    if (!projection) return targetPosition;
+
+    // 마커 크기를 픽셀로 변환 (scale 12 = 반지름 12px)
+    const markerRadius = 12;
+    const minDistance = markerRadius * 1.4; // 30% 겹치지 않도록 (70% 거리 보장)
+
+    let adjustedPosition = targetPosition;
+    let attempts = 0;
+    const maxAttempts = 8; // 최대 시도 횟수
+
+    while (attempts < maxAttempts) {
+      const targetPixel = projection.fromLatLngToPoint(adjustedPosition);
+      if (!targetPixel) break;
+
+      let hasCollision = false;
+
+      // 기존 마커들과의 거리 체크
+      for (const marker of existingMarkers) {
+        const markerPosition = marker.getPosition();
+        if (!markerPosition) continue;
+
+        const markerPixel = projection.fromLatLngToPoint(markerPosition);
+        if (!markerPixel) continue;
+
+        const distance = Math.sqrt(
+          Math.pow(targetPixel.x - markerPixel.x, 2) + 
+          Math.pow(targetPixel.y - markerPixel.y, 2)
+        );
+
+        if (distance < minDistance) {
+          hasCollision = true;
+          break;
+        }
+      }
+
+      if (!hasCollision) {
+        break; // 충돌이 없으면 현재 위치 사용
+      }
+
+      // 충돌이 있으면 약간의 오프셋을 적용하여 위치 조정
+      const angle = (attempts * 45) * (Math.PI / 180); // 45도씩 회전
+      const offsetDistance = minDistance * 0.8; // 최소 거리의 80% 만큼 이동
+      
+      const offsetPixel = new google.maps.Point(
+        targetPixel.x + Math.cos(angle) * offsetDistance,
+        targetPixel.y + Math.sin(angle) * offsetDistance
+      );
+
+      const offsetLatLng = projection.fromPointToLatLng(offsetPixel);
+      if (offsetLatLng) {
+        adjustedPosition = offsetLatLng;
+      }
+
+      attempts++;
+    }
+
+    return adjustedPosition;
+  }, []);
+
   // 줌 레벨과 필터에 따른 최종 표시할 레스토랑
   const getDisplayRestaurants = useCallback((currentZoomLevel: number) => {
     const filteredRestaurants = getFilteredRestaurants();
@@ -325,15 +393,19 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     const displayRestaurants = getDisplayRestaurants(currentZoomLevel);
     const newMarkers: google.maps.Marker[] = [];
     
-    // 필터된 레스토랑만 마커 생성
-    displayRestaurants.forEach(restaurant => {
+    // 필터된 레스토랑만 마커 생성 (겹침 방지 적용)
+    displayRestaurants.forEach((restaurant, index) => {
       if (!restaurant.position) return;
       
       try {
         const zIndexValue = restaurant.rank ? 1000 - restaurant.rank : 500;
+        const originalPosition = new google.maps.LatLng(restaurant.position.lat, restaurant.position.lng);
+        
+        // 마커 겹침 방지를 위한 위치 조정
+        const adjustedPosition = adjustMarkerPosition(originalPosition, newMarkers, map);
         
         const marker = new google.maps.Marker({
-          position: restaurant.position,
+          position: adjustedPosition,
           map: map,
           title: restaurant.rank ? `${restaurant.name} (${restaurant.rank}위)` : restaurant.name,
           // 모든 마커에 순위 라벨 표시
@@ -358,7 +430,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
     setMarkers(newMarkers);
     
-  }, [map, selectedRankFilter, getDisplayRestaurants, getMarkerIcon, handleMarkerClick, selectedRestaurant]);
+  }, [map, selectedRankFilter, getDisplayRestaurants, getMarkerIcon, handleMarkerClick, selectedRestaurant, adjustMarkerPosition]);
 
   // 줌 레벨이나 선택된 레스토랑이 변경될 때만 스타일 업데이트
   useEffect(() => {
