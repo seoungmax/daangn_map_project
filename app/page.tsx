@@ -15,7 +15,9 @@ export default function Home() {
         setIsLoading(true);
         setError(null);
         console.log('Fetching restaurant data...');
-        const response = await fetch('/data/restaurants.json');
+        const response = await fetch('/data/restaurants.json', {
+          cache: 'no-store'
+        });
         console.log('Response status:', response.status);
         
         if (!response.ok) {
