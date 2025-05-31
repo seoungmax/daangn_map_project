@@ -32,13 +32,13 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     return 80; // 최대 80개로 제한
   }, []);
 
-  // 마커 스타일 설정 함수 - 파란색으로 변경하고 모든 줌 레벨에서 일관된 크기
+  // 마커 스타일 설정 함수 - 보라색으로 변경하고 모든 줌 레벨에서 일관된 크기
   const getMarkerIcon = useCallback((isSelected: boolean, currentZoomLevel: number) => {
     if (isSelected) {
       // 선택된 마커는 핀 모양 (원형이 내부에 있는 형태)
       return {
         path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
-        fillColor: '#2196F3', // 파란색으로 변경
+        fillColor: '#9C27B0', // 보라색으로 변경
         fillOpacity: 1,
         strokeColor: '#FFFFFF',
         strokeWeight: 2,
@@ -50,14 +50,14 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     return {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 12, // 모든 줌 레벨에서 동일한 크기
-      fillColor: '#2196F3', // 파란색으로 변경
+      fillColor: '#9C27B0', // 보라색으로 변경
       fillOpacity: 1,
       strokeColor: '#FFFFFF',
       strokeWeight: 2,
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 개선된 텍스트 겹침 방지
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 지도 중앙 기준 우선순위
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !restaurants.length || !createOverlayRef.current) return;
     
@@ -71,21 +71,41 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     }
     
     try {
-      // 최대 10개의 가게 이름만 표시 (성능 및 가독성 향상)
+      // 최소 5개, 최대 10개의 가게 이름 표시
+      const minOverlays = 5;
       const maxOverlays = 10;
       
-      // 상위 레스토랑 필터링 (순위 기준 상위 30개에서 선별)
+      // 지도 중앙 좌표 가져오기
+      const mapCenter = map.getCenter();
+      if (!mapCenter) return;
+      
+      const centerLat = mapCenter.lat();
+      const centerLng = mapCenter.lng();
+      
+      // 상위 레스토랑을 지도 중앙에서 가까운 순으로 정렬
       const topRestaurants = restaurants
-        .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 30)
-        .sort((a, b) => (a.rank || 0) - (b.rank || 0));
+        .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 50) // 상위 50개에서 선별
+        .map(restaurant => {
+          if (!restaurant.position) return null;
+          
+          // 지도 중앙에서의 거리 계산
+          const distance = Math.sqrt(
+            Math.pow(restaurant.position.lat - centerLat, 2) + 
+            Math.pow(restaurant.position.lng - centerLng, 2)
+          );
+          
+          return { ...restaurant, distanceFromCenter: distance };
+        })
+        .filter(restaurant => restaurant !== null)
+        .sort((a, b) => a.distanceFromCenter - b.distanceFromCenter); // 중앙에서 가까운 순으로 정렬
       
-      // 텍스트 겹침 방지를 위한 충돌 감지 시스템
+      // 텍스트 겹침 방지를 위한 충돌 감지 시스템 (50m 거리)
       const overlayPositions: { lat: number; lng: number; name: string; restaurant: Restaurant }[] = [];
-      const minDistance = 0.002; // 최소 거리 (약 200m)
+      const minDistance = 0.0005; // 최소 거리 (약 50m)
       
-      // 순위가 높은 순서로 위치 충돌 검사하며 추가
-      topRestaurants.forEach(restaurant => {
-        if (!restaurant.position || overlayPositions.length >= maxOverlays) return;
+      // 지도 중앙에서 가까운 순서로 위치 충돌 검사하며 추가
+      for (const restaurant of topRestaurants) {
+        if (!restaurant.position || overlayPositions.length >= maxOverlays) break;
         
         const { lat, lng } = restaurant.position;
         
@@ -101,7 +121,33 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         if (!hasCollision) {
           overlayPositions.push({ lat, lng, name: restaurant.name, restaurant });
         }
-      });
+      }
+      
+      // 최소 개수 보장: 만약 5개 미만이면 거리 조건을 완화하여 추가
+      if (overlayPositions.length < minOverlays) {
+        const relaxedMinDistance = 0.0003; // 더 짧은 거리 (약 30m)
+        
+        for (const restaurant of topRestaurants) {
+          if (!restaurant.position || overlayPositions.length >= minOverlays) break;
+          
+          // 이미 추가된 레스토랑은 건너뛰기
+          if (overlayPositions.some(existing => existing.restaurant.id === restaurant.id)) continue;
+          
+          const { lat, lng } = restaurant.position;
+          
+          // 완화된 거리 조건으로 검사
+          const hasCollision = overlayPositions.some(existing => {
+            const distance = Math.sqrt(
+              Math.pow(lat - existing.lat, 2) + Math.pow(lng - existing.lng, 2)
+            );
+            return distance < relaxedMinDistance;
+          });
+          
+          if (!hasCollision) {
+            overlayPositions.push({ lat, lng, name: restaurant.name, restaurant });
+          }
+        }
+      }
       
       // 최종 선별된 레스토랑들로 오버레이 생성
       const newOverlays: google.maps.OverlayView[] = [];
