@@ -19,6 +19,9 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   const [zoomLevel, setZoomLevel] = useState(15);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [selectedMarker, setSelectedMarker] = useState<google.maps.Marker | null>(null);
+  const [sidePanelOpen, setSidePanelOpen] = useState(false);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   
   // createOverlay 함수를 저장하는 ref를 생성
   const createOverlayRef = useRef<((position: google.maps.LatLng, name: string, isSelected: boolean) => google.maps.OverlayView) | null>(null);
@@ -491,6 +494,77 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     updateOverlaysBasedOnZoom(zoomLevel);
   }, [zoomLevel, selectedRestaurant]); // 의존성 배열에서 불필요한 항목들 제거
 
+  // 순위 목록에서 음식점 선택 핸들러
+  const handleRestaurantListClick = useCallback((restaurant: Restaurant) => {
+    if (!map || !restaurant.position) return;
+
+    // 사이드 패널 닫기
+    setSidePanelOpen(false);
+
+    // 해당 마커 찾기
+    const targetMarker = markers.find(marker => {
+      const position = marker.getPosition();
+      return position && 
+        Math.abs(position.lat() - restaurant.position.lat) < 0.0001 && 
+        Math.abs(position.lng() - restaurant.position.lng) < 0.0001;
+    });
+
+    if (targetMarker) {
+      // 이전 선택된 마커 초기화
+      if (selectedMarker) {
+        selectedMarker.setIcon(getMarkerIcon(false, zoomLevel));
+      }
+
+      // 새로운 마커 선택
+      targetMarker.setIcon(getMarkerIcon(true, zoomLevel));
+      setSelectedMarker(targetMarker);
+      setSelectedRestaurant(restaurant);
+
+      // 지도 이동 및 줌
+      map.panTo(restaurant.position);
+      map.setZoom(17);
+
+      if (onRestaurantSelect) {
+        onRestaurantSelect(restaurant);
+      }
+    }
+  }, [map, markers, selectedMarker, zoomLevel, getMarkerIcon, onRestaurantSelect]);
+
+  // 터치 제스처 핸들러
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length === 1) {
+      setTouchStartY(e.touches[0].clientY);
+      setTouchStartX(e.touches[0].clientX);
+    }
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!touchStartY || !touchStartX) return;
+
+    const touchEndY = e.changedTouches[0].clientY;
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaY = touchStartY - touchEndY;
+    const deltaX = touchStartX - touchEndX;
+
+    // 세로 스와이프가 가로 스와이프보다 크고, 아래쪽으로 충분히 스와이프한 경우
+    if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY < -100) {
+      setSidePanelOpen(false);
+    }
+
+    setTouchStartY(null);
+    setTouchStartX(null);
+  }, [touchStartY, touchStartX]);
+
+  // 성능 최적화를 위한 가상화된 레스토랑 목록
+  const getVisibleRestaurants = useCallback(() => {
+    const sortedRestaurants = restaurants
+      .filter(restaurant => restaurant.rank !== undefined)
+      .sort((a, b) => (a.rank || 0) - (b.rank || 0));
+    
+    // 성능을 위해 처음 100개 항목만 렌더링
+    return sortedRestaurants.slice(0, 100);
+  }, [restaurants]);
+
   if (error) {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6">
@@ -526,6 +600,167 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
   return (
     <div className="w-full h-full relative" style={{ minHeight: '100vh', position: 'relative' }}>
+      {/* 햄버거 메뉴 버튼 */}
+      <button
+        onClick={() => setSidePanelOpen(true)}
+        className="fixed top-4 right-4 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-200 z-50"
+        style={{ zIndex: 1001 }}
+        aria-label="메뉴 열기"
+      >
+        <svg 
+          className="w-6 h-6 text-white" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M4 6h16M4 12h16M4 18h16" 
+          />
+        </svg>
+      </button>
+
+      {/* 사이드 패널 오버레이 */}
+      {sidePanelOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+          onClick={() => setSidePanelOpen(false)}
+          style={{ zIndex: 999 }}
+        />
+      )}
+
+      {/* 사이드 패널 */}
+      <div
+        className={`fixed bottom-0 right-0 bg-white rounded-tl-2xl shadow-2xl transition-transform duration-300 ease-in-out z-50 ${
+          sidePanelOpen ? 'transform translate-y-0' : 'transform translate-y-full'
+        }`}
+        style={{ 
+          zIndex: 1000,
+          height: '100vh',
+          width: '80%',
+          maxWidth: '400px'
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* 스와이프 인디케이터 */}
+        <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mt-2 mb-2" />
+        
+        {/* 헤더 */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white rounded-tl-2xl">
+          <div>
+            <h2 className="text-lg font-bold text-gray-900">당근러가 사랑한 점심 맛집</h2>
+            <p className="text-sm text-gray-500">총 {restaurants.length}개 음식점</p>
+          </div>
+          <button
+            onClick={() => setSidePanelOpen(false)}
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+            aria-label="메뉴 닫기"
+          >
+            <svg 
+              className="w-6 h-6 text-gray-600" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M6 18L18 6M6 6l12 12" 
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* 순위 목록 */}
+        <div 
+          className="flex-1 overflow-y-auto" 
+          style={{ 
+            height: 'calc(100vh - 120px)', // 스와이프 인디케이터 공간 고려
+            WebkitOverflowScrolling: 'touch' // iOS 모멘텀 스크롤링
+          }}
+        >
+          <div className="p-4">
+            {getVisibleRestaurants().map((restaurant, index, array) => (
+              <div key={restaurant.id}>
+                <div
+                  onClick={() => handleRestaurantListClick(restaurant)}
+                  className="bg-white p-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200 active:bg-gray-100"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleRestaurantListClick(restaurant);
+                    }
+                  }}
+                >
+                  <div className="flex items-start space-x-3">
+                    {/* 순위 배지 */}
+                    <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">{restaurant.rank}</span>
+                    </div>
+                    
+                    {/* 음식점 정보 */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-bold text-gray-900 truncate">
+                        {restaurant.name}
+                      </h3>
+                      
+                      {/* 별점 및 리뷰 */}
+                      <div className="flex items-center mt-1 space-x-2">
+                        <div className="flex items-center">
+                          <span className="text-yellow-400 text-sm">⭐</span>
+                          <span className="ml-1 text-sm font-medium text-gray-700">
+                            {restaurant.rating.toFixed(1)}
+                          </span>
+                        </div>
+                        <span className="text-xs text-gray-500">
+                          ({restaurant.reviews}개 리뷰)
+                        </span>
+                      </div>
+
+                      {/* 주소 */}
+                      <p className="text-xs text-gray-500 mt-1 truncate">
+                        {restaurant.address}
+                      </p>
+
+                      {/* 거리 */}
+                      <div className="flex items-center justify-between mt-2">
+                        <span className="text-xs text-blue-600 font-medium">
+                          회사에서 {restaurant.distance.toFixed(1)}km
+                        </span>
+                        <div className="flex items-center text-xs text-gray-400">
+                          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                          </svg>
+                          지도에서 보기
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 구분선 - 마지막 항목이 아닌 경우에만 표시 */}
+                {index < array.length - 1 && (
+                  <div className="border-b border-gray-100 mx-4" />
+                )}
+              </div>
+            ))}
+            
+            {/* 더 많은 항목이 있을 경우 안내 메시지 */}
+            {restaurants.length > 100 && (
+              <div className="text-center py-4 text-sm text-gray-500">
+                상위 100개 음식점을 표시하고 있습니다
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       <div 
         ref={mapRef} 
         id="google-map"
@@ -551,7 +786,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       )}
       
       {/* 바텀시트 */}
-      {selectedRestaurant && selectedMarker && (
+      {selectedRestaurant && selectedMarker && !sidePanelOpen && (
         <div 
           className="fixed inset-x-0 bottom-0 bg-white rounded-t-2xl shadow-lg transition-transform duration-300 ease-in-out"
           style={{ 
