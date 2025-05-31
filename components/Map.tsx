@@ -66,10 +66,10 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   // 마커 스타일 설정 함수 - 모든 마커를 순위 표시 원형으로 통일
   const getMarkerIcon = useCallback((restaurant: Restaurant, isSelected: boolean) => {
     if (isSelected) {
-      // 선택된 마커는 보라색 핀 모양
+      // 선택된 마커는 파란색 핀 모양
       return {
         path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
-        fillColor: '#9C27B0', // 보라색
+        fillColor: '#1E40AF', // 파란색
         fillOpacity: 1,
         strokeColor: '#FFFFFF',
         strokeWeight: 2,
@@ -78,11 +78,11 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       };
     }
     
-    // 모든 마커를 순위가 표시되는 원형 마커로 통일
+    // 모든 마커를 순위가 표시되는 원형 마커로 통일 (파란색)
     return {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 12,
-      fillColor: '#9C27B0', // 보라색
+      fillColor: '#1E40AF', // 파란색
       fillOpacity: 1,
       strokeColor: '#FFFFFF',
       strokeWeight: 2,
@@ -178,6 +178,72 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
           // 렌더링 최적화
           backgroundColor: '#f0f0f0',
           clickableIcons: false, // POI 클릭 비활성화로 성능 향상
+          // Google Maps 스타일링 - POI를 주황색으로 통일
+          styles: [
+            {
+              featureType: "poi",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#ff6b35" // 주황색
+                }
+              ]
+            },
+            {
+              featureType: "poi",
+              elementType: "labels.text.fill",
+              stylers: [
+                {
+                  color: "#cc5429" // 어두운 주황색
+                }
+              ]
+            },
+            {
+              featureType: "poi",
+              elementType: "labels.text.stroke",
+              stylers: [
+                {
+                  color: "#ffffff" // 흰색 외곽선
+                }
+              ]
+            },
+            {
+              featureType: "poi.business",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#ff6b35" // 비즈니스 POI 주황색
+                }
+              ]
+            },
+            {
+              featureType: "poi.business",
+              elementType: "labels.text.fill",
+              stylers: [
+                {
+                  color: "#cc5429" // 비즈니스 POI 텍스트 어두운 주황색
+                }
+              ]
+            },
+            {
+              featureType: "poi.park",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#ff8b65" // 공원 POI 밝은 주황색
+                }
+              ]
+            },
+            {
+              featureType: "poi.park",
+              elementType: "labels.text.fill",
+              stylers: [
+                {
+                  color: "#cc5429" // 공원 POI 텍스트 어두운 주황색
+                }
+              ]
+            }
+          ]
         };
         
         // 맵 요소 스타일 설정
