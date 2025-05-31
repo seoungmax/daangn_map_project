@@ -32,22 +32,13 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     return 80; // 최대 80개로 제한
   }, []);
 
-  // 디버깅용 상태 표시
-  console.log('Map state:', { 
-    restaurantsReceived: restaurants.length, 
-    mapLoaded, 
-    markersCount: markers.length,
-    error,
-    apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? 'Set' : 'Not set'
-  });
-
-  // 마커 스타일 설정 함수
+  // 마커 스타일 설정 함수 - 파란색으로 변경하고 모든 줌 레벨에서 일관된 크기
   const getMarkerIcon = useCallback((isSelected: boolean, currentZoomLevel: number) => {
     if (isSelected) {
       // 선택된 마커는 핀 모양 (원형이 내부에 있는 형태)
       return {
         path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
-        fillColor: '#FF6B00',
+        fillColor: '#2196F3', // 파란색으로 변경
         fillOpacity: 1,
         strokeColor: '#FFFFFF',
         strokeWeight: 2,
@@ -55,17 +46,18 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         anchor: new google.maps.Point(12, 22),
       };
     }
+    // 일반 마커는 모든 줌 레벨에서 일관된 원형 크기
     return {
       path: google.maps.SymbolPath.CIRCLE,
-      scale: currentZoomLevel > 18 ? 6 : 12,
-      fillColor: currentZoomLevel > 18 ? '#FFFFFF' : '#FF6B00',
+      scale: 12, // 모든 줌 레벨에서 동일한 크기
+      fillColor: '#2196F3', // 파란색으로 변경
       fillOpacity: 1,
-      strokeColor: currentZoomLevel > 18 ? '#FFFFFF' : '#FFFFFF',
+      strokeColor: '#FFFFFF',
       strokeWeight: 2,
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 개선된 텍스트 겹침 방지
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !restaurants.length || !createOverlayRef.current) return;
     
@@ -79,48 +71,47 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     }
     
     try {
-      // 줌 레벨에 따라 표시할 레스토랑 수 결정
-      let maxRestaurantsToShow = getMaxMarkersForZoom(currentZoomLevel);
+      // 최대 10개의 가게 이름만 표시 (성능 및 가독성 향상)
+      const maxOverlays = 10;
       
-      // 상위 레스토랑 필터링
-      const filteredRestaurants = restaurants
-        .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= maxRestaurantsToShow)
+      // 상위 레스토랑 필터링 (순위 기준 상위 30개에서 선별)
+      const topRestaurants = restaurants
+        .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 30)
         .sort((a, b) => (a.rank || 0) - (b.rank || 0));
       
-      // 레스토랑 위치를 그리드로 분할하여 같은 영역에 여러 레스토랑이 있을 경우 순위가 높은 것만 오버레이 표시
-      const gridSize = currentZoomLevel <= 16 ? 0.0008 : 0.0004; // 줌 레벨에 따라 그리드 크기 조정
+      // 텍스트 겹침 방지를 위한 충돌 감지 시스템
+      const overlayPositions: { lat: number; lng: number; name: string; restaurant: Restaurant }[] = [];
+      const minDistance = 0.002; // 최소 거리 (약 200m)
       
-      // 그리드 맵 객체 사용
-      const gridMap: Record<string, Restaurant> = {};
-      
-      // 각 레스토랑을 그리드에 할당
-      filteredRestaurants.forEach(restaurant => {
-        if (!restaurant.position) return; // 위치 정보가 없는 경우 건너뜀
+      // 순위가 높은 순서로 위치 충돌 검사하며 추가
+      topRestaurants.forEach(restaurant => {
+        if (!restaurant.position || overlayPositions.length >= maxOverlays) return;
         
-        const gridX = Math.floor(restaurant.position.lat / gridSize);
-        const gridY = Math.floor(restaurant.position.lng / gridSize);
-        const gridKey = `${gridX}-${gridY}`;
+        const { lat, lng } = restaurant.position;
         
-        // 해당 그리드에 레스토랑이 없거나, 새 레스토랑의 순위가 더 높은 경우 업데이트
-        const existingRestaurant = gridMap[gridKey];
-        if (!existingRestaurant || (existingRestaurant.rank || 999) > (restaurant.rank || 999)) {
-          gridMap[gridKey] = restaurant;
+        // 기존 오버레이들과의 거리 계산
+        const hasCollision = overlayPositions.some(existing => {
+          const distance = Math.sqrt(
+            Math.pow(lat - existing.lat, 2) + Math.pow(lng - existing.lng, 2)
+          );
+          return distance < minDistance;
+        });
+        
+        // 충돌이 없으면 추가
+        if (!hasCollision) {
+          overlayPositions.push({ lat, lng, name: restaurant.name, restaurant });
         }
       });
       
-      // 그리드별로 하나씩만 오버레이 생성
+      // 최종 선별된 레스토랑들로 오버레이 생성
       const newOverlays: google.maps.OverlayView[] = [];
       
-      // 타입 안정성을 위해 명시적으로 타입 처리
-      Object.values(gridMap).forEach((restaurant: Restaurant) => {
-        if (createOverlayRef.current && restaurant && restaurant.position) {
+      overlayPositions.forEach(({ lat, lng, name, restaurant }) => {
+        if (createOverlayRef.current) {
           try {
             const overlay = createOverlayRef.current(
-              new google.maps.LatLng(
-                restaurant.position.lat,
-                restaurant.position.lng
-              ),
-              restaurant.name,
+              new google.maps.LatLng(lat, lng),
+              name,
               selectedRestaurant?.id === restaurant.id
             );
             overlay.setMap(map);
@@ -210,8 +201,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   useEffect(() => {
     const initMap = async () => {
       try {
-        console.log('Initializing Google Maps...');
-        
         if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
           throw new Error('Google Maps API 키가 설정되지 않았습니다.');
         }
@@ -229,8 +218,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         const googleMaps = await loader.load().catch((error) => {
           throw new Error(`Google Maps API 로드 실패: ${error.message}`);
         });
-        
-        console.log('Google Maps loaded successfully');
         
         // RestaurantOverlay 클래스 정의
         class RestaurantOverlay extends googleMaps.maps.OverlayView {
@@ -331,8 +318,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
           clickableIcons: false, // POI 클릭 비활성화로 성능 향상
         };
         
-        console.log('Creating map with options:', mapOptions);
-        
         // 맵 요소 스타일 설정
         if (mapRef.current) {
           mapRef.current.style.width = '100%';
@@ -340,7 +325,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         }
         
         const mapInstance = new googleMaps.maps.Map(mapRef.current, mapOptions);
-        console.log('Map created successfully');
 
         setMap(mapInstance);
         setMapLoaded(true);
@@ -356,7 +340,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
               scaledSize: new googleMaps.maps.Size(40, 40),
             },
           });
-          console.log('Company marker created successfully');
         } catch (markerError) {
           console.error('Error creating company marker:', markerError);
         }
