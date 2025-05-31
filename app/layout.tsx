@@ -1,17 +1,18 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-export const metadata = {
-  title: '강남/서초 맛집 지도',
-  description: '강남구와 서초구의 맛집을 한눈에 볼 수 있는 지도 서비스입니다.',
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: '당근마켓 맛집 지도',
+  description: '당근마켓 주변 맛집을 확인해보세요',
   icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon.svg',
-    apple: '/icon.svg',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/icon.svg',
-    },
-  },
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: '/icon.svg'
+  }
 }
 
 export default function RootLayout({
@@ -21,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+        <link rel="shortcut icon" href="/icon.svg" />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

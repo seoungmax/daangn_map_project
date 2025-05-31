@@ -47,7 +47,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 함수 위치를 먼저 선언하도록 이동
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !restaurants.length || !createOverlayRef.current) return;
     
@@ -381,8 +381,6 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     const filteredRestaurants = restaurants
       .filter(restaurant => restaurant.rank !== undefined && restaurant.rank <= 100)
       .sort((a, b) => (a.rank || 0) - (b.rank || 0));
-
-    console.log('Updating markers for restaurants:', filteredRestaurants.length);
     
     filteredRestaurants.forEach(restaurant => {
       if (!restaurant.position) return;
@@ -418,7 +416,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     const currentZoomLevel = map.getZoom() || 15;
     updateOverlaysBasedOnZoom(currentZoomLevel);
     
-  }, [map, restaurants]); // zoomLevel과 selectedRestaurant는 제거하고 별도의 useEffect로 분리
+  }, [map, restaurants]); // 의존성 배열을 간소화
 
   // 줌 레벨이나 선택된 레스토랑이 변경될 때만 스타일 업데이트
   useEffect(() => {
@@ -434,9 +432,8 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       }
     });
     
-    const currentZoomLevel = map.getZoom() || 15;
-    updateOverlaysBasedOnZoom(currentZoomLevel);
-  }, [zoomLevel, selectedRestaurant, map, markers, restaurants, getMarkerIcon, updateOverlaysBasedOnZoom]);
+    updateOverlaysBasedOnZoom(zoomLevel);
+  }, [zoomLevel, selectedRestaurant]); // 의존성 배열에서 불필요한 항목들 제거
 
   if (error) {
     return (
