@@ -77,30 +77,43 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
 
   // 마커 스타일 설정 함수 - 50위까지는 순위 마커, 51위부터는 보라색 점
   const getMarkerIcon = useCallback((restaurant: Restaurant, isSelected: boolean, currentZoomLevel: number) => {
+    if (isSelected) {
+      // 선택된 마커는 보라색 핀 모양
+      return {
+        path: 'M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z',
+        fillColor: '#9C27B0', // 보라색
+        fillOpacity: 1,
+        strokeColor: '#FFFFFF',
+        strokeWeight: 2,
+        scale: 2,
+        anchor: new google.maps.Point(12, 22),
+      };
+    }
+    
     // 50위까지는 순위가 표시되는 원형 마커
     if (restaurant.rank && restaurant.rank <= 50) {
       return {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: isSelected ? 16 : 12, // 선택시 더 크게
-        fillColor: '#9C27B0', // 보라색 유지
+        scale: 12,
+        fillColor: '#9C27B0', // 보라색
         fillOpacity: 1,
-        strokeColor: isSelected ? '#FF6B00' : '#FFFFFF', // 선택시 주황색 테두리
-        strokeWeight: isSelected ? 3 : 2, // 선택시 더 두꺼운 테두리
+        strokeColor: '#FFFFFF',
+        strokeWeight: 2,
       };
     }
     
     // 51위부터는 작은 보라색 점
     return {
       path: google.maps.SymbolPath.CIRCLE,
-      scale: isSelected ? 10 : 6, // 선택시 더 크게
+      scale: 6,
       fillColor: '#9C27B0',
-      fillOpacity: isSelected ? 1 : 0.8, // 선택시 더 진하게
-      strokeColor: isSelected ? '#FF6B00' : '#FFFFFF', // 선택시 주황색 테두리
-      strokeWeight: isSelected ? 2 : 1, // 선택시 더 두꺼운 테두리
+      fillOpacity: 0.8,
+      strokeColor: '#FFFFFF',
+      strokeWeight: 1,
     };
   }, []);
 
-  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 성능 최적화
+  // 줌 레벨에 따라 오버레이 업데이트하는 함수 - 필터 적용 수정
   const updateOverlaysBasedOnZoom = useCallback((currentZoomLevel: number) => {
     if (!map || !createOverlayRef.current) return;
     
@@ -119,7 +132,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
         return;
       }
       
-      // 현재 표시된 레스토랑들 중에서 오버레이 생성
+      // 현재 필터에 따라 표시된 레스토랑들 중에서 오버레이 생성
       const displayRestaurants = getDisplayRestaurants(currentZoomLevel);
       if (!displayRestaurants.length) return;
       
@@ -127,7 +140,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       const bounds = map.getBounds();
       if (!bounds) return;
       
-      // 현재 화면에 보이는 레스토랑들만 필터링
+      // 현재 화면에 보이는 필터된 레스토랑들만 선별
       const visibleRestaurants = displayRestaurants
         .filter(restaurant => {
           if (!restaurant.position) return false;
@@ -202,7 +215,7 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
     } catch (error) {
       console.error("Error in updateOverlaysBasedOnZoom:", error);
     }
-  }, [map, getMaxOverlaysForZoom, getDisplayRestaurants, selectedRestaurant]);
+  }, [map, getMaxOverlaysForZoom, getDisplayRestaurants, selectedRestaurant, selectedRankFilter]);
 
   // 마커 클릭 핸들러
   const handleMarkerClick = useCallback((restaurant: Restaurant, marker: google.maps.Marker) => {
@@ -542,6 +555,17 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
       }
     });
   }, [zoomLevel, selectedRestaurant, getMarkerIcon, getDisplayRestaurants]);
+
+  // 필터 변경 시 오버레이 즉시 업데이트
+  useEffect(() => {
+    if (!map) return;
+    
+    const currentZoomLevel = map.getZoom() || 15;
+    // 필터 변경 시 오버레이 즉시 업데이트
+    setTimeout(() => {
+      updateOverlaysBasedOnZoom(currentZoomLevel);
+    }, 100);
+  }, [selectedRankFilter, updateOverlaysBasedOnZoom]);
 
   // 순위 목록에서 음식점 선택 핸들러
   const handleRestaurantListClick = useCallback((restaurant: Restaurant) => {
