@@ -23,6 +23,15 @@ export default function Map({ restaurants = [], onRestaurantSelect }: MapProps) 
   // createOverlay 함수를 저장하는 ref를 생성
   const createOverlayRef = useRef<((position: google.maps.LatLng, name: string, isSelected: boolean) => google.maps.OverlayView) | null>(null);
 
+  // 디버깅용 상태 표시
+  console.log('Map state:', { 
+    restaurantsReceived: restaurants.length, 
+    mapLoaded, 
+    markersCount: markers.length,
+    error,
+    apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? 'Set' : 'Not set'
+  });
+
   // 마커 스타일 설정 함수
   const getMarkerIcon = useCallback((isSelected: boolean, currentZoomLevel: number) => {
     if (isSelected) {
